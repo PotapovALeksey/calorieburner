@@ -17,6 +17,7 @@
     line-height: 1.5625rem;
     font-family: $main-font;
     margin-bottom: 0.625rem;
+    text-align: center;
  
 }
 
@@ -26,10 +27,15 @@
     color: $text-light-color;
     line-height: 1.125rem;
     font-size: $medium-text-size;
-    margin-bottom: 1.5rem;
     border-bottom: 0.125rem solid #888888;
-    height: 2.5rem;
+    padding-bottom: 0.125rem;
 
+}
+
+.filter_link_txt {
+    margin-bottom: 1.5rem;
+    padding-left: 4.09rem;
+   
 }
 
 .filter_type_text {
@@ -38,7 +44,7 @@
     color: $main-light-color;
     font-size: $medium-text-size;
     line-height: 1.125rem;
-    flex-basis: 80%;
+    flex-basis: 65%;
     
     
     
@@ -58,27 +64,43 @@
 .filter_type_btn {
     border: none;
     background-color: $main-dark-color;
-    //fill: #ffffff;
+
 }
 
-/*.svg {
-    height: 1.25rem;
-    width: 1.125rem;
-    color: #ffffff;
-}*/
-
-/*.filter_box {
-    display: flex;
-    flex-direction: column-reverse;
-
-}*/
 
 .filer_type_box {
-    display: none;
+  // display: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 1.5625rem;
+  padding-bottom: 1.5625rem;
 }
 
 
+.filter_type_item_text {
+    font-size: $subtitle-size;
+    font-family: $main-font;
+    font-weight: $font-weight-light;
+    color: $text-light-color;
+    flex-basis: 80%;
+    //line-height: 2.5rem;
+   // padding-left: 2px;
+    //padding-bottom: 2px;
 
+}
+
+.filter_type_item {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 18px;
+    height: 18px;
+}
 
 
 

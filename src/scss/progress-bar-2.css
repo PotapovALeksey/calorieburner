@@ -1,0 +1,5 @@
+@import "../progress-bar/loading-bar.css";
+
+.progress-bar-item {
+    color: green;
+}

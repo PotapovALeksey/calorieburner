@@ -4,3 +4,115 @@
     list-style: none;
     text-decoration: none;
 }
+
+.filter {
+    margin: 0 auto;
+    width: 77%;
+}
+
+.filter_title {
+    font-size: $small-title-size;
+    font-weight: $font-weight-bold;
+    color: $text-dark-color;
+    line-height: 1.5625rem;
+    font-family: $main-font;
+    margin-bottom: 0.625rem;
+ 
+}
+
+.filter_link {
+    font-family: $main-font;
+    font-weight: $font-weight-light;
+    color: $text-light-color;
+    line-height: 1.125rem;
+    font-size: $medium-text-size;
+    margin-bottom: 1.5rem;
+    border-bottom: 0.125rem solid #888888;
+    height: 2.5rem;
+
+}
+
+.filter_type_text {
+    font-family: $main-font;
+    font-weight: $font-weight-bold;
+    color: $main-light-color;
+    font-size: $medium-text-size;
+    line-height: 1.125rem;
+    flex-basis: 80%;
+    
+    
+    
+}
+
+.filter_type {
+    width: 15.3125rem;
+    background-color: $main-dark-color;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem; 
+    margin-bottom: 0.3125rem;
+
+}
+
+.filter_type_btn {
+    border: none;
+    background-color: $main-dark-color;
+    //fill: #ffffff;
+}
+
+/*.svg {
+    height: 1.25rem;
+    width: 1.125rem;
+    color: #ffffff;
+}*/
+
+/*.filter_box {
+    display: flex;
+    flex-direction: column-reverse;
+
+}*/
+
+.filer_type_box {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

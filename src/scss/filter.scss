@@ -1,0 +1,178 @@
+.filter {
+  margin: 0;
+  padding: 0; //margin: 0 auto;
+  width: 77%;
+}
+
+.filter_title {
+  font-size: $small-title-size;
+  font-weight: $font-weight-bold;
+  color: $text-dark-color;
+  line-height: 1.5625rem;
+  font-family: $main-font;
+  margin-bottom: 0.625rem;
+  text-align: center;
+}
+
+.filter_link {
+  font-family: $main-font;
+  font-weight: $font-weight-light;
+  color: $text-light-color;
+  line-height: 1.125rem;
+  font-size: $medium-text-size;
+  border-bottom: 0.125rem solid #888888;
+  padding-bottom: 0.125rem;
+}
+
+.filter_link_txt {
+  margin-bottom: 1.5rem;
+  padding-left: 4.09rem;
+}
+
+.filter_type_text {
+  font-family: $main-font;
+  font-weight: $font-weight-bold;
+  color: $main-light-color;
+  font-size: $medium-text-size;
+  line-height: 1.125rem;
+  flex-basis: 65%;
+}
+
+.filter_type {
+  //width: 15.3125rem;
+  background-color: $main-dark-color;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0.3125rem;
+}
+
+.filter_type_btn {
+  border: none;
+  background-color: $main-dark-color;
+}
+
+//.filer_type_box {
+// display: none;
+//}
+//.filer_type_box :hover{
+.filer_type_box {
+  //display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 1.5625rem;
+  padding-bottom: 1.5625rem;
+}
+
+.filter_type_item_text {
+  font-size: $subtitle-size;
+  font-family: $main-font;
+  font-weight: $font-weight-light;
+  color: $text-light-color;
+  flex-basis: 80%;
+}
+
+.filter_type_item_text:hover {
+  font-weight: $font-weight-bold;
+}
+
+.filter_type_item {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.625rem;
+}
+
+img {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+label {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  /* 10 px padding right + 15px input type*/
+  margin-right: 10px;
+  /* margin between inputs types */
+}
+
+label:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 0;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.checkbox label:before {
+  background: url('../img/filter/baseline_fitness_center_black_18dp.png') left center no-repeat;
+  margin-top: 2px;
+}
+
+/*#trigger {
+  display: none;
+}
+.checker {
+  background-image: url(../img/filter/baseline_fitness_center_black_18dp.png);
+  background-position: left center;
+  background-size: auto 100%;
+  //width: 40px;
+ // height: 40px;
+  background-repeat: no-repeat;
+}
+#trigger:checked + .checker {
+ //background-position: right center;
+}*/
+@media (min-width: 768px) and (max-width: 1199px) {
+  .filter_title {
+    font-size: $big-title-size;
+    line-height: 3.75rem;
+  }
+  .filter_link_txt {
+    text-align: center;
+  }
+  .filter_type_text {
+    font-size: $tablet-medium-text-size;
+  }
+  .filter_type_text br {
+    display: none;
+  }
+  .filter_type {
+    width: 40.625rem;
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+    margin-bottom: 0.5rem;
+  }
+  .filer_type_box {
+    //width: 40.625rem;
+  }
+  .filter_type_item_text {
+    font-size: $big-text-size;
+  }
+  .filter_box_item {
+    width: 40.625rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .filter_title {
+    font-size: $desktop-small-title-size;
+    line-height: 3.75rem;
+  }
+  .filter_box {
+    //max-width: 73.125rem;
+    display: flex;
+    flex-direction: row;
+  }
+  .filter_box_item {
+    flex-basis: 25%;
+  }
+}

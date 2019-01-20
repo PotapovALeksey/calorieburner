@@ -177,14 +177,7 @@ function viewAllVideos() {
             }
         ]
     });
-    //    const slickSlider = document.querySelector('.slick-slider');   
-    //    slickSlider.style.width = '100%';
-    // setInterval(hideText, 100);
-
-
-    // setInterval(showText, 100);
-
-
+    
     function showText() {
         let div = document.querySelector('.slick-active');
         let text = div.querySelector('.slider-text-pos');

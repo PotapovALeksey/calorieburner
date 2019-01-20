@@ -57,6 +57,7 @@
 // display: none;
 //}
 //.filer_type_box :hover{
+
 .filer_type_box {
   //display: block;
   display: flex;
@@ -104,12 +105,13 @@ label:before {
   left: 0;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   display: none;
 }
 
 .checkbox label:before {
-  background: url('../img/filter/baseline_fitness_center_black_18dp.png') left center no-repeat;
+  background: url("../img/filter/baseline_fitness_center_black_18dp.png") left
+    center no-repeat;
   margin-top: 2px;
 }
 

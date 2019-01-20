@@ -4,3 +4,137 @@
     list-style: none;
     text-decoration: none;
 }
+
+.filter {
+    margin: 0 auto;
+    width: 77%;
+}
+
+.filter_title {
+    font-size: $small-title-size;
+    font-weight: $font-weight-bold;
+    color: $text-dark-color;
+    line-height: 1.5625rem;
+    font-family: $main-font;
+    margin-bottom: 0.625rem;
+    text-align: center;
+ 
+}
+
+.filter_link {
+    font-family: $main-font;
+    font-weight: $font-weight-light;
+    color: $text-light-color;
+    line-height: 1.125rem;
+    font-size: $medium-text-size;
+    border-bottom: 0.125rem solid #888888;
+    padding-bottom: 0.125rem;
+
+}
+
+.filter_link_txt {
+    margin-bottom: 1.5rem;
+    padding-left: 4.09rem;
+   
+}
+
+.filter_type_text {
+    font-family: $main-font;
+    font-weight: $font-weight-bold;
+    color: $main-light-color;
+    font-size: $medium-text-size;
+    line-height: 1.125rem;
+    flex-basis: 65%;
+    
+    
+    
+}
+
+.filter_type {
+    width: 15.3125rem;
+    background-color: $main-dark-color;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem; 
+    margin-bottom: 0.3125rem;
+
+}
+
+.filter_type_btn {
+    border: none;
+    background-color: $main-dark-color;
+
+}
+
+
+.filer_type_box {
+  // display: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 1.5625rem;
+  padding-bottom: 1.5625rem;
+}
+
+
+.filter_type_item_text {
+    font-size: $subtitle-size;
+    font-family: $main-font;
+    font-weight: $font-weight-light;
+    color: $text-light-color;
+    flex-basis: 80%;
+    //line-height: 2.5rem;
+   // padding-left: 2px;
+    //padding-bottom: 2px;
+
+}
+
+.filter_type_item {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 18px;
+    height: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

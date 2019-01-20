@@ -101,14 +101,13 @@
 
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   display: none;
 }
 
 .checkbox .label:before {
   background: url('../img/icons/SVG icons/baseline-fitness_center-24px.svg') left center no-repeat;
   background-size: 1rem;
-
 }
 
 .checkbox2 .label:before {
@@ -235,6 +234,4 @@ input[type=checkbox]:checked+.label:before {
   .filter_box_item {
     flex-basis: 25%;
   }
-
-
 }

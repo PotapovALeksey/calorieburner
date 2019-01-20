@@ -1,0 +1,110 @@
+@import "../progress-bar/loading-bar.css";
+@import "variables.scss";
+
+.progress-bar2-container {
+  background-color: $main-dark-color;
+  @include for-size(desktop) {
+    flex-basis: 35%;
+    height: 400px;
+  }
+
+  .ldBar-label:after {
+    content: "минут";
+    color: $main-light-color;
+    margin-left: 5px;
+    font-family: $main-font;
+    font-size: 0.7em;
+    font-weight: 200;
+  }
+  .ldBar-label {
+    color: $main-light-color;
+  }
+  path {
+    stroke-linecap: round;
+  }
+  .progress-bar-item {
+    list-style: none;
+  }
+
+  @include for-size(phone) {
+    .progress-bar2-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .progress-bar-title {
+      text-transform: uppercase;
+      font-family: $main-font;
+      font-weight: $font-weight-bold;
+      font-size: $medium-text-size;
+      color: $bg-light-color;
+    }
+    .progress-bar-item-text {
+      font-family: $main-font;
+      font-weight: $font-weight-bold;
+      font-size: $medium-text-size;
+      color: $main-light-color;
+      padding-left: 20px;
+    }
+  }
+  @include for-size(tablet) {
+    .progress-bar2-container {
+      width: 100%;
+      display: flex;
+    }
+    .progress-bar-2 {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+    }
+    .progress-bar-title {
+      text-transform: uppercase;
+      font-family: $main-font;
+      font-weight: $font-weight-bold;
+      font-size: $medium-text-size;
+      color: $bg-light-color;
+    }
+    .progress-bar-item-text {
+      font-family: $main-font;
+      font-weight: $font-weight-bold;
+      font-size: $medium-text-size;
+      color: $main-light-color;
+      padding-left: 20px;
+    }
+  }
+
+  .progress-bar2-container {
+    @include for-size(desktop) {
+      flex-basis: 35%;
+      height: 400px;
+    }
+    .progress-bar-title {
+      text-align: center;
+      padding-left: 46px;
+      padding-top: 70px;
+    }
+
+    .progress-bar-2 {
+      padding-top: 68px;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+    }
+    .progress-bar-title {
+      text-transform: uppercase;
+      font-family: $main-font;
+      font-weight: $font-weight-bold;
+      font-size: $medium-text-size;
+      color: $bg-light-color;
+    }
+    .progress-bar-item-text {
+      font-family: $main-font;
+      font-weight: $font-weight-bold;
+      font-size: $medium-text-size;
+      color: $main-light-color;
+      padding-left: 20px;
+    }
+  }
+}

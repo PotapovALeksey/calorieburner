@@ -1,6 +1,249 @@
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
+.filter {
+  margin: 0 auto;
+  padding: 0;
+  width: 77%;
+  list-style: none;
+  text-decoration: none;
 }
+
+.filter_title {
+  font-size: $small-title-size;
+  font-weight: $font-weight-bold;
+  color: $text-dark-color;
+  line-height: 1.5625rem;
+  font-family: $main-font;
+  margin-bottom: 0.625rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.filter_link {
+  font-family: $main-font;
+  font-weight: $font-weight-light;
+  color: $text-light-color;
+  line-height: 1.125rem;
+  font-size: $medium-text-size;
+  border-bottom: 0.125rem solid #888888;
+  padding-bottom: 0.125rem;
+}
+
+.filter_link_txt {
+  margin-bottom: 1.5rem;
+  padding-left: 4.09rem;
+}
+
+.filter_type_text {
+  font-family: $main-font;
+  font-weight: $font-weight-bold;
+  color: $main-light-color;
+  font-size: $medium-text-size;
+  line-height: 1.125rem;
+  flex-basis: 65%;
+}
+
+.filter_type {
+  background-color: $main-dark-color;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0.3125rem;
+}
+
+.filter_type_btn {
+  border: none;
+  background-color: $main-dark-color;
+}
+
+.filer_type_box {
+  display: none;
+  // display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 1.5625rem;
+  padding-bottom: 1.5625rem;
+  padding-left: 0.5rem;
+}
+
+.filter_type_item_text {
+  font-size: $subtitle-size;
+  font-family: $main-font;
+  font-weight: $font-weight-light;
+  color: $text-light-color;
+  flex-basis: 80%;
+}
+
+.filter_type_item_text:hover {
+  font-weight: $font-weight-bold;
+}
+
+.filter_type_item {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.625rem;
+  cursor: pointer;
+}
+
+
+
+.label {
+  display: inline-block;
+  position: relative;
+
+}
+
+.label:before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  left: 0;
+  top: -1rem;
+
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox .label:before {
+  background: url('../img/icons/SVG icons/baseline-fitness_center-24px.svg') left center no-repeat;
+  background-size: 1rem;
+}
+
+.checkbox2 .label:before {
+  background: url('../img/icons/SVG icons/baseline-star_border-24px.svg') left center no-repeat;
+  background-size: 1rem;
+
+}
+
+.checkbox3 .label:before {
+  background: url('../img/icons/SVG icons/baseline-whatshot-24px.svg') left center no-repeat;
+  background-size: 1rem;
+
+}
+
+.checkbox4 .label:before {
+  background: url('../img/icons/SVG icons/baseline-timer-24px.svg') left center no-repeat;
+  background-size: 1rem;
+
+}
+
+input[type=checkbox]:checked+.label:before {
+  background-color: red;
+}
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .filter {
+    width: 86%;
+  }
+
+  .filter_title {
+    font-size: $big-title-size;
+    line-height: 3.75rem;
+  }
+
+  .filter_title br {
+    display: none;
+  }
+
+  .filter_link_txt {
+    padding: 0;
+    text-align: center;
+  }
+
+  .filter_type_text {
+    font-size: $tablet-medium-text-size;
+  }
+
+
+
+  .filter_type_text br {
+    display: none;
+  }
+
+  .filter_type {
+    width: 40.625rem;
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  
+
+  .filter_type_item_text {
+    font-size: $big-text-size;
+    flex-basis: 90%;
+  }
+
+  .filter_box_item {
+    width: 40.625rem;
+    list-style: none;
+  }
+
+  .filter_box {
+    padding-left: 0.5rem;
+    list-style: none;
+  }
+
+  .checkbox .label:before {
+    background-size: 1.1rem;
+
+  }
+
+  .label:before {
+    content: "";
+    width: 1.15rem;
+    height: 1.15rem;
+    position: absolute;
+    left: 0;
+    top: -1rem;
+
+  }
+
+
+}
+
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .filter {
+    width: 75rem;
+  }
+
+  .filter_title {
+    font-size: $desktop-small-title-size;
+    line-height: 3.75rem;
+  }
+
+  .filter_type:nth-child(2n) {
+    background-color: #5168db;
+  }
+
+  .filter_title br {
+    display: none;
+  }
+
+  .filter_link_txt {
+
+    text-align: center;
+  }
+
+  .filter_box {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .filter_box_item {
+    flex-basis: 25%;
+  }
+}
+
+#filter_box {
+    list-style: none;
+  }
+
+#filter_link_txt {
+   text-decoration: none;
+ }

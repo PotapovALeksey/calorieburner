@@ -1,11 +1,44 @@
-<section class="filter">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CalorieBurner</title>
+   <link href="styles.css?4f0949365d067ecb6ba0" rel="stylesheet"></head>
+<body>
+  <div class="container_header_background">
+  <div class="container_header_banner">
+    <div class="container_header">
+      <header class="header">
+        <img
+          class="header__img"
+          src="./img/callorieburn_logo_colored.svg"
+          width="180"
+          alt="ololo"
+        />
+        <section>
+          <div class="header_maintext">
+            <h1 class="header_title">Видеотренировки любой сложности</h1>
+            <h2 class="header_subtitle">
+              Занимайтесь бесплатно и отслеживайте <br />
+              свои результаты в режиме онлайн!
+            </h2>
+          </div>
+        </section>
+      </header>
+    </div>
+  </div>
+</div>
+
+  <section class="filter">
     <h2 class="filter_title">Выберите параметры<br> своей тренировки</h2>
     <p class="filter_link_txt"><a id="filter_link_txt" class="filter_link" href="">снять фильтры</a></p>
     <ul id="filter_box" class="filter_box">
         <li class="filter_box_item">
             <div class="filter_type">
                 <p class="filter_type_text">ИНВЕНТАРЬ <br>ДЛЯ ТРЕНИРОВКИ</p>
-                <button id="js__filter-inventory" class="filter_type_btn"><img src="../src/img/icons/SVG icons/baseline-keyboard_arrow_down-24px.svg"
+                <button id="js__filter-inventory" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
                         alt="Развернуть" />
                 </button>
             </div>
@@ -45,7 +78,7 @@
         <li class="filter_box_item">
             <div class="filter_type">
                 <p class="filter_type_text">УРОВЕНЬ <br>СЛОЖНОСТИ</p>
-                <button id="js__filter-difficult" class="filter_type_btn"><img src="../src/img/icons/SVG icons/baseline-keyboard_arrow_down-24px.svg"
+                <button id="js__filter-difficult" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
                         alt="Развернуть" />
                 </button>
             </div>
@@ -73,7 +106,7 @@
         <li class="filter_box_item">
             <div class="filter_type">
                 <p class="filter_type_text">КОЛИЧЕСТВО <br>СЖИГАЕМЫХ КАЛОРИЙ</p>
-                <button id="js__filter-calory" class="filter_type_btn"><img src="../src/img/icons/SVG icons/baseline-keyboard_arrow_down-24px.svg"
+                <button id="js__filter-calory" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
                         alt="Развернуть" />
                 </button>
             </div>
@@ -143,7 +176,7 @@
         <li class="filter_box_item">
             <div class="filter_type">
                 <p class="filter_type_text">ДЛИТЕЛЬНОСТЬ <br>ТРЕНИРОВКИ</p>
-                <button id="js__filter-time" class="filter_type_btn"><img src="../src/img/icons/SVG icons/baseline-keyboard_arrow_down-24px.svg"
+                <button id="js__filter-time" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
                         alt="Развернуть" />
                 </button>
             </div>
@@ -201,3 +234,93 @@
     </ul>
 </section>
 <script src="/src/js/filter.js"></script>
+  <div class="slider-main">
+  <div class="slider-corusel">
+      <div class="slider-list">
+<!-- <div>
+ <iframe src="https://www.youtube.com/embed/RqfkrZA_ie0" name="iframe_a"></iframe>
+<a href="https://www.youtube.com/embed/RqfkrZA_ie0" target="iframe_a"><img src="https://img.youtube.com/vi/iY4hQd24_d0/sddefault.jpg"></a></p>
+ </div> -->
+   
+     
+     </div>    
+  </div>
+</div>
+
+  <div class="progress-wrapper">
+    <h2 class="progress-wrapper__title">Ваш прогресс тренировок</h2>
+    <div class="progress-bar-first">
+  <h3 class="progress-bar-first__title">Количество сожженных калорий</h3>
+  <div class="progress-bar-first__bar-wrapper">
+    <div class="line-bar">
+      <p class="line-bar__label">cегодня</p>
+      <div id="bar-today" class="line-bar__bar line-bar__bar--today"></div>
+      <p id="bar-text-today" class="line-bar__num">0ккал</p>
+    </div>
+    <div class="line-bar">
+      <p class="line-bar__label">неделя</p>
+      <div id="bar-week" class="line-bar__bar line-bar__bar--week"></div>
+      <p id="bar-text-week" class="line-bar__num">0ккал</p>
+    </div>
+    <div class="line-bar">
+      <p class="line-bar__label">месяц</p>
+      <div id="bar-mounth" class="line-bar__bar line-bar__bar--mounth"></div>
+      <p id="bar-text-mounth" class="line-bar__num">0ккал</p>
+    </div>
+  </div>
+</div>
+
+
+    <div class="progress-bar2-container">
+    <span class="progress-bar-title"> Длительность тренировок</span>
+    <ul class="progress-bar-2 ">
+        <li class="progress-bar-item"><div
+                data-preset="fan"
+                class="ldBar label-center"
+                data-value="35"
+                data-stroke-width="5"
+                data-stroke-trail-width="5"
+                data-stroke-trail="#415eda"
+                data-stroke="data:ldbar/res,gradient(-20,0,5,#96edf8,#fff)"
+        ></div> <span class="progress-bar-item-text">cегодня</span> </li>
+        <li class="progress-bar-item"> <div
+                data-preset="fan"
+                class="ldBar label-center"
+                data-value="65"
+                data-stroke-width="5"
+                data-stroke-trail-width="5"
+                data-stroke-trail="#415eda"
+                data-stroke="data:ldbar/res,gradient(-20,0,5,#96edf8,#fff)"
+        ></div> <span class="progress-bar-item-text">неделя</span> </li>
+        <li class="progress-bar-item"> <div
+                data-preset="fan"
+                class="ldBar label-center"
+                data-value="85"
+                data-stroke-width="5"
+                data-stroke-trail-width="5"
+                data-stroke-trail="#415eda"
+                data-stroke="data:ldbar/res,gradient(-20,0,5,#96edf8,#fff)"
+        ></div> <span class="progress-bar-item-text">месяц</span> </li>
+    </ul>
+</div>
+
+
+  </div>
+  <footer class="footer">
+  <div class="container_footer_logo">
+    <img
+      src="./img/callorieburn_logo_colored.svg"
+      width="120"
+      alt="ololo"
+    />
+  </div>
+  <span
+    >Приложение создано исключительно в обучающих целях.<br />
+    Все использованые видеоматериалы принадлежат их авторам <br />
+    и правоаблодателям опубликоваными на Youtube.</span
+  >
+</footer>
+
+<script type="text/javascript" src="bundle.js?4f0949365d067ecb6ba0"></script></body>
+
+</html>

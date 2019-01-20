@@ -1,22 +1,27 @@
-const arrayVideos = [
+import createVideo from './template/slider.hbs';
+import $ from "jquery";
+import "slick-carousel";
+
+
+
+const arrayVideos = [{
+        name: 'Утренняя тренировка для зарядки',
+        duration: '10 минут',
+        colories: '80 ккал',
+        inv: 'Коврик для йоги',
+        src: 'https://www.youtube.com/watch?v=ecrz1jaLV3A&list=PLUV7j0d8hiH2fO6jOTpwpKdvJA5fjnPaw',
+        level: 'Простая',
+        img: 'https://img.youtube.com/vi/ecrz1jaLV3A/sddefault.jpg',
+    },
     {
-    name: 'Утренняя тренировка для зарядки',
-    duration: '10 минут',
-    colories: '80 ккал',
-    inv: 'Коврик для йоги',
-    src: 'https://www.youtube.com/watch?v=ecrz1jaLV3A&list=PLUV7j0d8hiH2fO6jOTpwpKdvJA5fjnPaw',
-    level: 'Простая',
-    img: 'https://img.youtube.com/vi/ecrz1jaLV3A/sddefault.jpg',
-},
-    {
-    name: '5-ти минутная тренировка на пресс и ягодицы',
-    duration: '5 минут',
-    colories: '40 ккал',
-    inv: 'Коврик и мяч для йоги',
-    src: 'https://www.youtube.com/watch?v=iY4hQd24_d0',
-    level: 'Средняя',
-    img: 'https://img.youtube.com/vi/iY4hQd24_d0/sddefault.jpg',
-},
+        name: '5-ти минутная тренировка на пресс и ягодицы',
+        duration: '5 минут',
+        colories: '40 ккал',
+        inv: 'Коврик и мяч для йоги',
+        src: 'https://www.youtube.com/watch?v=iY4hQd24_d0',
+        level: 'Средняя',
+        img: 'https://img.youtube.com/vi/iY4hQd24_d0/sddefault.jpg',
+    },
     {
         name: 'Интенсивная тренировка на все группы мышц',
         duration: '30 минут',
@@ -24,7 +29,7 @@ const arrayVideos = [
         inv: 'Не нужен',
         src: 'https://www.youtube.com/watch?v=-9jok89UtQk',
         level: 'Средняя',
-        img: 'https://img.youtube.com/vi/-9jok89UtQk/sddefault.jpg',    
+        img: 'https://img.youtube.com/vi/-9jok89UtQk/sddefault.jpg',
     },
     {
         name: 'Йога с элементами суставной гимнастики',
@@ -33,7 +38,7 @@ const arrayVideos = [
         inv: 'Коврик для йоги',
         src: 'https://www.youtube.com/watch?v=QDR_WB_2EHE',
         level: 'Средняя',
-        img: 'https://img.youtube.com/vi/QDR_WB_2EHE/0.jpg',     
+        img: 'https://img.youtube.com/vi/QDR_WB_2EHE/0.jpg',
     },
     {
         name: 'Аэробика для дома для начинаючих',
@@ -42,7 +47,7 @@ const arrayVideos = [
         inv: 'Не нужен',
         src: 'https://www.youtube.com/watch?v=d5bznQLUUuc',
         level: 'Простая',
-        img: 'https://img.youtube.com/vi/d5bznQLUUuc/sddefault.jpg',     
+        img: 'https://img.youtube.com/vi/d5bznQLUUuc/sddefault.jpg',
     },
     {
         name: 'Функциональная фитнес тренировка',
@@ -51,7 +56,7 @@ const arrayVideos = [
         inv: 'Коврик для йоги',
         src: 'https://www.youtube.com/watch?v=9tDnPfQWUbM',
         level: 'Простая',
-        img: 'https://img.youtube.com/vi/9tDnPfQWUbM/sddefault.jpg',    
+        img: 'https://img.youtube.com/vi/9tDnPfQWUbM/sddefault.jpg',
     },
     {
         name: 'Кардио тренировка с элементами бокса',
@@ -137,6 +142,64 @@ const arrayVideos = [
 ];
 
 
-{/* <iframe id="ytplayer" type="text/html" width="220" height="200"
+/* <iframe id="ytplayer" type="text/html" width="220" height="200"
 src="https://www.youtube.com/embed/RqfkrZA_ie0"
-frameborder="0" allowfullscreen></iframe> */}
+frameborder="0" allowfullscreen></iframe> */
+window.addEventListener('DOMContentLoaded', viewAllVideos);
+
+function viewAllVideos() {
+    const markUp = createVideo({
+        arrayVideos
+    });
+    const out = document.querySelector('.slider-list');
+    out.insertAdjacentHTML('afterbegin', markUp);
+    $('.slider-list').slick({
+        centerMode: true,
+        centerPadding: '150px',
+        slidesToShow: 1,
+        responsive: [{
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 320,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+    //    const slickSlider = document.querySelector('.slick-slider');   
+    //    slickSlider.style.width = '100%';
+    // setInterval(hideText, 100);
+
+
+    // setInterval(showText, 100);
+
+
+    function showText() {
+        let div = document.querySelector('.slick-active');
+        let text = div.querySelector('.slider-text-pos');
+        text.style.display = 'block';
+        const allDiv = [...document.querySelectorAll('.slick-slide')];
+        
+        allDiv.forEach(elem => {
+            if (!elem.classList.contains('slick-active')) {
+                elem.querySelector('.slider-text-pos').style.display = 'none';
+                        }            
+        })
+    }
+
+
+    const conttt = document.querySelector('.slider-list');
+    conttt.addEventListener('mousemove', showText);
+   
+}

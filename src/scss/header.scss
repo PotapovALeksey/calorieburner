@@ -1,0 +1,72 @@
+@media (min-width: 20rem) {
+.wrapper-top {
+    background-image: linear-gradient(rgba(19, 47, 179, 0.5),rgba(19, 47, 179, 0.5)), url(../img/header.jpg);
+    background-repeat: no-repeat;
+    background-position: 43% 100%;
+    background-size: cover;
+    position: relative;
+  
+}
+
+.header {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.box{
+    width: 100px;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.banner {
+    width: 240px;
+    margin: 0 auto;
+    padding-top: 180px;
+    padding-bottom: 100px;
+}
+
+h1 {
+    font-size: 25px;
+    color: #fff;
+    font-family: $main-font;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    width: 30px;
+    margin: 10px 0;
+}
+
+h2 {
+    color: #fff;
+    font-family: $main-font;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+}
+@media (min-width: 48rem) {
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        width: 43rem;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    
+}
+
+@media (min-width: 75rem) {
+
+    .header {
+        display: flex;
+        width: 59.375rem;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+ 
+}

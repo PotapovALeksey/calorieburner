@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CalorieBurner</title>
+   <link href="styles.css?4f0949365d067ecb6ba0" rel="stylesheet"></head>
+<body>
+  <div class="container_header_background">
+  <div class="container_header_banner">
+    <div class="container_header">
+      <header class="header">
+        <img
+          class="header__img"
+          src="./img/callorieburn_logo_colored.svg"
+          width="180"
+          alt="ololo"
+        />
+        <section>
+          <div class="header_maintext">
+            <h1 class="header_title">Видеотренировки любой сложности</h1>
+            <h2 class="header_subtitle">
+              Занимайтесь бесплатно и отслеживайте <br />
+              свои результаты в режиме онлайн!
+            </h2>
+          </div>
+        </section>
+      </header>
+    </div>
+  </div>
+</div>
+
+  <section class="filter">
+    <h2 class="filter_title">Выберите параметры<br> своей тренировки</h2>
+    <p class="filter_link_txt"><a id="filter_link_txt" class="filter_link" href="">снять фильтры</a></p>
+    <ul id="filter_box" class="filter_box">
+        <li class="filter_box_item">
+            <div class="filter_type">
+                <p class="filter_type_text">ИНВЕНТАРЬ <br>ДЛЯ ТРЕНИРОВКИ</p>
+                <button id="js__filter-inventory" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
+                        alt="Развернуть" />
+                </button>
+            </div>
+            <ul id="js__submenu-inventory" class="filer_type_box">
+                <li id="js__inventory-none" class="filter_type_item">
+                    <div class="checkbox">
+                        <input class="check1" type="checkbox" name="check" value="check1">
+                        <label class="label" for="check1"></label></div>
+                    <p class="filter_type_item_text">не нужен</p>
+                </li>
+                <li id="js__inventory-yoga-carpet" class="filter_type_item">
+                    <div class="checkbox">
+                        <input class="check1" type="checkbox" name="check" value="check1">
+                        <label for="check1" class="label"></label></div>
+                    <p class="filter_type_item_text">коврик для йоги</p>
+                </li>
+                <li id="js__inventory-dumbbells" class="filter_type_item">
+                    <div class="checkbox">
+                        <input class="check1" type="checkbox" name="check" value="check1">
+                        <label for="check1" class="label"></label></div>
+                    <p class="filter_type_item_text">гантели</p>
+                </li>
+                <li id="js__inventory-yoga-carpet-and-ball" class="filter_type_item">
+                    <div class="checkbox">
+                        <input class="check1" type="checkbox" name="check" value="check1">
+                        <label for="check1" class="label"></label></div>
+                    <p class="filter_type_item_text">коврик и мяч для <br>йоги</p>
+                </li>
+                <li id="js__inventory-yoga-carpet-and-dumbbells" class="filter_type_item">
+                    <div class="checkbox">
+                        <input class="check1" type="checkbox" name="check" value="check1">
+                        <label for="check1" class="label"></label></div>
+                    <p class="filter_type_item_text">коврик для йоги<br> и гантели</p>
+                </li>
+            </ul>
+        </li>
+        <li class="filter_box_item">
+            <div class="filter_type">
+                <p class="filter_type_text">УРОВЕНЬ <br>СЛОЖНОСТИ</p>
+                <button id="js__filter-difficult" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
+                        alt="Развернуть" />
+                </button>
+            </div>
+            <ul id="js__submenu-difficult" class="filer_type_box">
+                <li id="js__difficult-easy" class="filter_type_item">
+                    <div class="checkbox2">
+                        <input class="check2" type="checkbox" name="check" value="check2">
+                        <label for="check2" class="label"></label></div>
+                    <p class="filter_type_item_text">Простая</p>
+                </li>
+                <li id="js__difficult-medium" class="filter_type_item">
+                    <div class="checkbox2">
+                        <input class="check2" type="checkbox" name="check" value="check2">
+                        <label for="check2" class="label"></label></div>
+                    <p class="filter_type_item_text">Средняя</p>
+                </li>
+                <li id="js__difficult-hard" class="filter_type_item">
+                    <div class="checkbox2">
+                        <input class="check2" type="checkbox" name="check" value="check2">
+                        <label for="check2" class="label"></label></div>
+                    <p class="filter_type_item_text">Сложная</p>
+                </li>
+            </ul>
+        </li>
+        <li class="filter_box_item">
+            <div class="filter_type">
+                <p class="filter_type_text">КОЛИЧЕСТВО <br>СЖИГАЕМЫХ КАЛОРИЙ</p>
+                <button id="js__filter-calory" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
+                        alt="Развернуть" />
+                </button>
+            </div>
+            <ul id="js__submenu-calory" class="filer_type_box">
+                <li id="js__calory-40" class="filter_type_item">
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">40 ккал</p>
+                </li>
+                <li id="js__calory-80" class="filter_type_item">
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">80 ккал</p>
+                </li>
+                <li id="js__calory-100" class="filter_type_item">
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">100 ккал</p>
+                </li>
+                <li id="js__calory-110" class="filter_type_item">
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">110 ккал</p>
+                </li>
+                <li id="js__calory-250" class="filter_type_item">
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">250 ккал</p>
+                </li>
+                <li id="js__calory-300" class="filter_type_item">
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">300 ккал</p>
+                </li>
+                <li id="js__calory-350" class="filter_type_item">
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">350 ккал</p>
+                </li>
+                <li id="js__calory-400" class="filter_type_item">
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">400 ккал</p>
+                </li>
+                <li id="js__calory-500" class="filter_type_item">
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">500 ккал</p>
+                </li>
+                <li id="js__calory-600" class="filter_type_item">
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">600 ккал</p>
+                </li>
+            </ul>
+        </li>
+        <li class="filter_box_item">
+            <div class="filter_type">
+                <p class="filter_type_text">ДЛИТЕЛЬНОСТЬ <br>ТРЕНИРОВКИ</p>
+                <button id="js__filter-time" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
+                        alt="Развернуть" />
+                </button>
+            </div>
+            <ul id="js__submenu-time" class="filer_type_box">
+                <li id="js__time-5min" class="filter_type_item">
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">5 минут</p>
+                </li>
+                <li id="js__time-10min" class="filter_type_item">
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">10 минут</p>
+                </li>
+                <li id="js__time-14min" class="filter_type_item">
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">14 минут</p>
+                </li>
+                <li id="js__time-20min" class="filter_type_item">
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">20 минут</p>
+                </li>
+                <li id="js__time-30min" class="filter_type_item">
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">30 минут</p>
+                </li>
+                <li id="js__time-45min" class="filter_type_item">
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">45 минут</p>
+                </li>
+                <li id="js__time-50min" class="filter_type_item">
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">50 минут</p>
+                </li>
+                <li id="js__time-60min" class="filter_type_item">
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">60 минут</p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<script src="/src/js/filter.js"></script>
+  <div class="slider-main">
+  <div class="slider-corusel">
+      <div class="slider-list">
+<!-- <div>
+ <iframe src="https://www.youtube.com/embed/RqfkrZA_ie0" name="iframe_a"></iframe>
+<a href="https://www.youtube.com/embed/RqfkrZA_ie0" target="iframe_a"><img src="https://img.youtube.com/vi/iY4hQd24_d0/sddefault.jpg"></a></p>
+ </div> -->
+   
+     
+     </div>    
+  </div>
+</div>
+
+  <div class="progress-wrapper">
+    <h2 class="progress-wrapper__title">Ваш прогресс тренировок</h2>
+    <div class="progress-bar-first">
+  <h3 class="progress-bar-first__title">Количество сожженных калорий</h3>
+  <div class="progress-bar-first__bar-wrapper">
+    <div class="line-bar">
+      <p class="line-bar__label">cегодня</p>
+      <div id="bar-today" class="line-bar__bar line-bar__bar--today"></div>
+      <p id="bar-text-today" class="line-bar__num">0ккал</p>
+    </div>
+    <div class="line-bar">
+      <p class="line-bar__label">неделя</p>
+      <div id="bar-week" class="line-bar__bar line-bar__bar--week"></div>
+      <p id="bar-text-week" class="line-bar__num">0ккал</p>
+    </div>
+    <div class="line-bar">
+      <p class="line-bar__label">месяц</p>
+      <div id="bar-mounth" class="line-bar__bar line-bar__bar--mounth"></div>
+      <p id="bar-text-mounth" class="line-bar__num">0ккал</p>
+    </div>
+  </div>
+</div>
+
+
+    <div class="progress-bar2-container">
+    <span class="progress-bar-title"> Длительность тренировок</span>
+    <ul class="progress-bar-2 ">
+        <li class="progress-bar-item"><div
+                data-preset="fan"
+                class="ldBar label-center"
+                data-value="35"
+                data-stroke-width="5"
+                data-stroke-trail-width="5"
+                data-stroke-trail="#415eda"
+                data-stroke="data:ldbar/res,gradient(-20,0,5,#96edf8,#fff)"
+        ></div> <span class="progress-bar-item-text">cегодня</span> </li>
+        <li class="progress-bar-item"> <div
+                data-preset="fan"
+                class="ldBar label-center"
+                data-value="65"
+                data-stroke-width="5"
+                data-stroke-trail-width="5"
+                data-stroke-trail="#415eda"
+                data-stroke="data:ldbar/res,gradient(-20,0,5,#96edf8,#fff)"
+        ></div> <span class="progress-bar-item-text">неделя</span> </li>
+        <li class="progress-bar-item"> <div
+                data-preset="fan"
+                class="ldBar label-center"
+                data-value="85"
+                data-stroke-width="5"
+                data-stroke-trail-width="5"
+                data-stroke-trail="#415eda"
+                data-stroke="data:ldbar/res,gradient(-20,0,5,#96edf8,#fff)"
+        ></div> <span class="progress-bar-item-text">месяц</span> </li>
+    </ul>
+</div>
+
+
+  </div>
+  <footer class="footer">
+  <div class="container_footer_logo">
+    <img
+      src="./img/callorieburn_logo_colored.svg"
+      width="120"
+      alt="ololo"
+    />
+  </div>
+  <span
+    >Приложение создано исключительно в обучающих целях.<br />
+    Все использованые видеоматериалы принадлежат их авторам <br />
+    и правоаблодателям опубликоваными на Youtube.</span
+  >
+</footer>
+
+<script type="text/javascript" src="bundle.js?4f0949365d067ecb6ba0"></script></body>
+
+</html>

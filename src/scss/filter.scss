@@ -136,27 +136,34 @@ input[type=checkbox] {
     font-size: $big-title-size;
     line-height: 3.75rem;
   }
+
   .filter_link_txt {
     text-align: center;
   }
+
   .filter_type_text {
     font-size: $tablet-medium-text-size;
   }
+
   .filter_type_text br {
     display: none;
   }
+
   .filter_type {
     width: 40.625rem;
     padding-top: 1.875rem;
     padding-bottom: 1.875rem;
     margin-bottom: 0.5rem;
   }
+
   .filer_type_box {
     //width: 40.625rem;
   }
+
   .filter_type_item_text {
     font-size: $big-text-size;
   }
+
   .filter_box_item {
     width: 40.625rem;
   }
@@ -167,11 +174,13 @@ input[type=checkbox] {
     font-size: $desktop-small-title-size;
     line-height: 3.75rem;
   }
+
   .filter_box {
     //max-width: 73.125rem;
     display: flex;
     flex-direction: row;
   }
+
   .filter_box_item {
     flex-basis: 25%;
   }

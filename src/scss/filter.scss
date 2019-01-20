@@ -1,12 +1,7 @@
-* {
+.filter {
     margin: 0;
     padding: 0;
-    list-style: none;
-    text-decoration: none;
-}
-
-.filter {
-    margin: 0 auto;
+    //margin: 0 auto;
     width: 77%;
 }
 
@@ -51,7 +46,7 @@
 }
 
 .filter_type {
-    width: 15.3125rem;
+    //width: 15.3125rem;
     background-color: $main-dark-color;
     display: flex;
     justify-content: space-around;
@@ -124,7 +119,7 @@ img {
   #trigger:checked + .checker {
    //background-position: right center;
   }*/
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1199px){
     .filter_title {
         font-size: $big-title-size;
         line-height: 3.75rem;
@@ -151,7 +146,7 @@ img {
     }
 
     .filer_type_box {
-        width: 40.625rem;
+        //width: 40.625rem;
     }
 
     .filter_type_item_text {
@@ -172,15 +167,15 @@ img {
     }
 
     .filter_box {
-        max-width: 73.125rem;
+        //max-width: 73.125rem;
         display: flex;
         flex-direction: row;
         
     }
 
     .filter_box_item {
-        // flex-basis: 25%;
-        width: ;
+         flex-basis: 25%;
+        //width: 25%;
     }
 
 }

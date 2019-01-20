@@ -1,4 +1,14 @@
-@import 'normalize';
-@import 'mixin';
-@import 'variables';
+
+@import "normalize";
+@import "mixin";
+@import "variables";
+
+@import "header";
+@import "reset";
+
+
+
+@import "../loading-bar/loading-bar.css";
+@import "progress-bar-first";;
 @import "filter";
+

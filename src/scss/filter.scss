@@ -1,3 +1,4 @@
+
 .filter {
   margin: 0;
   padding: 0; //margin: 0 auto;
@@ -57,6 +58,7 @@
 // display: none;
 //}
 //.filer_type_box :hover{
+
 .filer_type_box {
   //display: block;
   display: flex;
@@ -72,10 +74,11 @@
   font-weight: $font-weight-light;
   color: $text-light-color;
   flex-basis: 80%;
-}
+
 
 .filter_type_item_text:hover {
   font-weight: $font-weight-bold;
+
 }
 
 .filter_type_item {
@@ -83,11 +86,6 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.625rem;
-}
-
-img {
-  width: 1.125rem;
-  height: 1.125rem;
 }
 
 label {
@@ -176,3 +174,4 @@ input[type=checkbox] {
     flex-basis: 25%;
   }
 }
+

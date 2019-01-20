@@ -172,7 +172,7 @@ input[type=checkbox]:checked+.label:before {
     margin-bottom: 0.5rem;
   }
 
-
+  
 
   .filter_type_item_text {
     font-size: $big-text-size;
@@ -239,3 +239,11 @@ input[type=checkbox]:checked+.label:before {
     flex-basis: 25%;
   }
 }
+
+#filter_box {
+    list-style: none;
+  }
+
+#filter_link_txt {
+   text-decoration: none;
+ }

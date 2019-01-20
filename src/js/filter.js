@@ -1,7 +1,3 @@
-import * as obj from "./array.js";
-
-console.log(obj.arrayVideos);
-
 // get filters menu items
 const filterInventory = document.getElementById('js__filter-inventory');
 const filterDifficult = document.getElementById('js__filter-difficult');

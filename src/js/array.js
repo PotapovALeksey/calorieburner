@@ -4,7 +4,7 @@ import "slick-carousel";
 
 
 
-export const arrayVideos = [{
+const arrayVideos = [{
         name: 'Утренняя тренировка для зарядки',
         duration: '10 минут',
         colories: '80 ккал',

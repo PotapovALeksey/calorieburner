@@ -17,11 +17,6 @@
   white-space: nowrap;
 }
 
-.filter_box {
-  margin: 0 auto;
-  padding: 0;
-}
-
 .filter_link {
   font-family: $main-font;
   font-weight: $font-weight-light;
@@ -58,7 +53,6 @@
 .filter_type_btn {
   border: none;
   background-color: $main-dark-color;
-  outline: none;
 }
 
 .filer_type_box {
@@ -105,7 +99,7 @@
   height: 1rem;
   position: absolute;
   left: 0;
-  top: -0.4rem;
+  top: -1rem;
 
 }
 
@@ -206,7 +200,7 @@ input[type=checkbox]:checked+.label:before {
     height: 1.15rem;
     position: absolute;
     left: 0;
-    top: -0.1rem;
+    top: -1rem;
 
   }
 

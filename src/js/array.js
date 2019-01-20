@@ -155,7 +155,7 @@ function viewAllVideos() {
     out.insertAdjacentHTML('afterbegin', markUp);
     $('.slider-list').slick({
         centerMode: true,
-        centerPadding: '150px',
+        centerPadding: '200px',
         slidesToShow: 1,
         responsive: [{
                 breakpoint: 768,
@@ -177,22 +177,31 @@ function viewAllVideos() {
             }
         ]
     });
-    
+    widthBlock();
+
+    function widthBlock() {
+        const allDiv = [...document.querySelectorAll('.slick-slide')];
+        allDiv.forEach(elem => {
+            elem.style.width = "700px";
+            console.log(elem.style.width);
+        })
+        console.log(allDiv);
+    };
+
     function showText() {
         let div = document.querySelector('.slick-active');
         let text = div.querySelector('.slider-text-pos');
         text.style.display = 'block';
         const allDiv = [...document.querySelectorAll('.slick-slide')];
-        
+
         allDiv.forEach(elem => {
             if (!elem.classList.contains('slick-active')) {
                 elem.querySelector('.slider-text-pos').style.display = 'none';
-                        }            
+            }
         })
     }
 
 
     const conttt = document.querySelector('.slider-list');
     conttt.addEventListener('mousemove', showText);
-   
 }

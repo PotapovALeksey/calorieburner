@@ -1,6 +1,6 @@
 .filter {
-  margin: 0;
-  padding: 0; //margin: 0 auto;
+  margin: 0 auto;
+  padding: 0; 
   width: 77%;
 }
 
@@ -12,6 +12,7 @@
   font-family: $main-font;
   margin-bottom: 0.625rem;
   text-align: center;
+  white-space: nowrap;
 }
 
 .filter_link {
@@ -39,7 +40,6 @@
 }
 
 .filter_type {
-  //width: 15.3125rem;
   background-color: $main-dark-color;
   display: flex;
   justify-content: space-around;
@@ -53,17 +53,13 @@
   background-color: $main-dark-color;
 }
 
-//.filer_type_box {
-// display: none;
-//}
-//.filer_type_box :hover{
 .filer_type_box {
-  //display: block;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 1.5625rem;
   padding-bottom: 1.5625rem;
+  padding-left: 0.5rem;
 }
 
 .filter_type_item_text {
@@ -83,67 +79,85 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.625rem;
-}
-
-img {
-  width: 1.125rem;
-  height: 1.125rem;
-}
-
-label {
   cursor: pointer;
+}
+
+
+
+.label {
   display: inline-block;
   position: relative;
-  padding-left: 25px;
-  /* 10 px padding right + 15px input type*/
-  margin-right: 10px;
-  /* margin between inputs types */
+
 }
 
-label:before {
+.label:before {
   content: "";
-  width: 15px;
-  height: 15px;
+  width: 1rem;
+  height: 1rem;
   position: absolute;
   left: 0;
+  top: -1rem;
+  
 }
 
 input[type=checkbox] {
   display: none;
 }
 
-.checkbox label:before {
-  background: url('../img/filter/baseline_fitness_center_black_18dp.png') left center no-repeat;
-  margin-top: 2px;
+.checkbox .label:before {
+  background: url('../img/icons/SVG icons/baseline-fitness_center-24px.svg') left center no-repeat;
+  background-size: 1rem;
+ 
 }
 
-/*#trigger {
-  display: none;
+.checkbox2 .label:before {
+  background: url('../img/icons/SVG icons/baseline-star_border-24px.svg') left center no-repeat;
+  background-size: 1rem;
+ 
 }
-.checker {
-  background-image: url(../img/filter/baseline_fitness_center_black_18dp.png);
-  background-position: left center;
-  background-size: auto 100%;
-  //width: 40px;
- // height: 40px;
-  background-repeat: no-repeat;
+
+.checkbox3 .label:before {
+  background: url('../img/icons/SVG icons/baseline-whatshot-24px.svg') left center no-repeat;
+  background-size: 1rem;
+ 
 }
-#trigger:checked + .checker {
- //background-position: right center;
-}*/
+
+.checkbox4 .label:before {
+  background: url('../img/icons/SVG icons/baseline-timer-24px.svg') left center no-repeat;
+  background-size: 1rem;
+ 
+}
+
+input[type=checkbox]:checked + .label:before {  
+  background-color: red; 
+} 
+
+
 @media (min-width: 768px) and (max-width: 1199px) {
+
+.filter {
+    width: 86%;
+}
+
   .filter_title {
     font-size: $big-title-size;
     line-height: 3.75rem;
   }
 
+  .filter_title br {
+    display: none;
+  }
+
   .filter_link_txt {
+    padding: 0;
     text-align: center;
   }
 
   .filter_type_text {
     font-size: $tablet-medium-text-size;
   }
+
+  
 
   .filter_type_text br {
     display: none;
@@ -156,27 +170,63 @@ input[type=checkbox] {
     margin-bottom: 0.5rem;
   }
 
-  .filer_type_box {
-    //width: 40.625rem;
-  }
+  
 
   .filter_type_item_text {
     font-size: $big-text-size;
+    flex-basis: 90%;
   }
 
   .filter_box_item {
     width: 40.625rem;
   }
+
+  .filter_box {
+    padding-left: 0.5rem;
+  }
+
+  .checkbox .label:before {
+    background-size: 1.1rem;
+   
+  }
+
+  .label:before {
+    content: "";
+    width: 1.15rem;
+    height: 1.15rem;
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    
+  }
+
+
 }
 
 @media (min-width: 1200px) and (max-width: 1920px) {
+ .filter {
+   width: 75rem;
+ }
+ 
   .filter_title {
     font-size: $desktop-small-title-size;
     line-height: 3.75rem;
   }
 
+  .filter_type:nth-child(2n) {
+    background-color: #5168db;
+  }
+
+  .filter_title br {
+    display: none;
+  }
+
+  .filter_link_txt {
+
+   text-align: center;
+  }
+
   .filter_box {
-    //max-width: 73.125rem;
     display: flex;
     flex-direction: row;
   }
@@ -184,4 +234,6 @@ input[type=checkbox] {
   .filter_box_item {
     flex-basis: 25%;
   }
+
+
 }

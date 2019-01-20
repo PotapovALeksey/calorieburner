@@ -58,8 +58,8 @@
 //}
 //.filer_type_box :hover{
 .filer_type_box {
-  //display: block;
-  display: flex;
+  display: none;
+  // display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 1.5625rem;

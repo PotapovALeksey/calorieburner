@@ -1,7 +1,7 @@
 import "./scss/styles.scss";
 import "@babel/polyfill";
 import "./progress-bar/loading-bar"
-import "./progress-bar.js"
+import "./js/progress-bar.js"
 // import View from "./js/view";
 // import Model from "./js/model";
 // import Controller from "./js/controller";
@@ -16,5 +16,4 @@ import "./js/slider";
 const view = new View();
 const model = new Model();
 
-const controller = new Controller(model, view);
 const controller = new Controller(model, view);

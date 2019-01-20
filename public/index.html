@@ -9,15 +9,7 @@
 
 </head>
 
-<body>
 
-${require("./header.html")}
-
-<div class="progress-wrapper">
-    ${require("./progress-bar-2.html")}
-</div>
-
-</body>
 
 </html>
   </head>
@@ -28,7 +20,11 @@ ${require("./header.html")}
         ${require("./slider.html")}
     <div class="progress-wrapper">
       <h2 class="progress-wrapper__title">Ваш прогресс тренировок</h2>
-      ${require("./progress-bar-first.html")}
+        <div class="progress-wrapper__loaders-container">
+            ${require("./progress-bar-first.html")}
+            ${require("./progress-bar-2.html")}
+        </div>
+
     </div>
 
 </body>

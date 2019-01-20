@@ -14,7 +14,7 @@ export function userProgress(time) {
   elem.style.width = width + "%";
   text.textContent = ccal + "ккал";
 }
-userProgress(720);
+userProgress(3600);
 
 //   export function foo() {
 //     console.log(obj.today);

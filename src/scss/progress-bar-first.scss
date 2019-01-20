@@ -1,4 +1,14 @@
 .progress-wrapper {
+
+  text-align: center;
+  @include for-size(tablet) {
+    background-color: $bg-light-color;
+  }
+  &__title {
+    width: 70%;
+    margin: 0 auto;
+    font-family: $main-font;
+
   padding-top: 45px;
   text-align: center;
   background-color: $bg-light-color;
@@ -22,16 +32,23 @@
     width: 70%;
     margin: 0 auto;
     margin-bottom: 35px;
+
     font-size: $small-title-size;
     font-weight: $font-weight-bold;
     color: $text-dark-color;
 
     @include for-size(tablet) {
+
+      font-size: $big-title-size;
+    }
+    @include for-size(desktop) {
+
       margin-bottom: 45px;
       font-size: $big-title-size;
     }
     @include for-size(desktop) {
       margin-bottom: 70px;
+
       font-size: $desktop-small-title-size;
     }
   }

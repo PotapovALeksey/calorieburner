@@ -1,132 +1,145 @@
 .progress-wrapper {
 
   text-align: center;
+
   @include for-size(tablet) {
     background-color: $bg-light-color;
   }
+
   &__title {
     width: 70%;
     margin: 0 auto;
     font-family: $main-font;
 
-  padding-top: 45px;
-  text-align: center;
-  background-color: $bg-light-color;
-  font-family: $main-font;
+    padding-top: 45px;
+    text-align: center;
+    background-color: $bg-light-color;
+    font-family: $main-font;
 
-  @include for-size(tablet) {
-    padding-top: 55px;
-    padding-left: 6.4%;
-    padding-right: 6.4%;
-    padding-bottom: 60px;
+    @include for-size(tablet) {
+      padding-top: 55px;
+      padding-left: 6.4%;
+      padding-right: 6.4%;
+      padding-bottom: 60px;
+    }
+
+    @include for-size(desktop) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 125px;
+      padding-bottom: 130px;
+    }
+
+    &__title {
+      width: 70%;
+      margin: 0 auto;
+      margin-bottom: 35px;
+
+      font-size: $small-title-size;
+      font-weight: $font-weight-bold;
+      color: $text-dark-color;
+
+      @include for-size(tablet) {
+
+        font-size: $big-title-size;
+      }
+
+      @include for-size(desktop) {
+
+        margin-bottom: 45px;
+        font-size: $big-title-size;
+      }
+
+      @include for-size(desktop) {
+        margin-bottom: 70px;
+
+        font-size: $desktop-small-title-size;
+      }
+    }
   }
-  @include for-size(desktop) {
+
+  .progress-bar-first {
+    padding: 0 12.5% 40px;
+    background-color: $bg-light-color;
+
+    @include for-size(tablet) {
+      margin-bottom: 20px;
+      padding: 45px 6% 45px;
+      text-align: left;
+      background-color: $main-light-color;
+    }
+
+    @include for-size(desktop) {
+      width: 35%;
+      margin-right: 2%;
+      margin-bottom: 0;
+      padding: 60px 6% 70px;
+    }
+
+    &__title {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: $subtitle-size;
+      font-weight: $font-weight-bold;
+      color: $text-dark-color;
+      text-transform: uppercase;
+
+      @include for-size(tablet) {
+        margin-bottom: 45px;
+        font-size: $tablet-medium-text-size;
+      }
+
+      @include for-size(desktop) {
+        margin-bottom: 115px;
+      }
+    }
+  }
+
+  .line-bar {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 125px;
-    padding-bottom: 130px;
-  }
+    align-items: center;
+    padding-left: 70px;
+    position: relative;
+    font-size: $medium-text-size;
+    color: $text-light-color;
 
-  &__title {
-    width: 70%;
-    margin: 0 auto;
-    margin-bottom: 35px;
-
-    font-size: $small-title-size;
-    font-weight: $font-weight-bold;
-    color: $text-dark-color;
-
-    @include for-size(tablet) {
-
-      font-size: $big-title-size;
+    &__label {
+      position: absolute;
+      left: 0;
+      transform: translate(0, -14px);
+      font-weight: $font-weight-bold;
     }
-    @include for-size(desktop) {
 
-      margin-bottom: 45px;
-      font-size: $big-title-size;
-    }
-    @include for-size(desktop) {
-      margin-bottom: 70px;
-
-      font-size: $desktop-small-title-size;
-    }
-  }
-}
-
-.progress-bar-first {
-  padding: 0 12.5% 40px;
-  background-color: $bg-light-color;
-  @include for-size(tablet) {
-    margin-bottom: 20px;
-    padding: 45px 6% 45px;
-    text-align: left;
-    background-color: $main-light-color;
-  }
-  @include for-size(desktop) {
-    width: 35%;
-    margin-right: 2%;
-    margin-bottom: 0;
-    padding: 60px 6% 70px;
-  }
-
-  &__title {
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: $subtitle-size;
-    font-weight: $font-weight-bold;
-    color: $text-dark-color;
-    text-transform: uppercase;
-    @include for-size(tablet) {
-      margin-bottom: 45px;
-      font-size: $tablet-medium-text-size;
-    }
-    @include for-size(desktop) {
-      margin-bottom: 115px;
-    }
-  }
-}
-.line-bar {
-  display: flex;
-  align-items: center;
-  padding-left: 70px;
-  position: relative;
-  font-size: $medium-text-size;
-  color: $text-light-color;
-
-  &__label {
-    position: absolute;
-    left: 0;
-    transform: translate(0, -14px);
-    font-weight: $font-weight-bold;
-  }
-
-  &__bar {
-    min-width: 10%;
-    max-width: 70%;
-    height: 22px;
-    margin-right: 10px;
-    background-color: $progress-light-color;
-    border-radius: 10px;
-    @include for-size(tablet) {
-      min-width: 5%;
-      max-width: 90%;
-    }
-    @include for-size(desktop) {
+    &__bar {
       min-width: 10%;
-      max-width: 82%;
+      max-width: 70%;
+      height: 22px;
+      margin-right: 10px;
+      background-color: $progress-light-color;
+      border-radius: 10px;
+
+      @include for-size(tablet) {
+        min-width: 5%;
+        max-width: 90%;
+      }
+
+      @include for-size(desktop) {
+        min-width: 10%;
+        max-width: 82%;
+      }
+
+      &--week {
+        background-color: $progress-semi-color;
+      }
+
+      &--mounth {
+        background-color: $main-dark-color;
+      }
     }
 
-    &--week {
-      background-color: $progress-semi-color;
+    &__num {
+      font-weight: $font-weight-light;
     }
-
-    &--mounth {
-      background-color: $main-dark-color;
-    }
-  }
-
-  &__num {
-    font-weight: $font-weight-light;
   }
 }

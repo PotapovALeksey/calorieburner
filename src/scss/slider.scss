@@ -24,3 +24,65 @@ $slick-arrow-color: black !default;
     }
   }
 }
+
+
+@include for-size(phone) {
+  .conteiner-sl {
+      width: 320px;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+  }
+
+     
+  img {
+      width: 150px;
+      display: block;
+      margin: 0 auto;
+
+      // padding-left: 40px;
+      // padding-right: 40px;
+}
+  
+  .slick-arrow {
+      position: absolute;
+      top: 0%;
+          
+  }
+}
+
+@include for-size(tablet) {
+  .conteiner-sl {
+      width: 700px;
+      height: 400px;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+  }
+  
+  img {
+      width: 400px;
+      margin: 0 auto;
+      padding-left: 30px;
+  
+  }
+  
+ }
+
+ @include for-size(desktop) {
+.conteiner-sl {
+  min-width: 1024px;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+img {
+  width: 550px;
+  margin: 0 auto;
+  padding-left: 30px;
+
+}
+
+}

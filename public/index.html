@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <title>CalorieBurner</title>
-</head>
+    <title>CalorieBurner</title>
+  </head>
 
-<body>
+  <body>
+      ${require("./header.html")}
+      ${require("./filter.html")}
+        ${require("./slider.html")}
+    <div class="progress-wrapper">
+      <h2 class="progress-wrapper__title">Ваш прогресс тренировок</h2>
+      ${require("./progress-bar-first.html")}
+    </div>
 
-  <div class="progress-wrapper">
-    <h2 class="progress-wrapper__title">Ваш прогресс тренировок</h2>
-    ${require("./progress-bar-first.html")}
-  </div>
 
-  ${require("./header.html")}
-  ${require("./filter.html")}
-  ${require("./progress-bar-first.html")}
+
 
 </body>
 

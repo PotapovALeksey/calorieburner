@@ -4,7 +4,7 @@ import "@babel/polyfill";
 import userProgress from "./js/temper";
 
 import "./progress-bar/loading-bar";
-// import "./progress-bar.js"
+// import "./js/progress-bar.js"
 
 import View from "./js/view";
 import Model from "./js/model";

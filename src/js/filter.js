@@ -1,3 +1,5 @@
+import array
+
 // get filters menu items
 const filterInventory = document.getElementById('js__filter-inventory');
 const filterDifficult = document.getElementById('js__filter-difficult');
@@ -94,19 +96,47 @@ function addEvtListeners() {
 }
 
 function showFilterInventory() {
-  submenuInventory.style.display = (submenuInventory.style.display === 'none') ? 'flex' : 'none';
+  if (submenuInventory.style.display === 'none') {
+    submenuInventory.style.display = 'flex';
+    submenuDifficult.style.display = 'none';
+    submenuCalory.style.display = 'none';
+    submenuTime.style.display = 'none';
+  } else {
+    submenuInventory.style.display = 'none';
+  }
 }
 
 function showFilterDifficult() {
-  submenuDifficult.style.display = (submenuDifficult.style.display === 'none') ? 'flex' : 'none';
+  if (submenuDifficult.style.display === 'none') {
+    submenuDifficult.style.display = 'flex';
+    submenuInventory.style.display = 'none';
+    submenuCalory.style.display = 'none';
+    submenuTime.style.display = 'none';
+  } else {
+    submenuDifficult.style.display = 'none';
+  }
 }
 
 function showFilterCalory() {
-  submenuCalory.style.display = (submenuCalory.style.display === 'none') ? 'flex' : 'none';
+  if (submenuCalory.style.display === 'none') {
+    submenuCalory.style.display = 'flex';
+    submenuInventory.style.display = 'none';
+    submenuDifficult.style.display = 'none';
+    submenuTime.style.display = 'none';
+  } else {
+    submenuCalory.style.display = 'none';
+  }
 }
 
 function showFilterTime() {
-  submenuTime.style.display = (submenuTime.style.display === 'none') ? 'flex' : 'none';
+  if (submenuTime.style.display === 'none') {
+    submenuTime.style.display = 'flex';
+    submenuInventory.style.display = 'none';
+    submenuDifficult.style.display = 'none';
+    submenuCalory.style.display = 'none';
+  } else {
+    submenuTime.style.display = 'none';
+  }
 }
 
 

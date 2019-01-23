@@ -69,11 +69,19 @@
   //    the player should play for six seconds and then stop.
   var done = false;
   function onPlayerStateChange(event) {
-    let duration = event.target.getDuration();
-    let currentTime = event.target.getCurrentTime();
-    console.log("duration" + duration);
-    console.log("currentTime" + currentTime);
+    let duration = Math.round(event.target.getDuration());
+    let currentTime = Math.round(event.target.getCurrentTime());
+    // console.log("duration" + duration);
+    // console.log("currentTime" + currentTime);
+    let callories = 200;
 
+    function calculateCalories(cal, currentTime, duration) {
+      calloriesForSecond = cal / duration;
+      callories = currentTime * calloriesForSecond;
+      return Math.round(callories);
+    }
+
+    console.log("call", calculateCalories(callories, currentTime, duration));
     // if (event.data == YT.PlayerState.PLAYING && !done) {
     //   // console.log("event data", event.data);
     //   // console.log(" YT.PlayerStateG", YT.PlayerState);

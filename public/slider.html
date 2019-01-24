@@ -9,16 +9,17 @@
   </div>
 </div>
 <!-- MODAL -->
-<div class="modal js-modal modal--hidden">
+<div class="modal js-modal modal-hidden">
   <div class="modal-content">
     <div class="modal-content__iframe-wrap">
       <iframe
         id="player"
         class="modal-content__iframe"
-        src="https://www.youtube.com/embed/RqfkrZA_ie0?enablejsapi=1"
+        src="https://www.youtube.com/embed/RqfkrZA_ie0?enablejsapi=1&playsinline=0"
         frameborder="0"
         height="100%"
         width="100%"
+        allowfullscreen="1"
       ></iframe>
       <!-- <div id="player"></div> -->
     </div>
@@ -36,6 +37,10 @@
 <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 
 <script>
+  let RESULT_CALORIES = 0;
+  let COUNTER = 0;
+  let CALORIES = 200;
+  let TIMER_ID;
   // 2. This code loads the IFrame Player API code asynchronously.
   var tag = document.createElement("script");
 
@@ -48,9 +53,6 @@
   var player;
   function onYouTubeIframeAPIReady() {
     player = new YT.Player("player", {
-      // height: "100%",
-      // width: "100%",
-      // videoId: "RqfkrZA_ie0",
       events: {
         onReady: onPlayerReady,
         onStateChange: onPlayerStateChange
@@ -61,36 +63,58 @@
   // 4. The API will call this function when the video player is ready.
   function onPlayerReady(event) {
     event.target.setPlaybackQuality("default");
-    event.target.playVideo();
+    
+    console.log(event.target);
   }
 
   // 5. The API calls this function when the player's state changes.
   //    The function indicates that when playing a video (state=1),
   //    the player should play for six seconds and then stop.
-  var done = false;
+
   function onPlayerStateChange(event) {
+
     let duration = Math.round(event.target.getDuration());
     let currentTime = Math.round(event.target.getCurrentTime());
-    // console.log("duration" + duration);
-    // console.log("currentTime" + currentTime);
-    let callories = 200;
+    let iframe = document.getElementById("player");
+
+    if (event.data == YT.PlayerState.PLAYING) {
+      TIMER_ID = setInterval(triggerFunction, 1000);
+    } else {
+      clearInterval(TIMER_ID);
+    }
+
+    function triggerFunction() {
+      incrementCounter();
+      calculateCalories(CALORIES, COUNTER, duration);
+    }
 
     function calculateCalories(cal, currentTime, duration) {
       calloriesForSecond = cal / duration;
-      callories = currentTime * calloriesForSecond;
-      return Math.round(callories);
+      callories = Math.round(currentTime * calloriesForSecond);
+      RESULT_CALORIES = formatedValue(callories);
+
+      displayResult(RESULT_CALORIES);
     }
 
-    console.log("call", calculateCalories(callories, currentTime, duration));
-    // if (event.data == YT.PlayerState.PLAYING && !done) {
-    //   // console.log("event data", event.data);
-    //   // console.log(" YT.PlayerStateG", YT.PlayerState);
+    function formatedValue(time) {
+      let value = time < 10 ? "00" + time : time < 100 ? "0" + time : time;
+      return value;
+    }
 
-    //   setTimeout(stopVideo, 1000);
-    //   done = true;
-    // }
+    function displayResult(value) {
+      const counterElem = document.querySelector(
+        ".js-modal-content__counter-num"
+      );
+
+      counterElem.innerHTML = value;
+    }
+
+    function incrementCounter() {
+      COUNTER++;
+    }
   }
-  function stopVideo() {
-    player.pauseVideo();
-  }
+
+  // function stopVideo() {
+  //   player.pauseVideo();
+  // }
 </script>

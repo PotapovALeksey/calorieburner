@@ -1,7 +1,7 @@
 import "./scss/styles.scss";
 import "@babel/polyfill";
-
-// import userProgress from "./js/temper";
+console.log(RESULT_CALORIES);
+import userProgress from "./js/temper";
 
 import "./progress-bar/loading-bar";
 // import "./js/progress-bar.js"

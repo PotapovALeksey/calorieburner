@@ -1,5 +1,5 @@
 .filter {
-  margin: 0 auto;
+  margin: 0 auto 40px;
   padding: 0;
   width: 77%;
   list-style: none;
@@ -30,7 +30,8 @@
 
 .filter_link_txt {
   margin-bottom: 1.5rem;
-  padding-left: 4.09rem;
+  // padding-left: 4.09rem;
+  text-align: center;
 }
 
 .filter_type_text {
@@ -53,6 +54,7 @@
 
 .filter_type_btn {
   border: none;
+  outline: none;
   background-color: $main-dark-color;
 }
 
@@ -86,12 +88,9 @@
   cursor: pointer;
 }
 
-
-
 .label {
   display: inline-block;
   position: relative;
-
 }
 
 .label:before {
@@ -101,7 +100,6 @@
   position: absolute;
   left: 0;
   top: -1rem;
-
 }
 
 input[type="checkbox"] {
@@ -137,13 +135,11 @@ input[type="checkbox"] {
   }
 }
 
-input[type=checkbox]:checked+.label:before {
+input[type="checkbox"]:checked + .label:before {
   background-color: red;
 }
 
-
-@media (min-width: 768px) and (max-width: 1199px) {
-
+@media (min-width: 768px) and (max-width: 1023px) {
   .filter {
     width: 86%;
   }
@@ -166,8 +162,6 @@ input[type=checkbox]:checked+.label:before {
     font-size: $tablet-medium-text-size;
   }
 
-
-
   .filter_type_text br {
     display: none;
   }
@@ -179,8 +173,6 @@ input[type=checkbox]:checked+.label:before {
     margin-bottom: 0.5rem;
   }
 
-  
-
   .filter_type_item_text {
     font-size: $big-text-size;
     flex-basis: 90%;
@@ -189,6 +181,7 @@ input[type=checkbox]:checked+.label:before {
   .filter_box_item {
     width: 40.625rem;
     list-style: none;
+    margin: 0 auto;
   }
 
   .filter_box {
@@ -198,7 +191,6 @@ input[type=checkbox]:checked+.label:before {
 
   .checkbox .label:before {
     background-size: 1.1rem;
-
   }
 
   .label:before {
@@ -208,15 +200,12 @@ input[type=checkbox]:checked+.label:before {
     position: absolute;
     left: 0;
     top: -1rem;
-
   }
-
-
 }
 
-@media (min-width: 1200px) and (max-width: 1920px) {
+@media (min-width: 1024px) {
   .filter {
-    width: 75rem;
+    width: 64rem;
   }
 
   .filter_title {
@@ -233,7 +222,6 @@ input[type=checkbox]:checked+.label:before {
   }
 
   .filter_link_txt {
-
     text-align: center;
   }
 
@@ -245,12 +233,17 @@ input[type=checkbox]:checked+.label:before {
   .filter_box_item {
     flex-basis: 25%;
   }
+
+  .filter_type {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 
 #filter_box {
-    list-style: none;
-  }
+  list-style: none;
+}
 
 #filter_link_txt {
-   text-decoration: none;
- }
+  text-decoration: none;
+}

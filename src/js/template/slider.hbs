@@ -9,8 +9,8 @@
           <svg class="slider-text__item-icon">
             <use href="./../src/img/icons/sprite.svg#icon-baseline-timer-24px"></use>
           </svg>
-          Длительность:{{duration}}</span
-        ><span class="slider-text__item-about"></span>
+          Длительность:<span class="slider-text__item-fromarray">{{duration}}</span></span>
+         
       </li>
       <li class="slider-text__item">
         <span class="slider-text__item-description">
@@ -19,8 +19,8 @@
               href="./../src/img/icons/sprite.svg#icon-baseline-star_border-24px"
             ></use>
           </svg>
-          Сложность:{{level}}</span
-        ><span class="slider-text__item-about"></span>
+          Сложность:<span class="slider-text__item-fromarray">{{level}}</span></span>
+         
       </li>
       <li class="slider-text__item">
         <span class="slider-text__item-description">
@@ -29,8 +29,8 @@
               href="./../src/img/icons/sprite.svg#icon-baseline-whatshot-24px"
             ></use>
           </svg>
-          Сжигает:{{colories}}</span
-        ><span class="slider-text__item-about"></span>
+          Сжигает:<span class="slider-text__item-fromarray">{{colories}}</span></span>
+          
       </li>
       <li class="slider-text__item">
         <span class="slider-text__item-description">
@@ -40,11 +40,12 @@
             ></use>
           </svg>
 
-          Инвентарь:{{inv}}</span
-        ><span class="slider-text__item-about"></span>
+          Инвентарь:<span class="slider-text__item-fromarray">{{inv}}</span></span>
+          
       </li>
     </ul></section>
  
 <a class='slider-link' href="{{src}}" target="iframe_a"><img src="{{img}}"></a>
+
 </div>
 {{/each}}

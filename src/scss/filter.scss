@@ -108,27 +108,33 @@ input[type="checkbox"] {
   display: none;
 }
 
-.checkbox .label:before {
-  background: url('../img/icons/SVG icons/baseline-fitness_center-24px.svg') left center no-repeat;
-  background-size: 1rem;
-}
+// .checkbox .label:before {
+//   background: url('../img/icons/SVG icons/baseline-fitness_center-24px.svg') left center no-repeat;
+//   background-size: 1rem;
+// }
 
-.checkbox2 .label:before {
-  background: url('../img/icons/SVG icons/baseline-star_border-24px.svg') left center no-repeat;
-  background-size: 1rem;
+// .checkbox2 .label:before {
+//   background: url('../img/icons/SVG icons/baseline-star_border-24px.svg') left center no-repeat;
+//   background-size: 1rem;
 
-}
+// }
 
-.checkbox3 .label:before {
-  background: url('../img/icons/SVG icons/baseline-whatshot-24px.svg') left center no-repeat;
-  background-size: 1rem;
+// .checkbox3 .label:before {
+//   background: url('../img/icons/SVG icons/baseline-whatshot-24px.svg') left center no-repeat;
+//   background-size: 1rem;
 
-}
+// }
 
-.checkbox4 .label:before {
-  background: url('../img/icons/SVG icons/baseline-timer-24px.svg') left center no-repeat;
-  background-size: 1rem;
+// .checkbox4 .label:before {
+//   background: url('../img/icons/SVG icons/baseline-timer-24px.svg') left center no-repeat;
+//   background-size: 1rem;
 
+// }
+
+.filter_type_item:hover {
+  .svg_icon {
+    fill: $progress-semi-color;
+  }
 }
 
 input[type=checkbox]:checked+.label:before {

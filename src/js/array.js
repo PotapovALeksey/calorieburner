@@ -155,52 +155,38 @@ function viewAllVideos() {
     out.insertAdjacentHTML('afterbegin', markUp);
     $('.slider-list').slick({
         centerMode: true,
-        centerPadding: '200px',
+        centerPadding: '10px',
         slidesToShow: 1,
-        responsive: [{
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
-                }
-            },
-            {
-                breakpoint: 320,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
-                }
-            }
-        ]
+               
     });
     widthBlock();
 
     function widthBlock() {
         const allDiv = [...document.querySelectorAll('.slick-slide')];
-        allDiv.forEach(elem => {
-            elem.style.width = "700px";
-            console.log(elem.style.width);
-        })
-        console.log(allDiv);
+        // allDiv.forEach(elem => {
+        //     elem.style.width = "700px";          
+        // })       
     };
 
     function showText() {
+        const x = window.matchMedia("(max-width: 767px)")
         let div = document.querySelector('.slick-active');
         let text = div.querySelector('.slider-text-pos');
         text.style.display = 'block';
         const allDiv = [...document.querySelectorAll('.slick-slide')];
-
+        
+        if (x.matches) {
         allDiv.forEach(elem => {
-            if (!elem.classList.contains('slick-active')) {
-                elem.querySelector('.slider-text-pos').style.display = 'none';
+              if (!elem.classList.contains('slick-active')) {
+                elem.querySelector('.slider-text-pos').style.display = 'block';
             }
-        })
+        })} else {
+            allDiv.forEach(elem => {
+                  if (!elem.classList.contains('slick-active')) {
+                    elem.querySelector('.slider-text-pos').style.display = 'none';
+                }
+            })}
     }
-
 
     const conttt = document.querySelector('.slider-list');
     conttt.addEventListener('mousemove', showText);

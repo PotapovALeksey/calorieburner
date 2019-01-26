@@ -159,15 +159,7 @@ function viewAllVideos() {
         slidesToShow: 1,
 
     });
-    widthBlock();
-
-    function widthBlock() {
-        const allDiv = [...document.querySelectorAll('.slick-slide')];
-        // allDiv.forEach(elem => {
-        //     elem.style.width = "700px";          
-        // })       
-    };
-
+   
     function showText() {
         const x = window.matchMedia("(max-width: 767px)")
         let div = document.querySelector('.slick-active');

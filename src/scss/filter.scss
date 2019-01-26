@@ -189,11 +189,13 @@ input[type=checkbox]:checked+.label:before {
   .filter_box_item {
     width: 40.625rem;
     list-style: none;
+    margin: 0 auto;
   }
 
   .filter_box {
     padding-left: 0.5rem;
     list-style: none;
+    
   }
 
   .checkbox .label:before {
@@ -240,10 +242,12 @@ input[type=checkbox]:checked+.label:before {
   .filter_box {
     display: flex;
     flex-direction: row;
+        
   }
 
   .filter_box_item {
     flex-basis: 25%;
+    margin: 0 auto;
   }
 }
 

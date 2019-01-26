@@ -13,6 +13,7 @@ import array from "./js/array";
 import "./loading-bar/loading-bar";
 
 import "./js/slider";
+import "./js/filter";
 
 const view = new View();
 const model = new Model();

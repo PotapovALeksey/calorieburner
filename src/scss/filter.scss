@@ -15,6 +15,7 @@
   margin-bottom: 0.625rem;
   text-align: center;
   white-space: nowrap;
+  padding-top: 40px;
 }
 
 .filter_link {
@@ -103,36 +104,42 @@
 
 }
 
-input[type="checkbox"] {
-  display: none;
+// input[type="checkbox"] {
+//   display: none;
+// }
+
+// .checkbox .label:before {
+//   background: url('../img/icons/SVG icons/baseline-fitness_center-24px.svg') left center no-repeat;
+//   background-size: 1rem;
+// }
+
+// .checkbox2 .label:before {
+//   background: url('../img/icons/SVG icons/baseline-star_border-24px.svg') left center no-repeat;
+//   background-size: 1rem;
+
+// }
+
+// .checkbox3 .label:before {
+//   background: url('../img/icons/SVG icons/baseline-whatshot-24px.svg') left center no-repeat;
+//   background-size: 1rem;
+
+// }
+
+// .checkbox4 .label:before {
+//   background: url('../img/icons/SVG icons/baseline-timer-24px.svg') left center no-repeat;
+//   background-size: 1rem;
+
+// }
+
+.filter_type_item:hover {
+  .svg_icon {
+    fill: $progress-semi-color;
+  }
 }
 
-.checkbox .label:before {
-  background: url('../img/icons/SVG icons/baseline-fitness_center-24px.svg') left center no-repeat;
-  background-size: 1rem;
-}
-
-.checkbox2 .label:before {
-  background: url('../img/icons/SVG icons/baseline-star_border-24px.svg') left center no-repeat;
-  background-size: 1rem;
-
-}
-
-.checkbox3 .label:before {
-  background: url('../img/icons/SVG icons/baseline-whatshot-24px.svg') left center no-repeat;
-  background-size: 1rem;
-
-}
-
-.checkbox4 .label:before {
-  background: url('../img/icons/SVG icons/baseline-timer-24px.svg') left center no-repeat;
-  background-size: 1rem;
-
-}
-
-input[type=checkbox]:checked+.label:before {
-  background-color: red;
-}
+// input[type=checkbox]:checked+.label:before {
+//   background-color: red;
+// }
 
 
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -172,7 +179,7 @@ input[type=checkbox]:checked+.label:before {
     margin-bottom: 0.5rem;
   }
 
-  
+
 
   .filter_type_item_text {
     font-size: $big-text-size;
@@ -241,9 +248,9 @@ input[type=checkbox]:checked+.label:before {
 }
 
 #filter_box {
-    list-style: none;
-  }
+  list-style: none;
+}
 
 #filter_link_txt {
-   text-decoration: none;
- }
+  text-decoration: none;
+}

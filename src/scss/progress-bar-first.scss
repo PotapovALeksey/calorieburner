@@ -16,6 +16,8 @@
     justify-content: center;
     padding-top: 125px;
     padding-bottom: 130px;
+    padding-left: 3%;
+    padding-right: 3%;
   }
 
   &__title {
@@ -40,7 +42,7 @@
 .progress-bar-first {
   padding: 0 12.5% 40px;
   background-color: $bg-light-color;
-  box-sizing: border-box;
+  // box-sizing: content-box;
   @include for-size(tablet) {
     margin-bottom: 20px;
     padding: 45px 6% 45px;
@@ -48,7 +50,9 @@
     background-color: $main-light-color;
   }
   @include for-size(desktop) {
-    flex-basis: 35%;
+    // flex-basis: 35%;
+    width: 49%;
+    max-width: 800px;
     margin-right: 2%;
     margin-bottom: 0;
     padding: 60px 6% 70px;
@@ -73,33 +77,37 @@
 .line-bar {
   display: flex;
   align-items: center;
-  padding-left: 70px;
+  padding-left: 65px;
   position: relative;
   font-size: $medium-text-size;
   color: $text-light-color;
 
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
   &__label {
     position: absolute;
     left: 0;
-    transform: translate(0, -14px);
+    top: 2;
     font-weight: $font-weight-bold;
   }
 
-  &__bar {
-    min-width: 10%;
-    max-width: 70%;
+  &__bars-wrapper {
+    position: relative;
+    width: 100%;
     height: 22px;
-    margin-right: 10px;
+  }
+
+  &__bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 22px;
+    width: 50%;
+    max-width: 100%;
     background-color: $progress-light-color;
     border-radius: 10px;
-    @include for-size(tablet) {
-      min-width: 5%;
-      max-width: 90%;
-    }
-    @include for-size(desktop) {
-      min-width: 10%;
-      max-width: 82%;
-    }
 
     &--week {
       background-color: $progress-semi-color;
@@ -108,9 +116,27 @@
     &--mounth {
       background-color: $main-dark-color;
     }
+
+    &--under {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 80%;
+      background-color: hsla(230, 58%, 68%, 0.2);
+      @include for-size(tablet) {
+        width: 90%;
+      }
+      @include for-size(desktop) {
+        width: 82%;
+      }
+    }
   }
 
   &__num {
+    position: absolute;
+    right: 0;
+    top: 2; //чего не раб?
+    bottom: 2;
     font-weight: $font-weight-light;
   }
 }

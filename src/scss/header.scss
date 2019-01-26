@@ -1,72 +1,80 @@
-@media (min-width: 20rem) {
-.wrapper-top {
-    background-image: linear-gradient(rgba(19, 47, 179, 0.5),rgba(19, 47, 179, 0.5)), url(../img/header.jpg);
-    background-repeat: no-repeat;
-    background-position: 43% 100%;
-    background-size: cover;
-    position: relative;
-  
-}
-
 .header {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-.box{
-    width: 100px;
-    margin-top: 40px;
-    margin-left: 30px;
-}
-
-.banner {
-    width: 240px;
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  @include for-size (tablet){
+    width: 70%;
+    margin-left: 0;
+    padding-left: 60px;
+  }
+  @include for-size (desktop){
+    width: 760px;
+    padding-left: 0;
     margin: 0 auto;
-    padding-top: 180px;
+  }
+}
+
+.header__img {
+  display: inline-block; 
+   @include for-size (desktop){
+   width: 150px;
+  } 
+}
+
+.container_header_background {
+  background: url(../img/header.jpg);
+  
+  background-size: cover;
+  background-position: 42% 70%;
+}
+.container_header_banner {
+  display: block;
+  background: hsla(230, 65%, 50%, 0.7);
+  background-size: cover;
+  background-position: center;
+}
+.header_maintext {
+  font-family: $main-font, sans-serif;
+  color: #ffffff;
+  text-align: left;
+  letter-spacing: 2px;
+  padding-top: 150px;
+  @include for-size (desktop){
+    padding-top: 300px;
     padding-bottom: 100px;
+  }   
+}
+.header_title{
+  font-size: 22px; 
+  @include for-size (tablet){
+  font-size: 40px
+  }
+  @include for-size (desktop){
+  font-size: 38px;
+  }
+}   
+
+.header_hr {
+  width: 40px;
+  margin: 15px 0;
+  @include for-size (tablet){
+    display: inline-block;
+  }
+  @include for-size (desktop){
+    width: 60px;
+  }
 }
 
-h1 {
-    font-size: 25px;
-    color: #fff;
-    font-family: $main-font;
-    margin: 0;
-    padding: 0;
-}
-
-hr {
-    width: 30px;
-    margin: 10px 0;
-}
-
-h2 {
-    color: #fff;
-    font-family: $main-font;
-    font-size: 14px;
-   // text-transform: uppercase;
-}
-}
-@media (min-width: 48rem) {
-
-    .header {
-        display: flex;
-        flex-direction: row;
-        width: 43rem;
-        justify-content: space-between;
-        margin: 0 auto;
-    }
-
-    
-}
-
-@media (min-width: 75rem) {
-
-    .header {
-        display: flex;
-        width: 59.375rem;
-        justify-content: space-between;
-        margin: 0 auto;
-    }
-
- 
+.header_subtitle{
+  text-transform: uppercase;
+  font-size: 12px;
+  @include for-size (tablet){
+    font-size: 10px;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  @include for-size (desktop){
+    font-size: 8px;
+  }
 }

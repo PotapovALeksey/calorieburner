@@ -1,23 +1,25 @@
 @import "normalize";
-// @import "reset";
+
 @import "mixin";
 @import "variables";
 
 @import "slider";
 
-
 @import "../loading-bar/loading-bar.css";
 
 
+@import "header";
+
+@import "./modal.scss";
 
 
 
 
 
-@import "header2";
+
+
 @import "filter";
 @import "slider";
 @import "progress-bar-first";
 @import "progress-bar-2";
 @import "footer";
-

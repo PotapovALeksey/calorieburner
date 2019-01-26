@@ -1,44 +1,157 @@
-import array
+import * as array from './array.js';
+let arrayVideos = array.arrayVideos;
+console.log(arrayVideos);
+
+// const arrayVideos = [{
+//     name: 'Утренняя тренировка для зарядки',
+//     duration: '10 минут',
+//     calories: '80 ккал',
+//     inv: 'Коврик для йоги',
+//     src: 'https://www.youtube.com/watch?v=ecrz1jaLV3A&list=PLUV7j0d8hiH2fO6jOTpwpKdvJA5fjnPaw',
+//     level: 'Простая',
+//     img: 'https://img.youtube.com/vi/ecrz1jaLV3A/sddefault.jpg',
+// },
+//     {
+//         name: '5-ти минутная тренировка на пресс и ягодицы',
+//         duration: '5 минут',
+//         calories: '40 ккал',
+//         inv: 'Коврик и мяч для йоги',
+//         src: 'https://www.youtube.com/watch?v=iY4hQd24_d0',
+//         level: 'Средняя',
+//         img: 'https://img.youtube.com/vi/iY4hQd24_d0/sddefault.jpg',
+//     },
+//     {
+//         name: 'Интенсивная тренировка на все группы мышц',
+//         duration: '30 минут',
+//         calories: '300 ккал',
+//         inv: 'Не нужен',
+//         src: 'https://www.youtube.com/watch?v=-9jok89UtQk',
+//         level: 'Средняя',
+//         img: 'https://img.youtube.com/vi/-9jok89UtQk/sddefault.jpg',
+//     },
+//     {
+//         name: 'Йога с элементами суставной гимнастики',
+//         duration: '50 минут',
+//         calories: '350 ккал',
+//         inv: 'Коврик для йоги',
+//         src: 'https://www.youtube.com/watch?v=QDR_WB_2EHE',
+//         level: 'Средняя',
+//         img: 'https://img.youtube.com/vi/QDR_WB_2EHE/0.jpg',
+//     },
+//     {
+//         name: 'Аэробика для дома для начинаючих',
+//         duration: '50 минут',
+//         calories: '400 ккал',
+//         inv: 'Не нужен',
+//         src: 'https://www.youtube.com/watch?v=d5bznQLUUuc',
+//         level: 'Простая',
+//         img: 'https://img.youtube.com/vi/d5bznQLUUuc/sddefault.jpg',
+//     },
+//     {
+//         name: 'Функциональная фитнес тренировка',
+//         duration: '60 минут',
+//         calories: '600 ккал',
+//         inv: 'Коврик для йоги',
+//         src: 'https://www.youtube.com/watch?v=9tDnPfQWUbM',
+//         level: 'Простая',
+//         img: 'https://img.youtube.com/vi/9tDnPfQWUbM/sddefault.jpg',
+//     },
+//     {
+//         name: 'Кардио тренировка с элементами бокса',
+//         duration: '30 минут',
+//         calories: '300 ккал',
+//         inv: 'Не нужен',
+//         src: 'https://www.youtube.com/watch?v=xSUXMwqZ3z0',
+//         level: 'Средняя',
+//         img: 'https://img.youtube.com/vi/xSUXMwqZ3z0/sddefault.jpg',
+//     },
+//     {
+//         name: 'Интенсивная круговая тренировка',
+//         duration: '45 минут',
+//         calories: '500 ккал',
+//         inv: 'Не нужен',
+//         src: 'https://www.youtube.com/watch?v=yapXBQ9vBPQ',
+//         level: 'Сложная',
+//         img: 'https://img.youtube.com/vi/yapXBQ9vBPQ/sddefault.jpg',
+//     },
+//     {
+//         name: '30-ти минутная тренировка с гантелями',
+//         duration: '30 минут',
+//         calories: '250 ккал',
+//         inv: 'Гантели',
+//         src: 'https://www.youtube.com/watch?v=Z_UWE3pfl6o',
+//         level: 'Сложная',
+//         img: 'https://img.youtube.com/vi/Z_UWE3pfl6o/sddefault.jpg',
+//     },
+//     {
+//         name: 'Тренировка для рук с гантелями',
+//         duration: '14 минут',
+//         calories: '110 ккал',
+//         inv: 'Коврик для йоги и гантели',
+//         src: 'https://www.youtube.com/watch?v=oLOAffuSRds&t',
+//         level: 'Простая',
+//         img: 'https://img.youtube.com/vi/oLOAffuSRds/sddefault.jpg',
+//     },
+//     {
+//         name: 'Короткая Табата тренировка',
+//         duration: '10 минут',
+//         calories: '100 ккал',
+//         inv: 'Не нужен',
+//         src: 'https://www.youtube.com/watch?v=irALl4gr9zA&t',
+//         level: 'Сложная',
+//         img: 'https://img.youtube.com/vi/irALl4gr9zA/sddefault.jpg',
+//     },
+//     {
+//         name: '30-минутная хип-хоп тренировка по системе Табата',
+//         duration: '30 минут',
+//         calories: '350 ккал',
+//         inv: 'Не нужен',
+//         src: 'https://www.youtube.com/watch?v=kwkXyHjgoDM',
+//         level: 'Сложная',
+//         img: 'https://img.youtube.com/vi/kwkXyHjgoDM/sddefault.jpg',
+//     },
+//     {
+//         name: 'Утренняя тренировка на 15 минут',
+//         duration: '15 минут',
+//         calories: '350 ккал',
+//         inv: 'Коврик для йоги',
+//         src: 'https://www.youtube.com/watch?v=1fDHrKRqy34',
+//         level: 'Сложная',
+//         img: 'https://img.youtube.com/vi/1fDHrKRqy34/sddefault.jpg',
+//     },
+//     {
+//         name: '20-минутная жиросжигающая тренировка по системе Табата',
+//         duration: '20 минут',
+//         calories: '350 ккал',
+//         inv: 'Коврик для йоги',
+//         src: 'https://www.youtube.com/watch?v=lQkD1b5HOPY',
+//         level: 'Сложная',
+//         img: 'https://img.youtube.com/vi/lQkD1b5HOPY/sddefault.jpg',
+//     },
+//     {
+//         name: '10 минутная тренировка для ягодиц средней сложности',
+//         duration: '10 минут',
+//         calories: '80 ккал',
+//         inv: 'Коврик для йоги',
+//         src: 'https://www.youtube.com/watch?v=RqfkrZA_ie0',
+//         level: 'Сложная',
+//         img: 'https://img.youtube.com/vi/RqfkrZA_ie0/sddefault.jpg',
+//     }
+// ];
+
+// clear filters
+// const clearFilterButton = document.getElementById('filter_link_txt');
+// clearFilterButton.addEventListener('click', clearFilter);
+
+// function clearFilter() {
+//     resultFilter = arrayVideos;
+// }
 
 // get filters menu items
 const filterInventory = document.getElementById('js__filter-inventory');
 const filterDifficult = document.getElementById('js__filter-difficult');
 const filterCalory = document.getElementById('js__filter-calory');
 const filterTime = document.getElementById('js__filter-time');
-
-// get filter inventory menu subitems
-const inventoryNone = document.getElementById('js__inventory-none');
-const inventoryYogaCarpet = document.getElementById('js__inventory-yoga-carpet');
-const inventoryDumbells = document.getElementById('js__inventory-dumbells');
-const inventoryYogaCarpetAndBall = document.getElementById('js__inventory-yoga-carpet-and-ball');
-const inventoryYogaCarpetAndDumbells = document.getElementById('js__inventory-yoga-carpet-and-dumbells');
-
-// get filter difficult menu subitems
-const difficultEasy = document.getElementById('js__difficult-easy');
-const difficultMedium = document.getElementById('js__difficult-medium');
-const difficultHard = document.getElementById('js__difficult-hard');
-
-// get filter calory menu subitems
-const calory40 = document.getElementById('js__calory-40');
-const calory80 = document.getElementById('js__calory-80');
-const calory100 = document.getElementById('js__calory-100');
-const calory110 = document.getElementById('js__calory-110');
-const calory250 = document.getElementById('js__calory-250');
-const calory300 = document.getElementById('js__calory-300');
-const calory350 = document.getElementById('js__calory-350');
-const calory400 = document.getElementById('js__calory-400');
-const calory500 = document.getElementById('js__calory-500');
-const calory600 = document.getElementById('js__calory-600');
-
-//get filter time menu subitems
-const time5Min = document.getElementById('js__time-5min');
-const time10Min = document.getElementById('js__time-10min');
-const time14Min = document.getElementById('js__time-14min');
-const time20Min = document.getElementById('js__time-20min');
-const time30Min = document.getElementById('js__time-30min');
-const time45Min = document.getElementById('js__time-45min');
-const time50Min = document.getElementById('js__time-50min');
-const time60Min = document.getElementById('js__time-60min');
 
 // get filter submenu items
 const submenuInventory = document.getElementById('js__submenu-inventory');
@@ -49,198 +162,118 @@ const submenuTime = document.getElementById('js__submenu-time');
 // add event listeners
 document.addEventListener("DOMContentLoaded", addEvtListeners);
 
-function addEvtListeners() {
-  // add evtlisteners to menu items
-  filterInventory.addEventListener('click', showFilterInventory);
-  let submenuInventoryStyle = window.getComputedStyle(submenuInventory, "");
-  submenuInventory.style.display = (submenuInventoryStyle.display === 'none') ? 'none' : 'flex';
-  filterDifficult.addEventListener('click', showFilterDifficult);
-  let submenuDifficultStyle = window.getComputedStyle(submenuDifficult, "");
-  submenuDifficult.style.display = (submenuDifficultStyle.display === 'none') ? 'none' : 'flex';
-  filterCalory.addEventListener('click', showFilterCalory);
-  let submenuCaloryStyle = window.getComputedStyle(submenuCalory, "");
-  submenuCalory.style.display = (submenuCaloryStyle.display === 'none') ? 'none' : 'flex';
-  filterTime.addEventListener('click', showFilterTime);
-  let submenuTimeStyle = window.getComputedStyle(submenuTime, "");
-  submenuTime.style.display = (submenuTimeStyle.display === 'none') ? 'none' : 'flex';
-  // add evt listeners to menu Inventory subitems
-  inventoryNone.addEventListener('click', filterInventoryNone);
-  inventoryYogaCarpet.addEventListener('click', filterInventoryYogaCarpet);
-  inventoryDumbells.addEventListener('click', filterInventoryDumbells);
-  inventoryYogaCarpetAndBall.addEventListener('click', filterInventoryYogaCarpetAndBall);
-  inventoryYogaCarpetAndDumbells.addEventListener('click', filterInventoryYogaCarpetAndDumbells);
-  // add evt listeners to menu Difficult subitems
-  difficultEasy.addEventListener('click', filterDifficultNone);
-  difficultMedium.addEventListener('click', filterDifficultMedium);
-  difficultHard.addEventListener('click', filterDifficultHard);
-  // add evt listeners to menu Calory subitems
-  calory40.addEventListener('click', filterCalory40);
-  calory80.addEventListener('click', filterCalory80);
-  calory100.addEventListener('click', filterCalory100);
-  calory110.addEventListener('click', filterCalory110);
-  calory250.addEventListener('click', filterCalory250);
-  calory300.addEventListener('click', filterCalory300);
-  calory350.addEventListener('click', filterCalory350);
-  calory400.addEventListener('click', filterCalory400);
-  calory500.addEventListener('click', filterCalory500);
-  calory600.addEventListener('click', filterCalory600);
-  // add evt listeners to menu Time subitems
-  time5Min.addEventListener('click', filterTime5Min);
-  time10Min.addEventListener('click', filterTime10Min);
-  time14Min.addEventListener('click', filterTime14Min);
-  time20Min.addEventListener('click', filterTime20Min);
-  time30Min.addEventListener('click', filterTime30Min);
-  time45Min.addEventListener('click', filterTime45Min);
-  time50Min.addEventListener('click', filterTime50Min);
-  time60Min.addEventListener('click', filterTime60Min);
-}
-
+// show/close filter menus
 function showFilterInventory() {
-  if (submenuInventory.style.display === 'none') {
-    submenuInventory.style.display = 'flex';
-    submenuDifficult.style.display = 'none';
-    submenuCalory.style.display = 'none';
-    submenuTime.style.display = 'none';
-  } else {
-    submenuInventory.style.display = 'none';
-  }
+    if (submenuInventory.style.display === 'none') {
+        submenuInventory.style.display = 'flex';
+        submenuDifficult.style.display = 'none';
+        submenuCalory.style.display = 'none';
+        submenuTime.style.display = 'none';
+    } else {
+        submenuInventory.style.display = 'none';
+    }
 }
 
 function showFilterDifficult() {
-  if (submenuDifficult.style.display === 'none') {
-    submenuDifficult.style.display = 'flex';
-    submenuInventory.style.display = 'none';
-    submenuCalory.style.display = 'none';
-    submenuTime.style.display = 'none';
-  } else {
-    submenuDifficult.style.display = 'none';
-  }
+    if (submenuDifficult.style.display === 'none') {
+        submenuDifficult.style.display = 'flex';
+        submenuInventory.style.display = 'none';
+        submenuCalory.style.display = 'none';
+        submenuTime.style.display = 'none';
+    } else {
+        submenuDifficult.style.display = 'none';
+    }
 }
 
 function showFilterCalory() {
-  if (submenuCalory.style.display === 'none') {
-    submenuCalory.style.display = 'flex';
-    submenuInventory.style.display = 'none';
-    submenuDifficult.style.display = 'none';
-    submenuTime.style.display = 'none';
-  } else {
-    submenuCalory.style.display = 'none';
-  }
+    if (submenuCalory.style.display === 'none') {
+        submenuCalory.style.display = 'flex';
+        submenuInventory.style.display = 'none';
+        submenuDifficult.style.display = 'none';
+        submenuTime.style.display = 'none';
+    } else {
+        submenuCalory.style.display = 'none';
+    }
 }
 
 function showFilterTime() {
-  if (submenuTime.style.display === 'none') {
-    submenuTime.style.display = 'flex';
-    submenuInventory.style.display = 'none';
-    submenuDifficult.style.display = 'none';
-    submenuCalory.style.display = 'none';
-  } else {
-    submenuTime.style.display = 'none';
-  }
+    if (submenuTime.style.display === 'none') {
+        submenuTime.style.display = 'flex';
+        submenuInventory.style.display = 'none';
+        submenuDifficult.style.display = 'none';
+        submenuCalory.style.display = 'none';
+    } else {
+        submenuTime.style.display = 'none';
+    }
+}
+// add event listeners
+function addEvtListeners() {
+    // add evtlisteners to menu items
+    filterInventory.addEventListener('click', showFilterInventory);
+    let submenuInventoryStyle = window.getComputedStyle(submenuInventory, "");
+    submenuInventory.style.display = (submenuInventoryStyle.display === 'none') ? 'none' : 'flex';
+    filterDifficult.addEventListener('click', showFilterDifficult);
+    let submenuDifficultStyle = window.getComputedStyle(submenuDifficult, "");
+    submenuDifficult.style.display = (submenuDifficultStyle.display === 'none') ? 'none' : 'flex';
+    filterCalory.addEventListener('click', showFilterCalory);
+    let submenuCaloryStyle = window.getComputedStyle(submenuCalory, "");
+    submenuCalory.style.display = (submenuCaloryStyle.display === 'none') ? 'none' : 'flex';
+    filterTime.addEventListener('click', showFilterTime);
+    let submenuTimeStyle = window.getComputedStyle(submenuTime, "");
+    submenuTime.style.display = (submenuTimeStyle.display === 'none') ? 'none' : 'flex';
 }
 
+document.addEventListener("DOMContentLoaded", addEvtListeners);
+let arrCheck;
+let filter;
+let markup;
+let isInv;
+let isLevel;
+let isCalories;
+let isDuration;
+let resultFilter;
+const filterBox = document.getElementById('filter_box');
+filterBox.addEventListener('click', function (e) {
 
+    if (e.target.parentNode.nodeName === 'LI') {
+        if (e.target.nodeName === "UL") {
+            return;
+        }
+        arrCheck = [...filterBox.querySelectorAll('input:checked')];
+        filter = arrCheck.reduce((acc, item) => {
+            if (acc[item.dataset.type]) {
+                acc[item.dataset.type].push(item.dataset.value)
+            } else {
+                acc[item.dataset.type] = []
+                acc[item.dataset.type].push(item.dataset.value)
+            }
+            return acc;
+        }, {});
 
-function filterInventoryNone() {
-  alert('It works!');
-}
+        resultFilter = arrayVideos.filter(el => {
+            if (filter.inv) {
+                isInv = filter.inv.includes(el.inv);
+            } else {
+                isInv = true;
+            }
+            if (filter.level) {
+                isLevel = filter.level.includes(el.level);
+            } else {
+                isLevel = true;
+            }
+            if (filter.calories) {
+                isCalories = filter.calories.includes(el.calories);
+            } else {
+                isCalories = true;
+            }
+            if (filter.duration) {
+                isDuration = filter.duration.includes(el.duration);
+            } else {
+                isDuration = true;
+            }
 
-function filterInventoryYogaCarpet() {
-
-}
-
-function filterInventoryDumbells() {
-
-}
-
-function filterInventoryYogaCarpetAndBall() {
-
-}
-
-function filterInventoryYogaCarpetAndDumbells() {
-
-}
-
-function filterDifficultNone() {
-
-}
-
-function filterDifficultMedium() {
-
-}
-
-function filterDifficultHard() {
-
-}
-
-function filterCalory40() {
-
-}
-
-function filterCalory80() {
-
-}
-
-function filterCalory100() {
-
-}
-
-function filterCalory110() {
-
-}
-
-function filterCalory250() {
-
-}
-
-function filterCalory300() {
-
-}
-
-function filterCalory350() {
-
-}
-
-function filterCalory400() {
-
-}
-
-function filterCalory500() {
-
-}
-
-function filterCalory600() {
-
-}
-
-function filterTime5Min() {
-
-}
-
-function filterTime10Min() {
-
-}
-
-function filterTime14Min() {
-
-}
-
-function filterTime20Min() {
-
-}
-
-function filterTime30Min() {
-
-}
-
-function filterTime45Min() {
-
-}
-
-function filterTime50Min() {
-
-}
-
-function filterTime60Min() {
-
-}
+            return isInv && isLevel && isCalories && isDuration;
+        });
+        console.log(resultFilter);
+    }
+});

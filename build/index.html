@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CalorieBurner</title>
+  <link href="styles.css?b824096a8fb16854b828" rel="stylesheet"></head>
+
+  <body>
+    <div class="container_header_background">
+  <div class="container_header_banner">
+    <div class="container_header">
+      <header class="header">
+        <a href="index.html" class="logo">
+          <img
+            class="header__img"
+            src="./img/callorieburn_logo_white.svg"
+            width="100"
+            alt="ololo"
+          />
+        </a>
+        <section>
+          <div class="header_maintext">
+            <h1 class="header_title">Видеотренировки любой сложности</h1>
+            <hr class="header_hr">
+            <h2 class="header_subtitle">
+              Занимайтесь бесплатно и отслеживайте <br />
+              свои результаты в режиме онлайн!
+            </h2>
+          </div>
+        </section>
+      </header>
+    </div>
+  </div>
+</div>
+ <section class="filter">
+    <h2 class="filter_title">Выберите параметры<br> своей тренировки</h2>
+    <p class="filter_link_txt"><a id="filter_link_txt" class="filter_link" href="">снять фильтры</a></p>
+    <ul id="filter_box" class="filter_box">
+        <li class="filter_box_item">
+            <div class="filter_type">
+                <p class="filter_type_text">ИНВЕНТАРЬ <br>ДЛЯ ТРЕНИРОВКИ</p>
+                <button id="js__filter-inventory" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
+                        alt="Развернуть" />
+                </button>
+            </div>
+            <ul id="js__submenu-inventory" class="filer_type_box">
+                <li id="js__inventory-none" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-fitness_center-24px"></use>
+                    </svg>
+                    <div class="checkbox">
+                        <input class="check1" type="checkbox" name="check" value="check1">
+                        <label class="label" for="check1"></label></div>
+                    <p class="filter_type_item_text">не нужен</p>
+                </li>
+                <li id="js__inventory-yoga-carpet" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-fitness_center-24px"></use>
+                    </svg>
+                    <div class="checkbox">
+                        <input class="check1" type="checkbox" name="check" value="check1">
+                        <label for="check1" class="label"></label></div>
+                    <p class="filter_type_item_text">коврик для йоги</p>
+                </li>
+                <li id="js__inventory-dumbbells" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-fitness_center-24px"></use>
+                    </svg>
+                    <div class="checkbox">
+                        <input class="check1" type="checkbox" name="check" value="check1">
+                        <label for="check1" class="label"></label></div>
+                    <p class="filter_type_item_text">гантели</p>
+                </li>
+                <li id="js__inventory-yoga-carpet-and-ball" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-fitness_center-24px"></use>
+                    </svg>
+                    <div class="checkbox">
+                        <input class="check1" type="checkbox" name="check" value="check1">
+                        <label for="check1" class="label"></label></div>
+                    <p class="filter_type_item_text">коврик и мяч для <br>йоги</p>
+                </li>
+                <li id="js__inventory-yoga-carpet-and-dumbbells" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-fitness_center-24px"></use>
+                    </svg>
+                    <div class="checkbox">
+                        <input class="check1" type="checkbox" name="check" value="check1">
+                        <label for="check1" class="label"></label></div>
+                    <p class="filter_type_item_text">коврик для йоги<br> и гантели</p>
+                </li>
+            </ul>
+        </li>
+        <li class="filter_box_item">
+            <div class="filter_type">
+                <p class="filter_type_text">УРОВЕНЬ <br>СЛОЖНОСТИ</p>
+                <button id="js__filter-difficult" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
+                        alt="Развернуть" />
+                </button>
+            </div>
+            <ul id="js__submenu-difficult" class="filer_type_box">
+                <li id="js__difficult-easy" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-star_border-24px"></use>
+                    </svg>
+                    <div class="checkbox2">
+                        <input class="check2" type="checkbox" name="check" value="check2">
+                        <label for="check2" class="label"></label></div>
+                    <p class="filter_type_item_text">Простая</p>
+                </li>
+                <li id="js__difficult-medium" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-star_border-24px"></use>
+                    </svg>
+                    <div class="checkbox2">
+                        <input class="check2" type="checkbox" name="check" value="check2">
+                        <label for="check2" class="label"></label></div>
+                    <p class="filter_type_item_text">Средняя</p>
+                </li>
+                <li id="js__difficult-hard" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-star_border-24px"></use>
+                    </svg>
+                    <div class="checkbox2">
+                        <input class="check2" type="checkbox" name="check" value="check2">
+                        <label for="check2" class="label"></label></div>
+                    <p class="filter_type_item_text">Сложная</p>
+                </li>
+            </ul>
+        </li>
+        <li class="filter_box_item">
+            <div class="filter_type">
+                <p class="filter_type_text">КОЛИЧЕСТВО <br>СЖИГАЕМЫХ КАЛОРИЙ</p>
+                <button id="js__filter-calory" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
+                        alt="Развернуть" />
+                </button>
+            </div>
+            <ul id="js__submenu-calory" class="filer_type_box">
+                <li id="js__calory-40" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-whatshot-24px"></use>
+                    </svg>
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">40 ккал</p>
+                </li>
+                <li id="js__calory-80" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-whatshot-24px"></use>
+                    </svg>
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">80 ккал</p>
+                </li>
+                <li id="js__calory-100" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-whatshot-24px"></use>
+                    </svg>
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">100 ккал</p>
+                </li>
+                <li id="js__calory-110" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-whatshot-24px"></use>
+                    </svg>
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">110 ккал</p>
+                </li>
+                <li id="js__calory-250" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-whatshot-24px"></use>
+                    </svg>
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">250 ккал</p>
+                </li>
+                <li id="js__calory-300" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-whatshot-24px"></use>
+                    </svg>
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">300 ккал</p>
+                </li>
+                <li id="js__calory-350" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-whatshot-24px"></use>
+                    </svg>
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">350 ккал</p>
+                </li>
+                <li id="js__calory-400" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-whatshot-24px"></use>
+                    </svg>
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">400 ккал</p>
+                </li>
+                <li id="js__calory-500" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-whatshot-24px"></use>
+                    </svg>
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">500 ккал</p>
+                </li>
+                <li id="js__calory-600" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-whatshot-24px"></use>
+                    </svg>
+                    <div class="checkbox3">
+                        <input class="check3" type="checkbox" name="check" value="check3">
+                        <label for="check3" class="label"></label></div>
+                    <p class="filter_type_item_text">600 ккал</p>
+                </li>
+            </ul>
+        </li>
+        <li class="filter_box_item">
+            <div class="filter_type">
+                <p class="filter_type_text">ДЛИТЕЛЬНОСТЬ <br>ТРЕНИРОВКИ</p>
+                <button id="js__filter-time" class="filter_type_btn"><img src="./img/baseline-keyboard_arrow_down-24px.svg"
+                        alt="Развернуть" />
+                </button>
+            </div>
+            <ul id="js__submenu-time" class="filer_type_box">
+                <li id="js__time-5min" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-timer-24px"></use>
+                    </svg>
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">5 минут</p>
+                </li>
+                <li id="js__time-10min" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-timer-24px"></use>
+                    </svg>
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">10 минут</p>
+                </li>
+                <li id="js__time-14min" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-timer-24px"></use>
+                    </svg>
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">14 минут</p>
+                </li>
+                <li id="js__time-20min" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-timer-24px"></use>
+                    </svg>
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">20 минут</p>
+                </li>
+                <li id="js__time-30min" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-timer-24px"></use>
+                    </svg>
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">30 минут</p>
+                </li>
+                <li id="js__time-45min" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-timer-24px"></use>
+                    </svg>
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">45 минут</p>
+                </li>
+                <li id="js__time-50min" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-timer-24px"></use>
+                    </svg>
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">50 минут</p>
+                </li>
+                <li id="js__time-60min" class="filter_type_item">
+                    <svg class="svg_icon" width="15px" height="15px">
+                        <use href="../src/img/icons/sprite.svg#icon-baseline-timer-24px"></use>
+                    </svg>
+                    <div class="checkbox4">
+                        <input class="check4" type="checkbox" name="check" value="check4">
+                        <label for="check4" class="label"></label></div>
+                    <p class="filter_type_item_text">60 минут</p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<script src="/src/js/filter.js"></script>
+
+    <div class="slider-main">
+  <div class="slider-corusel">
+    <div class="slider-list">
+      <!-- <div>
+ <iframe src="https://www.youtube.com/embed/RqfkrZA_ie0" name="iframe_a"></iframe>
+<a href="https://www.youtube.com/embed/RqfkrZA_ie0" target="iframe_a"><img src="https://img.youtube.com/vi/iY4hQd24_d0/sddefault.jpg"></a></p>
+ </div> -->
+    </div>
+  </div>
+</div>
+<!-- MODAL -->
+<div class="modal js-modal">
+  <div class="modal-content">
+    <div class="modal-content__iframe-wrap">
+      <iframe
+        id="player"
+        class="modal-content__iframe"
+        src="https://www.youtube.com/embed/RqfkrZA_ie0?enablejsapi=1&playsinline=0"
+        frameborder="0"
+        height="100%"
+        width="100%"
+        allowfullscreen="1"
+      ></iframe>
+      <!-- <div id="player"></div> -->
+    </div>
+    <div class="modal-content__counter-wrap">
+      <!-- <p class='modal-content__text'>Сожжено</p> -->
+      <p class="modal-content__counter">
+        <span class="modal-content__counter-num js-modal-content__counter-num"
+          >000</span
+        >
+        <span class="modal-content__counter-text">/ккал</span>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+
+<script>
+  let RESULT_CALORIES = 0;
+  let COUNTER = 0;
+  let CALORIES = 200;
+  let TIMER_ID;
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement("script");
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player("player", {
+      events: {
+        onReady: onPlayerReady,
+        onStateChange: onPlayerStateChange
+      }
+    });
+  }
+
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+    event.target.setPlaybackQuality("default");
+    
+  }
+
+  // 5. The API calls this function when the player's state changes.
+  //    The function indicates that when playing a video (state=1),
+  //    the player should play for six seconds and then stop.
+
+  function onPlayerStateChange(event) {
+
+    let duration = Math.round(event.target.getDuration());
+    let currentTime = Math.round(event.target.getCurrentTime());
+    let iframe = document.getElementById("player");
+
+    if (event.data == YT.PlayerState.PLAYING) {
+      TIMER_ID = setInterval(triggerFunction, 1000);
+    } else {
+      clearInterval(TIMER_ID);
+    }
+
+    function triggerFunction() {
+      incrementCounter();
+      calculateCalories(CALORIES, COUNTER, duration);
+    }
+
+    function calculateCalories(cal, currentTime, duration) {
+      calloriesForSecond = cal / duration;
+      callories = Math.round(currentTime * calloriesForSecond);
+      RESULT_CALORIES = formatedValue(callories);
+
+      displayResult(RESULT_CALORIES);
+    }
+
+    function formatedValue(time) {
+      let value = time < 10 ? "00" + time : time < 100 ? "0" + time : time;
+      return value;
+    }
+
+    function displayResult(value) {
+      const counterElem = document.querySelector(
+        ".js-modal-content__counter-num"
+      );
+
+      counterElem.innerHTML = value;
+    }
+
+    function incrementCounter() {
+      COUNTER++;
+    }
+  }
+
+</script>
+
+    <div class="progress-wrapper">
+      <h2 class="progress-wrapper__title">Ваш прогресс тренировок</h2>
+      <!-- <div class="progress-wrapper__loaders-container"> -->
+      <div class="progress-bar-first">
+  <h3 class="progress-bar-first__title">Количество сожженных калорий</h3>
+  <div class="progress-bar-first__bar-wrapper">
+    <div class="line-bar">
+      <p class="line-bar__label">cегодня</p>
+      <div class="line-bar__bars-wrapper">
+        <div class="line-bar__bar line-bar__bar--under">
+          <div id="bar-today" class="line-bar__bar line-bar__bar--today"></div>
+        </div>
+        <p id="bar-text-today" class="line-bar__num">0ккал</p>
+      </div>
+    </div>
+    <div class="line-bar">
+      <p class="line-bar__label">неделя</p>
+      <div class="line-bar__bars-wrapper">
+        <div class="line-bar__bar line-bar__bar--under">
+          <div id="bar-week" class="line-bar__bar line-bar__bar--week"></div>
+        </div>
+      </div>
+      <p id="bar-text-week" class="line-bar__num">0ккал</p>
+    </div>
+    <div class="line-bar">
+      <p class="line-bar__label">месяц</p>
+      <div class="line-bar__bars-wrapper">
+        <div class="line-bar__bar line-bar__bar--under">
+          <div
+            id="bar-mounth"
+            class="line-bar__bar line-bar__bar--mounth"
+          ></div>
+        </div>
+      </div>
+      <p id="bar-text-mounth" class="line-bar__num">0ккал</p>
+    </div>
+  </div>
+</div>
+
+      <div class="progress-bar2-container">
+  <h3 class="progress-bar-title">Длительность тренировок</h3>
+  <ul class="progress-bar-2">
+    <li class="progress-bar-item_container">
+      <div
+        style=" width:155px; height:150px"
+        class="ldBar label-center"
+        data-value="30"
+        data-stroke-width="10"
+        data-type="stroke"
+        data-stroke-trail-width="10"
+        data-stroke-trail="#415eda"
+        data-stroke="data:ldbar/res,gradient(340,0,#96edf8,#96edf8)"
+        data-path="M545.8087056538684,766.8155666646228a83.023463,83.023463,0,1,1,143.16786663378184,0.2827660725772603"
+      ></div>
+      <span class="progress-bar-item-text">cегодня</span>
+    </li>
+    <li class="progress-bar-item_container">
+      <div
+        style=" width:155px; height:150px"
+        class="ldBar label-center"
+        data-value="65"
+        data-stroke-width="10"
+        data-type="stroke"
+        data-stroke-trail-width="10"
+        data-stroke-trail="#415eda"
+        data-stroke="data:ldbar/res,gradient(340,0,#96edf8,#96edf8)"
+        data-path="M545.8087056538684,766.8155666646228a83.023463,83.023463,0,1,1,143.16786663378184,0.2827660725772603"
+      ></div>
+      <span class="progress-bar-item-text">неделя</span>
+    </li>
+    <li class="progress-bar-item_container">
+      <div
+        style=" width:155px; height:150px"
+        class="ldBar label-center"
+        data-value="90"
+        data-stroke-width="10"
+        data-type="stroke"
+        data-stroke-trail-width="10"
+        data-stroke-trail="#415eda"
+        data-stroke="data:ldbar/res,gradient(340,0,#96edf8,#96edf8)"
+        data-path="M545.8087056538684,766.8155666646228a83.023463,83.023463,0,1,1,143.16786663378184,0.2827660725772603"
+      ></div>
+      <span class="progress-bar-item-text">месяц</span>
+    </li>
+  </ul>
+</div>
+
+      <!-- </div> -->
+    </div>
+    <footer class="footer">
+  <div class="container_footer_logo">
+    <a href="index.html" class="logo">
+      <img
+        src="./img/callorieburn_logo_colored.svg"
+        width="170"
+        alt="ololo"
+      />
+    </a>
+  </div>
+  <hr class="footer_hr">
+  <span class="footer_text">Приложение создано исключительно в обучающих целях.<br />
+    Все использованые видеоматериалы принадлежат их авторам <br />
+    и правоаблодателям опубликоваными на Youtube.</span>
+</footer>
+
+  <script type="text/javascript" src="bundle.js?b824096a8fb16854b828"></script></body>
+</html>

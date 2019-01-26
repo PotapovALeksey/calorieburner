@@ -137,9 +137,9 @@
   }
 }
 
-input[type=checkbox]:checked+.label:before {
-  background-color: red;
-}
+// input[type=checkbox]:checked+.label:before {
+//   background-color: red;
+// }
 
 
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -179,7 +179,7 @@ input[type=checkbox]:checked+.label:before {
     margin-bottom: 0.5rem;
   }
 
-  
+
 
   .filter_type_item_text {
     font-size: $big-text-size;
@@ -248,9 +248,9 @@ input[type=checkbox]:checked+.label:before {
 }
 
 #filter_box {
-    list-style: none;
-  }
+  list-style: none;
+}
 
 #filter_link_txt {
-   text-decoration: none;
- }
+  text-decoration: none;
+}

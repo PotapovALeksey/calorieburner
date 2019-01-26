@@ -4,7 +4,7 @@ import "slick-carousel";
 
 
 
-const arrayVideos = [{
+export const arrayVideos = [{
         name: 'Утренняя тренировка для зарядки',
         duration: '10 минут',
         colories: '80 ккал',
@@ -153,11 +153,11 @@ function viewAllVideos() {
     });
     const out = document.querySelector('.slider-list');
     out.insertAdjacentHTML('afterbegin', markUp);
-    $('.slider-list').slick({
+    $(out).slick({
         centerMode: true,
         centerPadding: '10px',
         slidesToShow: 1,
-               
+
     });
    
     function showText() {
@@ -166,18 +166,20 @@ function viewAllVideos() {
         let text = div.querySelector('.slider-text-pos');
         text.style.display = 'block';
         const allDiv = [...document.querySelectorAll('.slick-slide')];
-        
+
         if (x.matches) {
-        allDiv.forEach(elem => {
-              if (!elem.classList.contains('slick-active')) {
-                elem.querySelector('.slider-text-pos').style.display = 'block';
-            }
-        })} else {
             allDiv.forEach(elem => {
-                  if (!elem.classList.contains('slick-active')) {
+                if (!elem.classList.contains('slick-active')) {
+                    elem.querySelector('.slider-text-pos').style.display = 'block';
+                }
+            })
+        } else {
+            allDiv.forEach(elem => {
+                if (!elem.classList.contains('slick-active')) {
                     elem.querySelector('.slider-text-pos').style.display = 'none';
                 }
-            })}
+            })
+        }
     }
 
     const conttt = document.querySelector('.slider-list');

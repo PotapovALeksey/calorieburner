@@ -65,5 +65,6 @@ typings/
 *.xml
 *.xml
 
-.idea/
+.idea\
 
+.idea/

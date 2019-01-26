@@ -102,9 +102,9 @@
   top: -1rem;
 }
 
-input[type="checkbox"] {
-  display: none;
-}
+// input[type="checkbox"] {
+//   display: none;
+// }
 
 // .checkbox .label:before {
 //   background: url('../img/icons/SVG icons/baseline-fitness_center-24px.svg') left center no-repeat;
@@ -135,9 +135,9 @@ input[type="checkbox"] {
   }
 }
 
-input[type="checkbox"]:checked + .label:before {
-  background-color: red;
-}
+// input[type=checkbox]:checked+.label:before {
+//   background-color: red;
+// }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .filter {
@@ -256,4 +256,3 @@ input[type="checkbox"]:checked + .label:before {
 #filter_link_txt {
   text-decoration: none;
 }
-

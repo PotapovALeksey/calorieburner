@@ -8,28 +8,13 @@
   background-color: $main-dark-color;
 }
 
-.ldBar-label:after {
-  content: "минут";
-  color: $main-light-color;
-  margin-left: 5px;
-  font-family: $main-font;
-  font-size: 0.7em;
-  font-weight: 200;
-}
-.ldBar-label {
-  color: $main-light-color;
-}
-path {
-  stroke-linecap: round;
-}
-.progress-bar-item {
-  list-style: none;
-}
-
-@include for-size(phone) {
-  .progress-bar2-container {
-    display: flex;
-    flex-direction: column;
+  .ldBar-label:after {
+    content: "";
+    color: $main-light-color;
+    margin-left: 5px;
+    font-family: $main-font;
+    font-size: 0.7em;
+    font-weight: 200;
   }
   .ldBar {
     margin: auto;

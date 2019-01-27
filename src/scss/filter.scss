@@ -1,5 +1,5 @@
 .filter {
-  margin: 0 auto;
+  margin: 0 auto 10%;
   padding: 0;
   width: 77%;
   list-style: none;
@@ -15,6 +15,7 @@
   margin-bottom: 0.625rem;
   text-align: center;
   white-space: nowrap;
+  padding-top: 40px;
 }
 
 .filter_link {
@@ -29,7 +30,8 @@
 
 .filter_link_txt {
   margin-bottom: 1.5rem;
-  padding-left: 4.09rem;
+  // padding-left: 4.09rem;
+  text-align: center;
 }
 
 .filter_type_text {
@@ -48,10 +50,11 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 0.3125rem;
-}
+  }
 
 .filter_type_btn {
   border: none;
+  outline: none;
   background-color: $main-dark-color;
 }
 
@@ -63,7 +66,7 @@
   padding-top: 1.5625rem;
   padding-bottom: 1.5625rem;
   padding-left: 0.5rem;
-}
+  }
 
 .filter_type_item_text {
   font-size: $subtitle-size;
@@ -85,12 +88,9 @@
   cursor: pointer;
 }
 
-
-
 .label {
   display: inline-block;
   position: relative;
-
 }
 
 .label:before {
@@ -100,43 +100,46 @@
   position: absolute;
   left: 0;
   top: -1rem;
-
 }
 
-input[type="checkbox"] {
-  display: none;
+// input[type="checkbox"] {
+//   display: none;
+// }
+
+// .checkbox .label:before {
+//   background: url('../img/icons/SVG icons/baseline-fitness_center-24px.svg') left center no-repeat;
+//   background-size: 1rem;
+// }
+
+// .checkbox2 .label:before {
+//   background: url('../img/icons/SVG icons/baseline-star_border-24px.svg') left center no-repeat;
+//   background-size: 1rem;
+
+// }
+
+// .checkbox3 .label:before {
+//   background: url('../img/icons/SVG icons/baseline-whatshot-24px.svg') left center no-repeat;
+//   background-size: 1rem;
+
+// }
+
+// .checkbox4 .label:before {
+//   background: url('../img/icons/SVG icons/baseline-timer-24px.svg') left center no-repeat;
+//   background-size: 1rem;
+
+// }
+
+.filter_type_item:hover {
+  .svg_icon {
+    fill: $progress-semi-color;
+  }
 }
 
-.checkbox .label:before {
-  background: url('../img/icons/SVG icons/baseline-fitness_center-24px.svg') left center no-repeat;
-  background-size: 1rem;
-}
+// input[type=checkbox]:checked+.label:before {
+//   background-color: red;
+// }
 
-.checkbox2 .label:before {
-  background: url('../img/icons/SVG icons/baseline-star_border-24px.svg') left center no-repeat;
-  background-size: 1rem;
-
-}
-
-.checkbox3 .label:before {
-  background: url('../img/icons/SVG icons/baseline-whatshot-24px.svg') left center no-repeat;
-  background-size: 1rem;
-
-}
-
-.checkbox4 .label:before {
-  background: url('../img/icons/SVG icons/baseline-timer-24px.svg') left center no-repeat;
-  background-size: 1rem;
-
-}
-
-input[type=checkbox]:checked+.label:before {
-  background-color: red;
-}
-
-
-@media (min-width: 768px) and (max-width: 1199px) {
-
+@media (min-width: 768px) and (max-width: 1023px) {
   .filter {
     width: 86%;
   }
@@ -159,8 +162,6 @@ input[type=checkbox]:checked+.label:before {
     font-size: $tablet-medium-text-size;
   }
 
-
-
   .filter_type_text br {
     display: none;
   }
@@ -172,8 +173,6 @@ input[type=checkbox]:checked+.label:before {
     margin-bottom: 0.5rem;
   }
 
-  
-
   .filter_type_item_text {
     font-size: $big-text-size;
     flex-basis: 90%;
@@ -182,16 +181,17 @@ input[type=checkbox]:checked+.label:before {
   .filter_box_item {
     width: 40.625rem;
     list-style: none;
+    margin: 0 auto;
   }
 
   .filter_box {
     padding-left: 0.5rem;
     list-style: none;
+    
   }
 
   .checkbox .label:before {
     background-size: 1.1rem;
-
   }
 
   .label:before {
@@ -201,15 +201,13 @@ input[type=checkbox]:checked+.label:before {
     position: absolute;
     left: 0;
     top: -1rem;
-
   }
-
-
 }
 
-@media (min-width: 1200px) and (max-width: 1920px) {
+@media (min-width: 1024px) {
   .filter {
-    width: 75rem;
+    width: 64rem;
+    margin: 0 auto 8%;
   }
 
   .filter_title {
@@ -226,24 +224,35 @@ input[type=checkbox]:checked+.label:before {
   }
 
   .filter_link_txt {
-
     text-align: center;
   }
 
   .filter_box {
     display: flex;
     flex-direction: row;
+        
   }
 
   .filter_box_item {
     flex-basis: 25%;
+    margin: 0 auto;
+  }
+
+  .filter_type {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+  }
+  .filer_type_box {
+    position: absolute;
+  z-index: 999999;
   }
 }
 
 #filter_box {
-    list-style: none;
-  }
+  list-style: none;
+}
 
 #filter_link_txt {
-   text-decoration: none;
- }
+  text-decoration: none;
+}

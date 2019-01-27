@@ -1,6 +1,6 @@
 import "./scss/styles.scss";
 import "@babel/polyfill";
-
+console.log(RESULT_CALORIES);
 import userProgress from "./js/temper";
 import "./js/progress-bar.js";
 import "./progress-bar/loading-bar";
@@ -14,6 +14,7 @@ import array from "./js/array";
 
 
 import "./js/slider";
+import "./js/filter";
 
 const view = new View();
 const model = new Model();

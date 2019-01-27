@@ -1,56 +1,44 @@
 function DayUserProgress() {
+  let currentVideoTime = 3600; // Basically get from localstorage
+  let targetVideoTime = 7200;
 
-    let currentVideoTime = 3600; // Basically get from localstorage
-    let targetVideoTime = 7200;
+  let progressElement = document.getElementById("ldBar-left");
 
-    let progressElement = document.getElementById("ldBar-left");
-
-    let percentage = (currentVideoTime / targetVideoTime)*100;
-    progressElement.setAttribute("data-value", percentage.toString());
-
+  let percentage = (currentVideoTime / targetVideoTime) * 100;
+  progressElement.setAttribute("data-value", percentage.toString());
 }
 DayUserProgress();
 
-
-
 function func() {
-    function setCorrectDataToDayProgressbar() {
+  function setCorrectDataToDayProgressbar() {
+    let paintTime = document.getElementsByClassName("ldBar-label");
+    console.log(paintTime);
+    console.log(paintTime[0]);
+    console.log(paintTime.length);
 
-        let paintTime = document.getElementsByClassName('ldBar-label');
-        console.log(paintTime);
-        console.log(paintTime[0]);
-        console.log(paintTime.length);
+    paintTime[0].innerHTML = "939";
+  }
 
-        paintTime[0].innerHTML = "939"
+  function setCorrectDataToWeekProgressbar() {
+    let paintTime = document.getElementsByClassName("ldBar-label");
+    console.log(paintTime);
+    console.log(paintTime[1]);
+    console.log(paintTime.length);
+  }
 
-    }
+  function setCorrectDataToMonthProgressbar() {
+    let paintTime = document.getElementsByClassName("ldBar-label");
+    console.log(paintTime);
+    console.log(paintTime[2]);
+    console.log(paintTime.length);
+  }
 
-    function setCorrectDataToWeekProgressbar() {
-
-        let paintTime = document.getElementsByClassName('ldBar-label');
-        console.log(paintTime);
-        console.log(paintTime[1]);
-        console.log(paintTime.length);
-
-    }
-
-    function setCorrectDataToMonthProgressbar() {
-
-        let paintTime = document.getElementsByClassName('ldBar-label');
-        console.log(paintTime);
-        console.log(paintTime[2]);
-        console.log(paintTime.length);
-
-    }
-
-    setCorrectDataToDayProgressbar();
-    setCorrectDataToWeekProgressbar();
-    setCorrectDataToMonthProgressbar();
+  setCorrectDataToDayProgressbar();
+  setCorrectDataToWeekProgressbar();
+  setCorrectDataToMonthProgressbar();
 }
 
 setTimeout(func, 1500);
-
-
 
 /*
 
@@ -79,10 +67,5 @@ function func() {
 
 setTimeout(func, 2000);
 */
-
-
-
-
-
 
 //userProgress(3600);

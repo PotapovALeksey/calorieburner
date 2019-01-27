@@ -7,7 +7,7 @@ $slick-arrow-color: black !default;
 
 .slider {
   &-text {
-    &__title {}
+  //  &__title {}
 
     &__list {
       list-style: none;
@@ -238,7 +238,7 @@ line-height: 1.25;
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 10%;
+ // margin-top: 10%;
 }
 .slider-link {
   position: relative;

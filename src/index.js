@@ -12,7 +12,7 @@ import Model from "./js/model";
 import Controller from "./js/controller";
 import array from "./js/array";
 
-
+import "./js/array";
 import "./js/slider";
 import "./js/filter";
 

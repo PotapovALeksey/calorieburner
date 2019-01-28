@@ -7,7 +7,7 @@ import YouTubePlayer from 'youtube-player';
 
 
 
-const arrayVideos = [{
+export const arrayVideos = [{
         name: 'Утренняя тренировка для зарядки',
         duration: '10 минут',
         colories: '80 ккал',
@@ -163,7 +163,7 @@ function viewAllVideos() {
     });
    
     function showText() {
-        const x = window.matchMedia("(max-width: 767px)")
+        const x = window.matchMedia("(max-width: 767px)");
         let div = document.querySelector('.slick-active');
         let text = div.querySelector('.slider-text-pos');
         text.style.display = 'block';

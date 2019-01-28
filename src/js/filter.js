@@ -242,10 +242,10 @@ filterBox.addEventListener('click', function (e) {
         arrCheck = [...filterBox.querySelectorAll('input:checked')];
         filter = arrCheck.reduce((acc, item) => {
             if (acc[item.dataset.type]) {
-                acc[item.dataset.type].push(item.dataset.value)
+                acc[item.dataset.type].push(item.dataset.value);
             } else {
-                acc[item.dataset.type] = []
-                acc[item.dataset.type].push(item.dataset.value)
+                acc[item.dataset.type] = [];
+                acc[item.dataset.type].push(item.dataset.value);
             }
             return acc;
         }, {});
@@ -277,3 +277,39 @@ filterBox.addEventListener('click', function (e) {
         console.log(resultFilter);
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", selectInputElements);
+
+function selectInputElements() {
+    for (let i = 1; i <= 26; i++) {
+        let submenuFilterText = document.getElementById('txt' + i);
+        submenuFilterText.addEventListener('click', toggle);
+        let submenuFilterSvg = document.getElementById('svg' + i);
+        submenuFilterSvg.addEventListener('click', toggle);
+    }
+}
+
+function toggle(event, checked) {
+    // debugger
+    let evt = event.target.id;
+    var splits = evt.split(/(\d)/);
+    // console.log(splits[0], splits[1]);
+    if (splits[0] === 'svg') {
+        let svg = document.getElementById('svg' + splits[1]);
+        svg.setAttribute('style', 'fill: $main-dark-color !important');
+        svg.style.fill = '$main-dark-color';
+        // console.log(svg);
+    } else if (splits[0] === 'txt') {
+        let txt = document.getElementById('txt' + splits[1]);
+        txt.style.fontWeight = '$font-weight-bold';
+        txt.setAttribute('style', 'font-weight: $font-weight-bold !important');
+        // console.log(txt);
+    }
+    let i = splits[1];
+    // console.log(splits);
+    let elm = document.getElementById('input' + i);
+    if (checked != elm.checked) {
+        elm.click();
+    }
+}

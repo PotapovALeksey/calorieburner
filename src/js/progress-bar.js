@@ -1,11 +1,29 @@
 function DayUserProgress() {
-  let currentVideoTime = 1200; // Basically get from localstorage
-  let targetVideoTime = 7200;
+    let currentVideoTime = localStorage.getItem("timeProgress");
+    let targetVideoTime = 7200;
 
   let progressElement = document.getElementById("ldBar-left");
 
   let percentage = (currentVideoTime / targetVideoTime) * 100;
   progressElement.setAttribute("data-value", percentage.toString());
+}
+function WeekUserProgress() {
+    let currentVideoTime = localStorage.getItem("timeProgress");
+    let targetVideoTime = 7200;
+
+    let progressElement = document.getElementById("ldBar-center");
+
+    let percentage = (currentVideoTime / targetVideoTime) * 100;
+    progressElement.setAttribute("data-value", percentage.toString());
+}
+function MonthUserProgress() {
+    let currentVideoTime = localStorage.getItem("timeProgress");
+    let targetVideoTime = 7200;
+
+    let progressElement = document.getElementById("ldBar-right");
+
+    let percentage = (currentVideoTime / targetVideoTime) * 100;
+    progressElement.setAttribute("data-value", percentage.toString());
 }
 
 function paintingTime() {
@@ -20,24 +38,24 @@ function paintingTime() {
 }
 
 function setCorrectDataToDayProgressbar() {
-  let paintTime = document.getElementsByClassName("ldBar-label");
-  console.log(paintTime[0]);
-  let currentVideoTime = 1234;
-  paintTime[0].innerHTML = contentCreator(currentVideoTime);
+    let paintTime = document.getElementsByClassName("ldBar-label");
+    console.log(paintTime[0]);
+    let currentVideoTime = localStorage.getItem("timeProgress") ;
+    paintTime[0].innerHTML = contentCreator(currentVideoTime);
 }
 
 function setCorrectDataToWeekProgressbar() {
-  let paintTime = document.getElementsByClassName("ldBar-label");
-  console.log(paintTime[1]);
-  let currentVideoTime = 6667;
-  paintTime[1].innerHTML = contentCreator(currentVideoTime);
+    let paintTime = document.getElementsByClassName("ldBar-label");
+    console.log(paintTime[1]);
+    let currentVideoTime = localStorage.getItem("timeProgress");
+    paintTime[1].innerHTML = contentCreator(currentVideoTime);
 }
 
 function setCorrectDataToMonthProgressbar() {
-  let paintTime = document.getElementsByClassName("ldBar-label");
-  console.log(paintTime[2]);
-  let currentVideoTime = 9123;
-  paintTime[2].innerHTML = contentCreator(currentVideoTime);
+    let paintTime = document.getElementsByClassName("ldBar-label");
+    console.log(paintTime[2]);
+    let currentVideoTime = localStorage.getItem("timeProgress");
+    paintTime[2].innerHTML = contentCreator(currentVideoTime);
 }
 
 function contentCreator(currentVideoTimeInSeconds) {
@@ -75,15 +93,10 @@ function contentCreator(currentVideoTimeInSeconds) {
   return string;
 }
 
-function countData() {
-  let today = 1;
-  let currentDate = Date.prototype.getDate();
-  if (today === currentDate) {
-  } else {
-  }
-}
+DayUserProgress();
+WeekUserProgress();
+MonthUserProgress();
 
-// DayUserProgress();
 let idInterval = setInterval(paintingTime, 50);
 
 export { DayUserProgress, paintingTime };

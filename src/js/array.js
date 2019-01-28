@@ -150,6 +150,7 @@ src="https://www.youtube.com/embed/RqfkrZA_ie0"
 frameborder="0" allowfullscreen></iframe> */
 window.addEventListener('DOMContentLoaded', viewAllVideos);
 function viewAllVideos() {
+    
     const markUp = createVideo({
         arrayVideos
     });
@@ -202,13 +203,18 @@ function viewAllVideos() {
  
   
         let caloriesToExport;
+        let timeToExport;
    const closeBtn = document.querySelector('.madal-btn__close');
    closeBtn.addEventListener('click', closeModal);
    function closeModal(event) {
     event.preventDefault();
     mod.style.display = "none";
     player.stopVideo();
-    localStorage.setItem("calories", caloriesToExport);
+    localStorage.setItem("caloriess", caloriesToExport);
+    localStorage.setItem("timeProgress", timeToExport);
+    location.reload(true);
+   
+   
 
    }
    
@@ -245,7 +251,8 @@ function viewAllVideos() {
            callories = Math.round(COUNTER * calloriesForSecond);
            let res = formatedValue(callories);
            displayResult(res);
-      
+           timeToExport = currentTime;
+                 
        }
    
                   
@@ -283,5 +290,7 @@ function viewAllVideos() {
 
 }
 
-// let xx = localStorage.getItem("calories");
-//    console.log(xx);
+export const calorToProgress = Number(localStorage.getItem("caloriess"));
+export const timeToProgress = Number(localStorage.getItem("timeProgress"));
+
+   

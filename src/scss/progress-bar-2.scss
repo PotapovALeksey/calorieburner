@@ -7,9 +7,23 @@
 .progress-bar2-container {
   background-color: $main-dark-color;
 }
+.progress-bar-time {
+  font-family: $main-font;
+  font-size: 30px;
+  font-weight: bold;
+  color: $main-light-color;
+}
+.progress-bar-small{
+  font-family: $main-font;
+  font-size: $big-text-size;
+  font-weight: bold;
+  color: $main-light-color;
+  margin-top: 12px;
+}
+
 
 .ldBar-label:after {
-  content: "минут";
+  content: "";
   color: $main-light-color;
   margin-left: 5px;
   font-family: $main-font;
@@ -18,7 +32,13 @@
 }
 .ldBar-label {
   color: $main-light-color;
+  display: flex;
 }
+
+.ldBar.label-center > .ldBar-label {
+  top: 58%;
+}
+
 path {
   stroke-linecap: round;
 }

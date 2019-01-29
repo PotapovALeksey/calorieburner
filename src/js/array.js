@@ -1,6 +1,7 @@
-import createVideo from './template/slider.hbs';
+import createVideo from "./template/slider.hbs";
 import $ from "jquery";
 import "slick-carousel";
+
 
 import YouTubePlayer from 'youtube-player';
 import * as array from './filter.js';
@@ -40,15 +41,13 @@ function viewAllVideos(arr) {
         modalSrc.src = newSrc;
         mod.style.display = "block";
 
-        let player;
- 
-  
-        let caloriesToExport;
-        let timeToExport;
-   const closeBtn = document.querySelector('.madal-btn__close');
-   closeBtn.addEventListener('click', closeModal);
-   function closeModal(event) {
+
+  const mod = document.querySelector(".modal");
+  const sliderList = document.querySelector(".slick-track");
+  sliderList.addEventListener("click", showModal);
+  function showModal(event) {
     event.preventDefault();
+
     mod.style.display = "none";
     player.stopVideo();
     localStorage.setItem("caloriess", caloriesToExport);
@@ -71,68 +70,75 @@ function viewAllVideos(arr) {
    let callories;
    let COUNTER = 0;
 
-   function onPlayerStateChange(event) {
-       let duration;
-       let currentTime;
-        
-       if (event.data == 1)
-       {
-           TIMER_ID = setInterval(triggerFunction, 1000);
-       }
-       else {
-              clearInterval(TIMER_ID);
-       }
-            
-   
-       function triggerFunction() {
-           incrementCounter();
-           currentTime = Math.floor(event.target.getCurrentTime());
-           duration = Math.floor(event.target.getDuration());
-           calloriesForSecond = 200 / duration;
-           callories = Math.round(COUNTER * calloriesForSecond);
-           let res = formatedValue(callories);
-           displayResult(res);
-           timeToExport = currentTime;
-                 
-       }
-   
-                  
-       function formatedValue(time) {
-         let value = time < 10 ? "00" + time : time < 100 ? "0" + time : time;
-         return value;
-       }
-   
-       function displayResult(value) {
-         const counterElem = document.querySelector(
-           ".js-modal-content__counter-num"
-         );
-   
-         counterElem.innerHTML = value;
-         caloriesToExport = value;
 
-       }
-       function incrementCounter() {
+    let player;
+
+    let caloriesToExport;
+    let timeToExport;
+    const closeBtn = document.querySelector(".madal-btn__close");
+    closeBtn.addEventListener("click", closeModal);
+    function closeModal(event) {
+      event.preventDefault();
+      mod.style.display = "none";
+      player.stopVideo();
+      localStorage.setItem("caloriess", caloriesToExport);
+      localStorage.setItem("timeProgress", timeToExport);
+      // location.reload(true);
+    }
+
+    player = YouTubePlayer("player");
+
+    player.on("stateChange", onPlayerStateChange);
+
+    let TIMER_ID;
+    let calloriesForSecond;
+    let callories;
+    let COUNTER = 0;
+
+    function onPlayerStateChange(event) {
+      let duration;
+      let currentTime;
+
+      if (event.data == 1) {
+        TIMER_ID = setInterval(triggerFunction, 1000);
+      } else {
+        clearInterval(TIMER_ID);
+      }
+
+      function triggerFunction() {
+        incrementCounter();
+        currentTime = Math.floor(event.target.getCurrentTime());
+        duration = Math.floor(event.target.getDuration());
+        calloriesForSecond = 200 / duration;
+        callories = Math.round(COUNTER * calloriesForSecond);
+        let res = formatedValue(callories);
+        displayResult(res);
+        timeToExport = currentTime;
+      }
+
+      function formatedValue(time) {
+        let value = time < 10 ? "00" + time : time < 100 ? "0" + time : time;
+        return value;
+      }
+
+      function displayResult(value) {
+        const counterElem = document.querySelector(
+          ".js-modal-content__counter-num"
+        );
+
+        counterElem.innerHTML = value;
+        caloriesToExport = value;
+      }
+      function incrementCounter() {
         return COUNTER++;
       }
-   
-     
-   }
-   
-
-
-
-
-
-
-
-
-
-}
-
+    }
+  }
 }
 // viewAllVideos(arrayVideos);
 export const calorToProgress = Number(localStorage.getItem("caloriess"));
 export const timeToProgress = Number(localStorage.getItem("timeProgress"));
+
 let ress = JSON.parse(localStorage.getItem("resFilter"));
 console.log(ress);
 

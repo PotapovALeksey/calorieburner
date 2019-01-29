@@ -1,5 +1,4 @@
 
-
 export const arrayVideos = [{
     name: 'Утренняя тренировка для зарядки',
     duration: '10 минут',
@@ -146,79 +145,83 @@ export const arrayVideos = [{
 // }
 
 // get filters menu items
-const filterInventory = document.getElementById('js__filter-inventory');
-const filterDifficult = document.getElementById('js__filter-difficult');
-const filterCalory = document.getElementById('js__filter-calory');
-const filterTime = document.getElementById('js__filter-time');
+const filterInventory = document.getElementById("js__filter-inventory");
+const filterDifficult = document.getElementById("js__filter-difficult");
+const filterCalory = document.getElementById("js__filter-calory");
+const filterTime = document.getElementById("js__filter-time");
 
 // get filter submenu items
-const submenuInventory = document.getElementById('js__submenu-inventory');
-const submenuDifficult = document.getElementById('js__submenu-difficult');
-const submenuCalory = document.getElementById('js__submenu-calory');
-const submenuTime = document.getElementById('js__submenu-time');
+const submenuInventory = document.getElementById("js__submenu-inventory");
+const submenuDifficult = document.getElementById("js__submenu-difficult");
+const submenuCalory = document.getElementById("js__submenu-calory");
+const submenuTime = document.getElementById("js__submenu-time");
 
 // add event listeners
 document.addEventListener("DOMContentLoaded", addEvtListeners);
 
 // show/close filter menus
 function showFilterInventory() {
-    if (submenuInventory.style.display === 'none') {
-        submenuInventory.style.display = 'flex';
-        submenuDifficult.style.display = 'none';
-        submenuCalory.style.display = 'none';
-        submenuTime.style.display = 'none';
-    } else {
-        submenuInventory.style.display = 'none';
-    }
+  if (submenuInventory.style.display === "none") {
+    submenuInventory.style.display = "flex";
+    submenuDifficult.style.display = "none";
+    submenuCalory.style.display = "none";
+    submenuTime.style.display = "none";
+  } else {
+    submenuInventory.style.display = "none";
+  }
 }
 
 function showFilterDifficult() {
-    if (submenuDifficult.style.display === 'none') {
-        submenuDifficult.style.display = 'flex';
-        submenuInventory.style.display = 'none';
-        submenuCalory.style.display = 'none';
-        submenuTime.style.display = 'none';
-    } else {
-        submenuDifficult.style.display = 'none';
-    }
+  if (submenuDifficult.style.display === "none") {
+    submenuDifficult.style.display = "flex";
+    submenuInventory.style.display = "none";
+    submenuCalory.style.display = "none";
+    submenuTime.style.display = "none";
+  } else {
+    submenuDifficult.style.display = "none";
+  }
 }
 
 function showFilterCalory() {
-    if (submenuCalory.style.display === 'none') {
-        submenuCalory.style.display = 'flex';
-        submenuInventory.style.display = 'none';
-        submenuDifficult.style.display = 'none';
-        submenuTime.style.display = 'none';
-    } else {
-        submenuCalory.style.display = 'none';
-    }
+  if (submenuCalory.style.display === "none") {
+    submenuCalory.style.display = "flex";
+    submenuInventory.style.display = "none";
+    submenuDifficult.style.display = "none";
+    submenuTime.style.display = "none";
+  } else {
+    submenuCalory.style.display = "none";
+  }
 }
 
 function showFilterTime() {
-    if (submenuTime.style.display === 'none') {
-        submenuTime.style.display = 'flex';
-        submenuInventory.style.display = 'none';
-        submenuDifficult.style.display = 'none';
-        submenuCalory.style.display = 'none';
-    } else {
-        submenuTime.style.display = 'none';
-    }
+  if (submenuTime.style.display === "none") {
+    submenuTime.style.display = "flex";
+    submenuInventory.style.display = "none";
+    submenuDifficult.style.display = "none";
+    submenuCalory.style.display = "none";
+  } else {
+    submenuTime.style.display = "none";
+  }
 }
 // add event listeners
 function addEvtListeners() {
-    // add evtlisteners to menu items
-    filterInventory.addEventListener('click', showFilterInventory);
-    let submenuInventoryStyle = window.getComputedStyle(submenuInventory, "");
-    submenuInventory.style.display = (submenuInventoryStyle.display === 'none') ? 'none' : 'flex';
-    filterDifficult.addEventListener('click', showFilterDifficult);
-    let submenuDifficultStyle = window.getComputedStyle(submenuDifficult, "");
-    submenuDifficult.style.display = (submenuDifficultStyle.display === 'none') ? 'none' : 'flex';
-    filterCalory.addEventListener('click', showFilterCalory);
-    let submenuCaloryStyle = window.getComputedStyle(submenuCalory, "");
-    submenuCalory.style.display = (submenuCaloryStyle.display === 'none') ? 'none' : 'flex';
-    filterTime.addEventListener('click', showFilterTime);
-    let submenuTimeStyle = window.getComputedStyle(submenuTime, "");
-    submenuTime.style.display = (submenuTimeStyle.display === 'none') ? 'none' : 'flex';
+  // add evtlisteners to menu items
+  filterInventory.addEventListener("click", showFilterInventory);
+  let submenuInventoryStyle = window.getComputedStyle(submenuInventory, "");
+  submenuInventory.style.display =
+    submenuInventoryStyle.display === "none" ? "none" : "flex";
+  filterDifficult.addEventListener("click", showFilterDifficult);
+  let submenuDifficultStyle = window.getComputedStyle(submenuDifficult, "");
+  submenuDifficult.style.display =
+    submenuDifficultStyle.display === "none" ? "none" : "flex";
+  filterCalory.addEventListener("click", showFilterCalory);
+  let submenuCaloryStyle = window.getComputedStyle(submenuCalory, "");
+  submenuCalory.style.display =
+    submenuCaloryStyle.display === "none" ? "none" : "flex";
+  filterTime.addEventListener("click", showFilterTime);
+  let submenuTimeStyle = window.getComputedStyle(submenuTime, "");
+  submenuTime.style.display =
+    submenuTimeStyle.display === "none" ? "none" : "flex";
 }
 
 document.addEventListener("DOMContentLoaded", addEvtListeners);
@@ -230,6 +233,7 @@ let isLevel;
 let isCalories;
 let isDuration;
 let resultFilter;
+
 const filterBox = document.getElementById('filter_box');
 filterBox.addEventListener('click', function (e) {
 
@@ -251,27 +255,29 @@ filterBox.addEventListener('click', function (e) {
             return acc;
         }, {});
 
-        resultFilter = arrayVideos.filter(el => {
-            if (filter.inv) {
-                isInv = filter.inv.includes(el.inv);
-            } else {
-                isInv = true;
-            }
-            if (filter.level) {
-                isLevel = filter.level.includes(el.level);
-            } else {
-                isLevel = true;
-            }
-            if (filter.calories) {
-                isCalories = filter.calories.includes(el.calories);
-            } else {
-                isCalories = true;
-            }
-            if (filter.duration) {
-                isDuration = filter.duration.includes(el.duration);
-            } else {
-                isDuration = true;
-            }
+
+    resultFilter = arrayVideos.filter(el => {
+      if (filter.inv) {
+        isInv = filter.inv.includes(el.inv);
+      } else {
+        isInv = true;
+      }
+      if (filter.level) {
+        isLevel = filter.level.includes(el.level);
+      } else {
+        isLevel = true;
+      }
+      if (filter.calories) {
+        isCalories = filter.calories.includes(el.calories);
+      } else {
+        isCalories = true;
+      }
+      if (filter.duration) {
+        isDuration = filter.duration.includes(el.duration);
+      } else {
+        isDuration = true;
+      }
+
 
             return isInv && isLevel && isCalories && isDuration;
         });
@@ -298,3 +304,4 @@ function toggleCheckbox(target) {
         text.style.color = "#51566b";
     }
 }
+

@@ -1,7 +1,6 @@
 import "./scss/styles.scss";
 import "@babel/polyfill";
 
-import "./js/progress-bar.js";
 import "./progress-bar/loading-bar";
 //import "./loading-bar/loading-bar";
 
@@ -13,6 +12,8 @@ import array from "./js/filter";
 import "./js/filter";
 import "./js/array";
 import "./js/slider";
+
+import "./js/progress-bar.js";
 import "./js/progress-bar1.js";
 
 const view = new View();

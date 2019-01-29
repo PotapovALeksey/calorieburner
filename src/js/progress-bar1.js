@@ -6,14 +6,23 @@ import {
 import { calorToProgress } from "./array.js";
 
 //глобальная переменная (со значениями для проверки работы кода)
+// let TIME = {
+//   lastDate: [0, 1, 28],
+//   todayCal: 300,
+//   weekCal: 1000,
+//   mounthCal: 3000,
+//   todayTime: 300,
+//   weekTime: 1000,
+//   mounthTime: 3000
+// };
 let TIME = {
-  lastDate: [0, 1, 28],
-  todayCal: 300,
-  weekCal: 1000,
-  mounthCal: 3000,
-  todayTime: 300,
-  weekTime: 1000,
-  mounthTime: 3000
+  lastDate: [0, 0, 0],
+  todayCal: 0,
+  weekCal: 0,
+  mounthCal: 0,
+  todayTime: 0,
+  weekTime: 0,
+  mounthTime: 0
 };
 
 const setToLS = value => {
@@ -146,13 +155,23 @@ function handleGetAndPaintNewTime() {
 //добавляет к существующему времени новое
 function addNewTime(timeFromLS, newCal, newTime) {
   console.log(newCal);
-  timeFromLS.todayCal += Number(newCal);
-  timeFromLS.weekCal += Number(newCal);
-  timeFromLS.mounthCal += Number(newCal);
-  timeFromLS.todayTime += Number(newTime);
-  timeFromLS.weekTime += Number(newTime);
-  timeFromLS.mounthTime += Number(newTime);
-  return (TIME = timeFromLS);
+  if (
+    newCal === undefined &&
+    newCal === NaN &&
+    newCal === "null" &&
+    newCal === null
+  )
+    return;
+  else {
+    console.log("srab", newCal == NaN);
+    timeFromLS.todayCal += Number(newCal);
+    timeFromLS.weekCal += Number(newCal);
+    timeFromLS.mounthCal += Number(newCal);
+    timeFromLS.todayTime += Number(newTime);
+    timeFromLS.weekTime += Number(newTime);
+    timeFromLS.mounthTime += Number(newTime);
+    return (TIME = timeFromLS);
+  }
 }
 //===================================================================
 

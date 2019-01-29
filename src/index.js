@@ -7,11 +7,12 @@ import "./progress-bar/loading-bar";
 import View from "./js/view";
 import Model from "./js/model";
 import Controller from "./js/controller";
-import array from "./js/array";
+import array from "./js/filter";
 
+import "./js/filter";
 import "./js/array";
 import "./js/slider";
-import "./js/filter";
+
 import "./js/progress-bar.js";
 import "./js/progress-bar1.js";
 

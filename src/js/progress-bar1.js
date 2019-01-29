@@ -1,11 +1,19 @@
-import { DayUserProgress, paintingTime } from "./progress-bar";
-paintingTime();
+import {
+  DayUserProgress,
+  WeekUserProgress,
+  MonthUserProgress
+} from "./progress-bar";
+import { calorToProgress } from "./array.js";
+
 //глобальная переменная (со значениями для проверки работы кода)
 let TIME = {
   lastDate: [0, 1, 28],
-  today: 300,
-  week: 1000,
-  mounth: 3000
+  todayCal: 300,
+  weekCal: 1000,
+  mounthCal: 3000,
+  todayTime: 300,
+  weekTime: 1000,
+  mounthTime: 3000
 };
 
 const setToLS = value => {
@@ -18,7 +26,12 @@ const getFromLS = () => {
 };
 
 const getCcalFromLS = () => {
-  const data = localStorage.getItem("calories");
+  const data = localStorage.getItem("caloriess");
+  return data ? Number(data) : null;
+};
+
+const getTimeFromLS = () => {
+  const data = localStorage.getItem("timeProgress");
   return data ? Number(data) : null;
 };
 
@@ -43,16 +56,20 @@ function loadingHandler() {
       currentMounth === timeLS.lastDate[0]
     ) {
       paintMounthBar(timeLS);
+      MonthUserProgress(timeLS.mounthTime);
       //   alert("1");
     } else if (currentMounth !== timeLS.lastDate[0]) {
       //месяц не совпадает
       timeLS.lastDate[0] = currentMounth;
       timeLS.lastDate[2] = currentDate;
-      timeLS.mounth = 0;
-      timeLS.today = 0;
+      timeLS.mounthCal = 0;
+      timeLS.todayCal = 0;
+      timeLS.mounthTime = 0;
+      timeLS.todayTime = 0;
       paintTodayBar(timeLS);
+      DayUserProgress(timeLS.todayTime);
       paintMounthBar(timeLS);
-
+      MonthUserProgress(timeLS.mounthTime);
       //   alert("2");
     }
     if (
@@ -60,22 +77,27 @@ function loadingHandler() {
       currentDate === timeLS.lastDate[2]
     ) {
       paintTodayBar(timeLS);
-      DayUserProgress();
-      setCorrectDataToDayProgressbar();
+      DayUserProgress(timeLS.todayTime);
       paintWeekBar(timeLS);
+      WeekUserProgress(timeLS.weekTime);
       //   alert("3");
     } else if (currentDate !== timeLS.lastDate[2]) {
       //день не совпадает
-      timeLS.today = 0;
+      timeLS.todayCal = 0;
+      timeLS.todayTime = 0;
       paintTodayBar(timeLS);
+      DayUserProgress(timeLS.todayTime);
       paintWeekBar(timeLS);
+      WeekUserProgress(timeLS.weekTime);
       //   alert("4");
     }
     if (currentDay === 1 && timeLS.today === 0) {
       //понедельник первый заход
       //   alert("5");
-      timeLS.week = 0;
+      timeLS.weekCal = 0;
+      timeLS.weekTime = 0;
       paintWeekBar(timeLS);
+      WeekUserProgress(timeLS.weekTime);
     }
     timeLS.lastDate = [currentMounth, currentDay, currentDate];
   }
@@ -91,34 +113,45 @@ closeBtn.addEventListener("click", handleGetAndPaintNewTime); //эмитация
 
 //получает время с видео и отрисовывает прогресс
 function handleGetAndPaintNewTime() {
-  let newTime = getCcalFromLS();
-
+  let newCal = getCcalFromLS();
+  let newTime = getTimeFromLS();
+  console.log(newTime);
   let timeFromLS = getFromLS();
   console.log(timeFromLS);
   let currentDate = new Date().getDate();
   //   проверяет не наступил ли новый день, пока смотрели видео
   if (currentDate === timeFromLS.lastDate[2]) {
-    addNewTime(timeFromLS, newTime);
+    console.log(newCal);
+    addNewTime(timeFromLS, newCal, newTime);
     setToLS(TIME);
     paintTodayBar(TIME);
+    DayUserProgress(TIME.todayTime);
     paintWeekBar(TIME);
+    WeekUserProgress(TIME.weekTime);
     paintMounthBar(TIME);
+    MonthUserProgress(TIME.mounthTime);
   } else {
     loadingHandler(); //если наступил новый день снова делаем проверки и обнуляем данные.
     //Наверное, стоит сюда написать отдельную ф-цию, которая будет только делать проверку и не отрисовывать прогресс
-    addNewTime(TIME, newTime);
+    addNewTime(TIME, newCal, newTime);
     setToLS(TIME);
     paintTodayBar(TIME);
+    DayUserProgress(TIME.todayTime);
     paintWeekBar(TIME);
+    WeekUserProgress(TIME.weekTime);
     paintMounthBar(TIME);
+    MonthUserProgress(TIME.mounthTime);
   }
 }
 //добавляет к существующему времени новое
-function addNewTime(timeFromLS, newTime) {
-  console.log(newTime);
-  timeFromLS.today += newTime;
-  timeFromLS.week += newTime;
-  timeFromLS.mounth += newTime;
+function addNewTime(timeFromLS, newCal, newTime) {
+  console.log(newCal);
+  timeFromLS.todayCal += Number(newCal);
+  timeFromLS.weekCal += Number(newCal);
+  timeFromLS.mounthCal += Number(newCal);
+  timeFromLS.todayTime += Number(newTime);
+  timeFromLS.weekTime += Number(newTime);
+  timeFromLS.mounthTime += Number(newTime);
   return (TIME = timeFromLS);
 }
 //===================================================================
@@ -128,19 +161,19 @@ function paintTodayBar(timeObj) {
   const text = document.getElementById("bar-text-today");
   //   const maxTime = 2 * 60 * 60 * 1000; //2 трен по часу, в mc
   const maxCcal = 1200;
-  countWidthAndCal(timeObj.today, elem, text, maxCcal);
+  countWidthAndCal(timeObj.todayCal, elem, text, maxCcal);
 }
 function paintWeekBar(timeObj) {
   const elem = document.getElementById("bar-week");
   const text = document.getElementById("bar-text-week");
   const maxCcal = 1200 * 7; //2 трен по часу каждый день, в mc
-  countWidthAndCal(timeObj.week, elem, text, maxCcal);
+  countWidthAndCal(timeObj.weekCal, elem, text, maxCcal);
 }
 function paintMounthBar(timeObj) {
   const elem = document.getElementById("bar-mounth");
   const text = document.getElementById("bar-text-mounth");
   const maxCcal = 1200 * 7 * 30; //2 трен по часу каждый день. Сделать проверку на к-во дней в месяце
-  countWidthAndCal(timeObj.mounth, elem, text, maxCcal);
+  countWidthAndCal(timeObj.mounthCal, elem, text, maxCcal);
 }
 function countWidthAndCal(ccal, elem1, elem2, maxCcal) {
   const width = Math.round((ccal * 100) / maxCcal);

@@ -81,7 +81,7 @@ function contentCreator(currentVideoTimeInSeconds) {
       " <div class='progress-bar-small'> ч. </div>";
   } else if (videoHour > 1) {
     let minutes = (
-      (currentVideoTimeInSeconds - Math.floor(videoHour) * 3600) /
+      (currentVideoTimeInSeconds - Math.floor(videoHour) * 36) / //3600
       60
     ).toFixed(0);
     string =

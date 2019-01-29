@@ -2,74 +2,55 @@ import createVideo from "./template/slider.hbs";
 import $ from "jquery";
 import "slick-carousel";
 
-
-import YouTubePlayer from 'youtube-player';
-import * as array from './filter.js';
+import YouTubePlayer from "youtube-player";
+import * as array from "./filter.js";
 let arrayVideos = array.arrayVideos;
-
-
-
-
-
-
 
 viewAllVideos(arrayVideos);
 function viewAllVideos(arr) {
-    
-    const markUp = createVideo({
-        arr
-    });
-    const out = document.querySelector('.slider-list');
-    out.insertAdjacentHTML('afterbegin', markUp);
-    $('.slider-list').slick({
-        centerMode: true,
-        centerPadding: '10px',
-        slidesToShow: 1,
-    
-               
-    });
-   
-    const mod = document.querySelector('.modal');
-    const sliderList = document.querySelector('.slick-track');
-    sliderList.addEventListener('click', showModal);
-    function showModal(event) {
-        event.preventDefault();
-        if (event.target.nodeName !== 'IMG') return;
-        const newSrc = event.target.parentNode.href;
-        // const mod = document.querySelector('.modal');
-        const modalSrc = document.querySelector('#player');
-        modalSrc.src = newSrc;
-        mod.style.display = "block";
-
+  const markUp = createVideo({
+    arr
+  });
+  const out = document.querySelector(".slider-list");
+  out.insertAdjacentHTML("afterbegin", markUp);
+  $(".slider-list").slick({
+    centerMode: true,
+    centerPadding: "10px",
+    slidesToShow: 1
+  });
 
   const mod = document.querySelector(".modal");
   const sliderList = document.querySelector(".slick-track");
   sliderList.addEventListener("click", showModal);
   function showModal(event) {
     event.preventDefault();
+    if (event.target.nodeName !== "IMG") return;
+    const newSrc = event.target.parentNode.href;
+    // const mod = document.querySelector('.modal');
+    const modalSrc = document.querySelector("#player");
+    modalSrc.src = newSrc;
+    mod.style.display = "block";
 
-    mod.style.display = "none";
-    player.stopVideo();
-    localStorage.setItem("caloriess", caloriesToExport);
-    localStorage.setItem("timeProgress", timeToExport);
-    // location.reload(true);
-   
-   
+    const sliderList = document.querySelector(".slick-track");
+    sliderList.addEventListener("click", showModal);
+    function showModal(event) {
+      const mod = document.querySelector(".modal");
+      event.preventDefault();
+      mod.style.display = "none";
+      player.stopVideo();
+      localStorage.setItem("caloriess", caloriesToExport);
+      localStorage.setItem("timeProgress", timeToExport);
+      // location.reload(true);
+    }
 
-   }
-   
-   player = YouTubePlayer('player');
-        
-   player.on('stateChange', onPlayerStateChange);
+    // player = YouTubePlayer("player");
 
-   
-   
-   
-   let TIMER_ID;
-   let calloriesForSecond;
-   let callories;
-   let COUNTER = 0;
+    // player.on("stateChange", onPlayerStateChange);
 
+    // let TIMER_ID;
+    // let calloriesForSecond;
+    // let callories;
+    // let COUNTER = 0;
 
     let player;
 
@@ -142,16 +123,4 @@ export const timeToProgress = Number(localStorage.getItem("timeProgress"));
 let ress = JSON.parse(localStorage.getItem("resFilter"));
 console.log(ress);
 
-
 // newVi(ress);
-
-
-    
-                   
-       
-
-    
-       
-    
-
-

@@ -155,15 +155,9 @@ function handleGetAndPaintNewTime() {
 //добавляет к существующему времени новое
 function addNewTime(timeFromLS, newCal, newTime) {
   console.log(newCal);
-  if (
-    newCal === undefined &&
-    newCal === NaN &&
-    newCal === "null" &&
-    newCal === null
-  )
-    return;
+  if (isNaN(newCal)) return;
   else {
-    console.log("srab", newCal == NaN);
+    console.log("srab", newCal == NaN, newCal);
     timeFromLS.todayCal += Number(newCal);
     timeFromLS.weekCal += Number(newCal);
     timeFromLS.mounthCal += Number(newCal);

@@ -60,7 +60,7 @@ module.exports = {
       hash: true,
       template: '!!html-loader?interpolate!./public/index.html',
       // template: "./public/index.html",
-      filename: "index.html"
+      filename: "index.html",
     }),
     new MiniCssExtractPlugin({
       filename: "styles.css"

@@ -1,3 +1,11 @@
+import createVideo from "./template/slider.hbs";
+import $ from "jquery";
+import "slick-carousel";
+
+import YouTubePlayer from "youtube-player";
+import {viewAllVideos}from "./array.js";
+
+
 export const arrayVideos = [
   {
     name: "Утренняя тренировка для зарядки",
@@ -136,6 +144,7 @@ export const arrayVideos = [
   }
 ];
 
+viewAllVideos(arrayVideos);
 // clear filters
 // const clearFilterButton = document.getElementById('filter_link_txt');
 // clearFilterButton.addEventListener('click', clearFilter);
@@ -278,11 +287,13 @@ filterBox.addEventListener("click", function(e) {
 
       return isInv && isLevel && isCalories && isDuration;
     });
-    console.log(resultFilter);
-    let newRess = localStorage.setItem(
-      "resFilter",
-      JSON.stringify(resultFilter)
-    );
+   
+  function destroyThumbnailBarSlick() {
+    $('.slider-list').slick("unslick");
+}
+destroyThumbnailBarSlick();
+
+  viewAllVideos(resultFilter);
   }
 });
 
@@ -304,3 +315,5 @@ function toggleCheckbox(target) {
     text.style.color = "#51566b";
   }
 }
+export const calorToProgress = Number(localStorage.getItem("caloriess"));
+export const timeToProgress = Number(localStorage.getItem("timeProgress"));

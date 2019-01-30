@@ -1,13 +1,15 @@
 import createVideo from "./template/slider.hbs";
 import $ from "jquery";
 import "slick-carousel";
-
 import YouTubePlayer from "youtube-player";
-import * as array from "./filter.js";
-let arrayVideos = array.arrayVideos;
 
-viewAllVideos(arrayVideos);
-function viewAllVideos(arr) {
+// import {arrayVideos} from "./filter.js"
+
+
+
+
+
+export function viewAllVideos(arr) {
   const markUp = createVideo({
     arr
   });
@@ -43,15 +45,7 @@ function viewAllVideos(arr) {
       // location.reload(true);
     }
 
-    // player = YouTubePlayer("player");
-
-    // player.on("stateChange", onPlayerStateChange);
-
-    // let TIMER_ID;
-    // let calloriesForSecond;
-    // let callories;
-    // let COUNTER = 0;
-
+    
     let player;
 
     let caloriesToExport;
@@ -116,11 +110,9 @@ function viewAllVideos(arr) {
     }
   }
 }
-// viewAllVideos(arrayVideos);
-export const calorToProgress = Number(localStorage.getItem("caloriess"));
-export const timeToProgress = Number(localStorage.getItem("timeProgress"));
+// export const calorToProgress = Number(localStorage.getItem("caloriess"));
+// export const timeToProgress = Number(localStorage.getItem("timeProgress"));  
 
-let ress = JSON.parse(localStorage.getItem("resFilter"));
-console.log(ress);
 
-// newVi(ress);
+
+

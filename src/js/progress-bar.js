@@ -1,14 +1,11 @@
 function DayUserProgress(currentVideoTime) {
-  //   let currentVideoTime = localStorage.getItem("timeProgress");
-  let targetVideoTime = 300;
+  let targetVideoTime = 1500; //!!!!!потом исправить на правильное значение тут и дальше!!!!
 
   let progressElement = document.getElementById("ldBar-left");
-
   let percentage = (currentVideoTime / targetVideoTime) * 100;
   progressElement.setAttribute("data-value", percentage.toString());
 }
 function WeekUserProgress(currentVideoTime) {
-  //   let currentVideoTime = localStorage.getItem("timeProgress");
   let targetVideoTime = 3000;
 
   let progressElement = document.getElementById("ldBar-center");
@@ -17,7 +14,6 @@ function WeekUserProgress(currentVideoTime) {
   progressElement.setAttribute("data-value", percentage.toString());
 }
 function MonthUserProgress(currentVideoTime) {
-  //   let currentVideoTime = localStorage.getItem("timeProgress");
   let targetVideoTime = 7000;
 
   let progressElement = document.getElementById("ldBar-right");
@@ -42,7 +38,6 @@ function setCorrectDataToDayProgressbar() {
   //   console.log(paintTime[0]);
   let videoTime = JSON.parse(localStorage.getItem("time"));
   let currentVideoTime = videoTime.todayTime;
-  //   console.log(videoTime.todayTime);
   paintTime[0].innerHTML = contentCreator(currentVideoTime);
 }
 
@@ -95,7 +90,6 @@ function contentCreator(currentVideoTimeInSeconds) {
       " <div class='progress-bar-small'> мин. </div>";
   }
 
-  //   console.log(string);
   return string;
 }
 
@@ -106,5 +100,5 @@ function contentCreator(currentVideoTimeInSeconds) {
 let idInterval = setInterval(paintingTime, 50);
 // paintingTime();
 
-export { DayUserProgress, WeekUserProgress, MonthUserProgress, idInterval };
+export { DayUserProgress, WeekUserProgress, MonthUserProgress };
 // setCorrectDataToDayProgressbar();

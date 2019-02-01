@@ -34,10 +34,11 @@ const getFromLS = () => {
   return data ? JSON.parse(data) : null;
 };
 
-const getCcalFromLS = () => {
+function getCcalFromLS() {
   const data = localStorage.getItem("caloriess");
+  console.log("f", data);
   return data ? Number(data) : null;
-};
+}
 
 const getTimeFromLS = () => {
   const data = localStorage.getItem("timeProgress");
@@ -118,46 +119,52 @@ function loadingHandler() {
 //===================================================================
 
 const closeBtn = document.querySelector(".madal-btn__close");
-closeBtn.addEventListener("click", handleGetAndPaintNewTime); //эмитация, что кликнули на закрытие модального окна видео
+closeBtn.addEventListener("click", handleGetAndPaintNewTime);
 
 //получает время с видео и отрисовывает прогресс
 function handleGetAndPaintNewTime() {
-  let newCal = getCcalFromLS();
-  let newTime = getTimeFromLS();
-  console.log(newTime);
-  let timeFromLS = getFromLS();
-  console.log(timeFromLS);
-  let currentDate = new Date().getDate();
-  //   проверяет не наступил ли новый день, пока смотрели видео
-  if (currentDate === timeFromLS.lastDate[2]) {
-    console.log(newCal);
-    addNewTime(timeFromLS, newCal, newTime);
-    setToLS(TIME);
-    paintTodayBar(TIME);
-    DayUserProgress(TIME.todayTime);
-    paintWeekBar(TIME);
-    WeekUserProgress(TIME.weekTime);
-    paintMounthBar(TIME);
-    MonthUserProgress(TIME.mounthTime);
-  } else {
-    loadingHandler(); //если наступил новый день снова делаем проверки и обнуляем данные.
-    //Наверное, стоит сюда написать отдельную ф-цию, которая будет только делать проверку и не отрисовывать прогресс
-    addNewTime(TIME, newCal, newTime);
-    setToLS(TIME);
-    paintTodayBar(TIME);
-    DayUserProgress(TIME.todayTime);
-    paintWeekBar(TIME);
-    WeekUserProgress(TIME.weekTime);
-    paintMounthBar(TIME);
-    MonthUserProgress(TIME.mounthTime);
-  }
+  setTimeout(function() {
+    let newCal;
+    newCal = getCcalFromLS();
+
+    console.log("out", newCal);
+    let newTime = getTimeFromLS();
+    console.log(newTime);
+    let timeFromLS = getFromLS();
+    // console.log(timeFromLS);
+    let currentDate = new Date().getDate();
+    //   проверяет не наступил ли новый день, пока смотрели видео
+    if (currentDate === timeFromLS.lastDate[2]) {
+      // console.log(newCal);
+      addNewTime(timeFromLS, newCal, newTime);
+      setToLS(TIME);
+      paintTodayBar(TIME);
+      DayUserProgress(TIME.todayTime);
+      paintWeekBar(TIME);
+      WeekUserProgress(TIME.weekTime);
+      paintMounthBar(TIME);
+      MonthUserProgress(TIME.mounthTime);
+    } else {
+      loadingHandler(); //если наступил новый день снова делаем проверки и обнуляем данные.
+      //Наверное, стоит сюда написать отдельную ф-цию, которая будет только делать проверку и не отрисовывать прогресс
+      addNewTime(TIME, newCal, newTime);
+      setToLS(TIME);
+      paintTodayBar(TIME);
+      DayUserProgress(TIME.todayTime);
+      paintWeekBar(TIME);
+      WeekUserProgress(TIME.weekTime);
+      paintMounthBar(TIME);
+      MonthUserProgress(TIME.mounthTime);
+    }
+    window.location.reload();
+  }, 0);
 }
 //добавляет к существующему времени новое
 function addNewTime(timeFromLS, newCal, newTime) {
-  console.log(newCal);
+  console.log(newTime);
   if (isNaN(newCal)) return;
   else {
-    console.log("srab", newCal == NaN, newCal);
+    // console.log("srab", newCal == NaN, newCal);
     timeFromLS.todayCal += Number(newCal);
     timeFromLS.weekCal += Number(newCal);
     timeFromLS.mounthCal += Number(newCal);

@@ -5,10 +5,6 @@ import YouTubePlayer from "youtube-player";
 
 // import {arrayVideos} from "./filter.js"
 
-
-
-
-
 export function viewAllVideos(arr) {
   const markUp = createVideo({
     arr
@@ -45,7 +41,6 @@ export function viewAllVideos(arr) {
       // location.reload(true);
     }
 
-    
     let player;
 
     let caloriesToExport;
@@ -111,8 +106,4 @@ export function viewAllVideos(arr) {
   }
 }
 // export const calorToProgress = Number(localStorage.getItem("caloriess"));
-// export const timeToProgress = Number(localStorage.getItem("timeProgress"));  
-
-
-
-
+// export const timeToProgress = Number(localStorage.getItem("timeProgress"));

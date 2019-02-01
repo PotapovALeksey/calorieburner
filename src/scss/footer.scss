@@ -2,9 +2,9 @@
   padding-top: 40px;
   font-family: $main-font, sans-serif;
   font-size: 9px;
-  color: #000000;
   text-align: center;
-  opacity: 0.7;
+  line-height: 12px;
+  letter-spacing: 1.5px;
   margin: 0 auto;
 }
 
@@ -14,8 +14,20 @@
 }
 
 .footer_text {
-  display: inline-block;
   padding-bottom: 25px;
-  opacity: 0.5;
-  width: 65%;
+  color: $text-light-color;
+  width: 66%;
+  margin: 0 auto;
 }
+
+@include for-size (desktop){
+
+  .footer {
+  font-size: 11px;
+  line-height: 18px;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+  }

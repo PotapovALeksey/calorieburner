@@ -7,6 +7,11 @@ $slick-arrow-color: black !default;
 
 .slider {
   &-text {
+
+      &__title {
+        margin-bottom: 20px;
+      }
+
     &__list {
       list-style: none;
       padding: 0;
@@ -38,7 +43,7 @@ $slick-arrow-color: black !default;
     transform: translateY(-50%);
     transform: translateX(-90%);
     min-width: 230px;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
     padding-right: 10%;
     // margin: 0 auto;
   }
@@ -85,20 +90,21 @@ $slick-arrow-color: black !default;
   }
   .slider-text__title {
     color: rgb(44, 73, 211);
-    font-size: 15px;
+    font-size: 20px;
     width: 230px;
     text-align: left;
-    line-height: 1.25;
+    line-height: 1.25rem;
   }
   .slider-text__item-description {
-    font-size: 10px;
+    font-size: 15px;
     color: rgb(81, 86, 107);
     text-align: left;
-    line-height: 2.667;
+    line-height: 2.5rem;
   }
   .slider-text__item-icon {
     fill: rgb(44, 73, 211);
     margin-right: 15px;
+    vertical-align: middle;
   }
   .slider-text__item-fromarray {
     font-weight: bold;
@@ -108,13 +114,13 @@ $slick-arrow-color: black !default;
   // }
   .slick-next {
     position: absolute;
-    top: 105%;
+    top: 100%;
     right: 11%;
     z-index: 999;
   }
   .slick-prev {
     position: absolute;
-    top: 105%;
+    top: 100%;
     left: 11%;
     z-index: 999;
   }

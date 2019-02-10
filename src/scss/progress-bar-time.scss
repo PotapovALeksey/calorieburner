@@ -1,8 +1,4 @@
-@import "../progress-bar/loading-bar.css";
-@import "variables.scss";
-@import "mixin";
-@import "normalize";
-@import "reset";
+@import "reset.css";
 
 .progress-bar2-container {
   background-color: $main-dark-color;
@@ -13,14 +9,13 @@
   font-weight: bold;
   color: $main-light-color;
 }
-.progress-bar-small{
+.progress-bar-small {
   font-family: $main-font;
   font-size: $big-text-size;
   font-weight: bold;
   color: $main-light-color;
   margin-top: 12px;
 }
-
 
 .ldBar-label:after {
   content: "";

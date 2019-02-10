@@ -15,7 +15,7 @@ module.exports = {
     rules: [
       {
         test: /\.html$/, // tells webpack to use this loader for all ".html" files
-        loader: 'html-loader'
+        loader: "html-loader"
       },
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
       {
@@ -42,15 +42,35 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         //use: ["file-loader"],
-          loader: "file-loader",
+        loader: "file-loader",
         options: {
           name: "./img/[name].[ext]"
-        },
+        }
       },
       {
         test: /\.hbs$/,
         exclude: /node_modules/,
-        use: ["handlebars-loader"],
+        use: ["handlebars-loader"]
+      },
+      // {
+      //   test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      //   use: [
+      //     {
+      //       loader: "file-loader",
+      //       options: {
+      //         name: ".fonts/[name].[ext]",
+      //         outputPath: "fonts/"
+      //       }
+      //     }
+      //   ]
+      // }
+      {
+        test: /\.(eot|ttf|woff|woff2|otf)$/,
+        // use: ["file-loader"],
+        loader: "file-loader",
+        options: {
+          name: "./fonts/[name].[ext]"
+        }
       }
     ]
   },
@@ -58,9 +78,9 @@ module.exports = {
     new CleanWebpackPlugin("build"),
     new HtmlWebpackPlugin({
       hash: true,
-      template: '!!html-loader?interpolate!./public/index.html',
+      template: "!!html-loader?interpolate!./public/index.html",
       // template: "./public/index.html",
-      filename: "index.html",
+      filename: "index.html"
     }),
     new MiniCssExtractPlugin({
       filename: "styles.css"

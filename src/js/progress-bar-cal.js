@@ -1,4 +1,7 @@
-//something ------------
+const moment = require("moment");
+let y = moment();
+// let x = moment().week();
+console.log(y);
 import {
   DayUserProgress,
   WeekUserProgress,

@@ -1,25 +1,13 @@
 @import "normalize";
-
+@import "fonts";
 @import "mixin";
 @import "variables";
-
-@import "slider";
-
-@import "../loading-bar/loading-bar.css";
-
+@import "../progress-bar/loading-bar.css";
 
 @import "header";
-
-@import "./modal.scss";
-
-
-
-
-
-
-
 @import "filter";
 @import "slider";
-@import "progress-bar-first";
-@import "progress-bar-2";
+@import "./modal.scss";
+@import "progress-bar-cal";
+@import "progress-bar-time";
 @import "footer";

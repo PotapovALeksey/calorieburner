@@ -2,19 +2,8 @@ import {
   DayUserProgress,
   WeekUserProgress,
   MonthUserProgress
-} from "./progress-bar";
-import { calorToProgress } from "./array.js";
+} from "./progress-bar-time";
 
-//глобальная переменная (со значениями для проверки работы кода)
-// let TIME = {
-//   lastDate: [0, 1, 28],
-//   todayCal: 300,
-//   weekCal: 1000,
-//   mounthCal: 3000,
-//   todayTime: 300,
-//   weekTime: 1000,
-//   mounthTime: 3000
-// };
 let TIME = {
   lastDate: [0, 0, 0],
   todayCal: 0,

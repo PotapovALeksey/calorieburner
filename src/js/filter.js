@@ -3,8 +3,6 @@ import $ from "jquery";
 import "slick-carousel";
 
 import YouTubePlayer from "youtube-player";
-// import {viewAllVideos}from "./array.js";
-
 
 const arrayVideos = [
   {
@@ -239,7 +237,7 @@ function viewAllVideos(arr) {
         caloriesToExport = value;
       }
       function incrementCounter() {
-        const anima = document.querySelector('.svg_anm');
+        const anima = document.querySelector(".svg_anm");
         anima.style.display = "block";
         return COUNTER++;
       }
@@ -389,25 +387,27 @@ filterBox.addEventListener("click", function(e) {
 
       return isInv && isLevel && isCalories && isDuration;
     });
-   
-  function destroyThumbnailBarSlick() {
-    $('.slider-list').slick("unslick");
-}
 
-function ifClearArray() {
-  const out = document.querySelector(".slider-list");
-  const message = document.createElement("P");
-  message.classList.add("noneArray");
-  message.innerHTML = "По Вашим параметрам тренировки не найдены. Примените другие критерии!";
-  out.appendChild(message);
-}
-destroyThumbnailBarSlick();
+    function destroyThumbnailBarSlick() {
+      $(".slider-list").slick("unslick");
+    }
 
-  if (resultFilter.length > 0) {
-    viewAllVideos(resultFilter);
-  } else { 
+    function ifClearArray() {
+      const out = document.querySelector(".slider-list");
+      const message = document.createElement("P");
+      message.classList.add("noneArray");
+      message.innerHTML =
+        "По Вашим параметрам тренировки не найдены. Примените другие критерии!";
+      out.appendChild(message);
+    }
     destroyThumbnailBarSlick();
-    ifClearArray();}
+
+    if (resultFilter.length > 0) {
+      viewAllVideos(resultFilter);
+    } else {
+      destroyThumbnailBarSlick();
+      ifClearArray();
+    }
   }
 });
 

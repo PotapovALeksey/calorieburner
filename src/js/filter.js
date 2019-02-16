@@ -141,6 +141,18 @@ const arrayVideos = [
     img: "https://img.youtube.com/vi/RqfkrZA_ie0/sddefault.jpg"
   }
 ];
+const mod = document.querySelector(".modal");
+let player;
+
+let caloriesToExport;
+let timeToExport;
+let TIMER_ID;
+let calloriesForSecond;
+let callories;
+let COUNTER = 0;
+let duration;
+let currentTime;
+
 function viewAllVideos(arr) {
   const markUp = createVideo({
     arr
@@ -154,96 +166,251 @@ function viewAllVideos(arr) {
     slidesToShow: 1
   });
 
-  const mod = document.querySelector(".modal");
+  // const mod = document.querySelector(".modal");
+  const sliderList = document.querySelector(".slick-track");
+  sliderList.addEventListener("click", showModal);
+  // function showModal(event) {
+  //   event.preventDefault();
+  //   if (event.target.nodeName !== "IMG") return;
+  //   const newSrc = event.target.parentNode.href;
+  //   // const mod = document.querySelector('.modal');
+  //   const modalSrc = document.querySelector("#player");
+  //   modalSrc.src = newSrc;
+  //   mod.style.display = "block";
+
+  //   const sliderList = document.querySelector(".slick-track");
+  //   sliderList.addEventListener("click", showModal);
+  //   function showModal(event) {
+  //     const mod = document.querySelector(".modal");
+  //     event.preventDefault();
+  //     mod.style.display = "none";
+  //     player.stopVideo();
+  //     // localStorage.setItem("caloriess", caloriesToExport);
+  //     // localStorage.setItem("timeProgress", timeToExport);
+  //     // location.reload(true);
+  //   }
+
+  //   let player;
+
+  //   let caloriesToExport;
+  //   let timeToExport;
+  //   const closeBtn = document.querySelector(".madal-btn__close");
+  //   closeBtn.addEventListener("click", closeModal);
+  //   function closeModal(event) {
+  //     event.preventDefault();
+  //     mod.style.display = "none";
+  //     player.stopVideo();
+  //     localStorage.setItem("caloriess", caloriesToExport);
+  //     localStorage.setItem("timeProgress", timeToExport);
+  //     // location.reload(true);
+  //   }
+
+  //   player = YouTubePlayer("player");
+
+  //   player.on("stateChange", onPlayerStateChange);
+
+  //   let TIMER_ID;
+  //   let calloriesForSecond;
+  //   let callories;
+  //   let COUNTER = 0;
+
+  //   function onPlayerStateChange(event) {
+  //     let duration;
+  //     let currentTime;
+
+  //     if (event.data == 1) {
+  //       TIMER_ID = setInterval(triggerFunction, 1000);
+  //     } else {
+  //       clearInterval(TIMER_ID);
+  //     }
+
+  //     function triggerFunction() {
+  //       incrementCounter();
+  //       currentTime = Math.floor(event.target.getCurrentTime());
+  //       duration = Math.floor(event.target.getDuration());
+  //       calloriesForSecond = 200 / duration;
+  //       callories = Math.round(COUNTER * calloriesForSecond);
+  //       let res = formatedValue(callories);
+  //       displayResult(res);
+  //       timeToExport = currentTime;
+  //     }
+
+  //     function formatedValue(time) {
+  //       let value = time < 10 ? "00" + time : time < 100 ? "0" + time : time;
+  //       return value;
+  //     }
+
+  //     function displayResult(value) {
+  //       const counterElem = document.querySelector(
+  //         ".js-modal-content__counter-num"
+  //       );
+
+  //       counterElem.innerHTML = value;
+  //       caloriesToExport = value;
+  //     }
+  //     function incrementCounter() {
+  //       const anima = document.querySelector(".svg_anm");
+  //       anima.style.display = "block";
+  //       return COUNTER++;
+  //     }
+  //   }
+  // }
+}
+//==========================================================================
+const closeBtn = document.querySelector(".madal-btn__close");
+closeBtn.addEventListener("click", closeModal);
+
+function showModal(event) {
+  event.preventDefault();
+  if (event.target.nodeName !== "IMG") return;
+  const newSrc = event.target.parentNode.href;
+  // const mod = document.querySelector('.modal');
+  const modalSrc = document.querySelector("#player");
+  modalSrc.src = newSrc;
+  mod.style.display = "block";
+
   const sliderList = document.querySelector(".slick-track");
   sliderList.addEventListener("click", showModal);
   function showModal(event) {
+    const mod = document.querySelector(".modal");
     event.preventDefault();
-    if (event.target.nodeName !== "IMG") return;
-    const newSrc = event.target.parentNode.href;
-    // const mod = document.querySelector('.modal');
-    const modalSrc = document.querySelector("#player");
-    modalSrc.src = newSrc;
-    mod.style.display = "block";
+    mod.style.display = "none";
+    player.stopVideo();
+    // localStorage.setItem("caloriess", caloriesToExport);
+    // localStorage.setItem("timeProgress", timeToExport);
+    // location.reload(true);
+  }
 
-    const sliderList = document.querySelector(".slick-track");
-    sliderList.addEventListener("click", showModal);
-    function showModal(event) {
-      const mod = document.querySelector(".modal");
-      event.preventDefault();
-      mod.style.display = "none";
-      player.stopVideo();
-      localStorage.setItem("caloriess", caloriesToExport);
-      localStorage.setItem("timeProgress", timeToExport);
-      // location.reload(true);
-    }
+  // let player;
 
-    let player;
+  // let caloriesToExport;
+  // let timeToExport;
 
-    let caloriesToExport;
-    let timeToExport;
-    const closeBtn = document.querySelector(".madal-btn__close");
-    closeBtn.addEventListener("click", closeModal);
-    function closeModal(event) {
-      event.preventDefault();
-      mod.style.display = "none";
-      player.stopVideo();
-      localStorage.setItem("caloriess", caloriesToExport);
-      localStorage.setItem("timeProgress", timeToExport);
-      // location.reload(true);
-    }
+  // const closeBtn = document.querySelector(".madal-btn__close");
+  // closeBtn.addEventListener("click", closeModal);
 
-    player = YouTubePlayer("player");
+  // function closeModal(event) {
+  //   event.preventDefault();
+  //   mod.style.display = "none";
+  //   player.stopVideo();
+  //   localStorage.setItem("caloriess", caloriesToExport);
+  //   localStorage.setItem("timeProgress", timeToExport);
+  //   // location.reload(true);
+  // }
 
-    player.on("stateChange", onPlayerStateChange);
+  player = YouTubePlayer("player");
 
-    let TIMER_ID;
-    let calloriesForSecond;
-    let callories;
-    let COUNTER = 0;
+  player.on("stateChange", onPlayerStateChange);
 
-    function onPlayerStateChange(event) {
-      let duration;
-      let currentTime;
+  // let TIMER_ID;
+  // let calloriesForSecond;
+  // let callories;
+  // let COUNTER = 0;
 
-      if (event.data == 1) {
-        TIMER_ID = setInterval(triggerFunction, 1000);
-      } else {
-        clearInterval(TIMER_ID);
-      }
+  // function onPlayerStateChange(event) {
+  //   let duration;
+  //   let currentTime;
 
-      function triggerFunction() {
-        incrementCounter();
-        currentTime = Math.floor(event.target.getCurrentTime());
-        duration = Math.floor(event.target.getDuration());
-        calloriesForSecond = 200 / duration;
-        callories = Math.round(COUNTER * calloriesForSecond);
-        let res = formatedValue(callories);
-        displayResult(res);
-        timeToExport = currentTime;
-      }
+  //   if (event.data == 1) {
+  //     TIMER_ID = setInterval(triggerFunction, 1000);
+  //   } else {
+  //     clearInterval(TIMER_ID);
+  //   }
 
-      function formatedValue(time) {
-        let value = time < 10 ? "00" + time : time < 100 ? "0" + time : time;
-        return value;
-      }
+  //   function triggerFunction() {
+  //     incrementCounter();
+  //     currentTime = Math.floor(event.target.getCurrentTime());
+  //     duration = Math.floor(event.target.getDuration());
+  //     calloriesForSecond = 200 / duration;
+  //     callories = Math.round(COUNTER * calloriesForSecond);
+  //     let res = formatedValue(callories);
+  //     displayResult(res);
+  //     timeToExport = currentTime;
+  //   }
 
-      function displayResult(value) {
-        const counterElem = document.querySelector(
-          ".js-modal-content__counter-num"
-        );
+  //   function formatedValue(time) {
+  //     let value = time < 10 ? "00" + time : time < 100 ? "0" + time : time;
+  //     return value;
+  //   }
 
-        counterElem.innerHTML = value;
-        caloriesToExport = value;
-      }
-      function incrementCounter() {
-        const anima = document.querySelector(".svg_anm");
-        anima.style.display = "block";
-        return COUNTER++;
-      }
-    }
+  //   function displayResult(value) {
+  //     const counterElem = document.querySelector(
+  //       ".js-modal-content__counter-num"
+  //     );
+
+  //     counterElem.innerHTML = value;
+  //     caloriesToExport = value;
+  //   }
+  //   function incrementCounter() {
+  //     const anima = document.querySelector(".svg_anm");
+  //     anima.style.display = "block";
+  //     return COUNTER++;
+  //   }
+  // }
+}
+function closeModal(event) {
+  event.preventDefault();
+  mod.style.display = "none";
+  player.stopVideo();
+  localStorage.setItem("caloriess", caloriesToExport);
+  localStorage.setItem("timeProgress", timeToExport);
+  // location.reload(true);
+}
+function onPlayerStateChange(event) {
+  // let duration;
+  // let currentTime;
+
+  if (event.data == 1) {
+    TIMER_ID = setInterval(triggerFunction, 1000);
+  } else {
+    clearInterval(TIMER_ID);
+  }
+
+  // function triggerFunction() {
+  //   incrementCounter();
+  //   currentTime = Math.floor(event.target.getCurrentTime());
+  //   duration = Math.floor(event.target.getDuration());
+  //   calloriesForSecond = 200 / duration;
+  //   callories = Math.round(COUNTER * calloriesForSecond);
+  //   let res = formatedValue(callories);
+  //   displayResult(res);
+  //   timeToExport = currentTime;
+  // }
+
+  // function formatedValue(time) {
+  //   let value = time < 10 ? "00" + time : time < 100 ? "0" + time : time;
+  //   return value;
+  // }
+
+  function displayResult(value) {
+    const counterElem = document.querySelector(
+      ".js-modal-content__counter-num"
+    );
+
+    counterElem.innerHTML = value;
+    caloriesToExport = value;
+  }
+  function incrementCounter() {
+    const anima = document.querySelector(".svg_anm");
+    anima.style.display = "block";
+    return COUNTER++;
+  }
+  function triggerFunction() {
+    incrementCounter();
+    currentTime = Math.floor(event.target.getCurrentTime());
+    duration = Math.floor(event.target.getDuration());
+    calloriesForSecond = 200 / duration;
+    callories = Math.round(COUNTER * calloriesForSecond);
+    let res = formatedValue(callories);
+    displayResult(res);
+    timeToExport = currentTime;
+  }
+  function formatedValue(time) {
+    let value = time < 10 ? "00" + time : time < 100 ? "0" + time : time;
+    return value;
   }
 }
+//==========================================================================
 viewAllVideos(arrayVideos);
 // clear filters
 // const clearFilterButton = document.getElementById('filter_link_txt');

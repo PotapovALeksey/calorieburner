@@ -1,12 +1,12 @@
 function DayUserProgress(currentVideoTime) {
-  let targetVideoTime = 1500; //!!!!!потом исправить на правильное значение тут и дальше!!!!
+  let targetVideoTime = 3000; //!!!!!потом исправить на правильное значение тут и дальше!!!!
 
   let progressElement = document.getElementById("ldBar-left");
   let percentage = (currentVideoTime / targetVideoTime) * 100;
   progressElement.setAttribute("data-value", percentage.toString());
 }
 function WeekUserProgress(currentVideoTime) {
-  let targetVideoTime = 3000;
+  let targetVideoTime = 10000;
 
   let progressElement = document.getElementById("ldBar-center");
 
@@ -14,7 +14,7 @@ function WeekUserProgress(currentVideoTime) {
   progressElement.setAttribute("data-value", percentage.toString());
 }
 function MonthUserProgress(currentVideoTime) {
-  let targetVideoTime = 7000;
+  let targetVideoTime = 20000;
 
   let progressElement = document.getElementById("ldBar-right");
 
@@ -55,7 +55,7 @@ function setCorrectDataToMonthProgressbar() {
   //   console.log(paintTime[2]);
   let videoTime = JSON.parse(localStorage.getItem("time"));
   let currentVideoTime = videoTime.mounthTime;
-  console.log(videoTime);
+  // console.log(videoTime);
   paintTime[2].innerHTML = contentCreator(currentVideoTime);
 }
 

@@ -4,7 +4,8 @@ import "@babel/polyfill";
 import "./progress-bar/loading-bar";
 
 import "./js/filter";
-import "./js/progress-bar-cal.js";
+// import "./js/progress-bar-cal.js";
+import "./js/progress-bars.js";
 import "./js/progress-bar-time.js";
 
 import View from "./js/view";

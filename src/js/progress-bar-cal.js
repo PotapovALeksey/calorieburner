@@ -1,3 +1,8 @@
+const moment = require("moment");
+// let y = moment().format({ d: day, M: M });
+// let x = moment().week();
+// console.log(moment.parseZone().format());
+// console.log(moment().weekday());
 import {
   DayUserProgress,
   WeekUserProgress,
@@ -5,7 +10,7 @@ import {
 } from "./progress-bar-time";
 
 let TIME = {
-  lastDate: [0, 0, 0],
+  lastDate: null,
   todayCal: 0,
   weekCal: 0,
   mounthCal: 0,
@@ -37,30 +42,27 @@ const getTimeFromLS = () => {
 // setToLS(TIME);
 
 document.addEventListener("DOMContentLoaded", loadingHandler);
-
 //========================================================================
-// Проверка даты и данных в ЛС и отрисовка прогресс-баров
+//проверяем дату последнего посещения и текущую, обнуляем данные, отрисовываем
 function loadingHandler() {
   let timeLS = getFromLS();
-  let currentMounth = new Date().getMonth();
-  let currentDate = new Date().getDate();
-  let currentDay = new Date().getDay();
+  let currentDate = moment();
+  let lsDate = moment(timeLS.lastDate);
+
   if (!timeLS || !timeLS.lastDate) {
-    TIME.lastDate = [currentMounth, currentDay, currentDate];
+    TIME.lastDate = currentDate;
     setToLS(TIME);
     return;
   } else if (timeLS && timeLS.lastDate) {
     if (
       //месяц совпадает
-      currentMounth === timeLS.lastDate[0]
+      lsDate.month() === currentDate.month()
     ) {
       paintMounthBar(timeLS);
       MonthUserProgress(timeLS.mounthTime);
-      //   alert("1");
-    } else if (currentMounth !== timeLS.lastDate[0]) {
+      console.log("1");
+    } else {
       //месяц не совпадает
-      timeLS.lastDate[0] = currentMounth;
-      timeLS.lastDate[2] = currentDate;
       timeLS.mounthCal = 0;
       timeLS.todayCal = 0;
       timeLS.mounthTime = 0;
@@ -69,36 +71,41 @@ function loadingHandler() {
       DayUserProgress(timeLS.todayTime);
       paintMounthBar(timeLS);
       MonthUserProgress(timeLS.mounthTime);
-      //   alert("2");
+      alert("2");
     }
     if (
-      //день совпадает
-      currentDate === timeLS.lastDate[2]
+      //неделя совпадает
+      lsDate.week() === currentDate.week()
     ) {
-      paintTodayBar(timeLS);
-      DayUserProgress(timeLS.todayTime);
+      console.log("3", lsDate.week(), currentDate.week());
       paintWeekBar(timeLS);
       WeekUserProgress(timeLS.weekTime);
-      //   alert("3");
-    } else if (currentDate !== timeLS.lastDate[2]) {
-      //день не совпадает
-      timeLS.todayCal = 0;
-      timeLS.todayTime = 0;
-      paintTodayBar(timeLS);
-      DayUserProgress(timeLS.todayTime);
-      paintWeekBar(timeLS);
-      WeekUserProgress(timeLS.weekTime);
-      //   alert("4");
-    }
-    if (currentDay === 1 && timeLS.today === 0) {
-      //понедельник первый заход
-      //   alert("5");
+    } else {
+      //неделя не совпадает
+      alert("4", lsDate.week(), currentDate.week());
       timeLS.weekCal = 0;
       timeLS.weekTime = 0;
       paintWeekBar(timeLS);
       WeekUserProgress(timeLS.weekTime);
     }
-    timeLS.lastDate = [currentMounth, currentDay, currentDate];
+    if (
+      //день совпадает
+      lsDate.date() === currentDate.date()
+    ) {
+      paintTodayBar(timeLS);
+      DayUserProgress(timeLS.todayTime);
+
+      console.log("5", lsDate.date(), currentDate.date());
+    } else {
+      //день не совпадает
+      timeLS.todayCal = 0;
+      timeLS.todayTime = 0;
+      paintTodayBar(timeLS);
+      DayUserProgress(timeLS.todayTime);
+
+      console.log("6", lsDate.date(), currentDate.date());
+    }
+    timeLS.lastDate = currentDate;
   }
 
   TIME = timeLS;
@@ -153,7 +160,6 @@ function addNewTime(timeFromLS, newCal, newTime) {
   console.log(newTime);
   if (isNaN(newCal)) return;
   else {
-    // console.log("srab", newCal == NaN, newCal);
     timeFromLS.todayCal += Number(newCal);
     timeFromLS.weekCal += Number(newCal);
     timeFromLS.mounthCal += Number(newCal);

@@ -28,3 +28,12 @@
     url("../fonts/GothamPro-Light.woff") format("woff"),
     url("../fonts/GothamPro-Light.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "slick";
+  font-style: normal;
+  font-weight: 400;
+  src: local("slick"), url("../fonts/slick.ttf") format("ttf"),
+    url("../fonts/slick.woff") format("woff"),
+    url("../fonts/slick.svg") format("svg");
+}
